@@ -46,6 +46,9 @@ public class MasterEventSystem : MonoBehaviour
         Engineer, Biologist, None
     }
 
+    private int biologyDifficulty = 0;
+    private int engineerDifficulty = 0;
+
     private Events currentEvent = Events.GameStart;
     private Roles currentRole = Roles.None;
 
@@ -218,15 +221,19 @@ public class MasterEventSystem : MonoBehaviour
         return notDone;
     }
 
-    public void setRole(EventInfoTypes role) {
+    public void setRole(Roles role) {
+        currentRole= role;
+    }
 
+    public int getDifficulty(Roles role) {
+        if (role == Roles.Biologist) return biologyDifficulty;
+        if (role == Roles.Engineer) return engineerDifficulty;
+        return -1;
+    }
+
+    public void setDifficulty(Roles role, int difficulty) {
+        if (role == Roles.Biologist) biologyDifficulty = difficulty;
+        else if (role == Roles.Engineer) engineerDifficulty = difficulty;
     }
 
 }
-
-// function to set role
-
-// track difficulty of game??? or can happen within minigame. Actually, do both
-
-
-// IMportant player for save: Name, currentJob,
