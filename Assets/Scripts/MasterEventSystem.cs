@@ -56,12 +56,28 @@ public class MasterEventSystem : MonoBehaviour
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
 
+    public static MasterEventSystem Instance;
+
+    private void Awake()
+    {
+        // start of new code
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        // end of new code
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         // if save file
         // set current event to save value
         // set event dictionary to
+        setDefaultEventInfo();
     }
 
     // Update is called once per frame
