@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Player's Quarters.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Hallway.unity
+    guid: 2bfbe39ab37199d45ba869655865c50d
+  - enabled: 1
+    path: Assets/Scenes/Command Center.unity
+    guid: 20184cde4e26dff4b9170810da097d86
+  - enabled: 1
+    path: Assets/Scenes/Engineering Bay.unity
+    guid: f3dcf58bf74dcc144aeba68811d4832e
+  - enabled: 1
+    path: Assets/Scenes/Biodome.unity
+    guid: ca8f4ef38c190ac4a9f958a222c60bbc
   m_configObjects: {}
