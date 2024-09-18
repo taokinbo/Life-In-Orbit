@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.IO;
+using Newtonsoft.Json;
 
-public class MasterEventSystem : MonoBehaviour
-{
-    public enum Events
-    {
+public enum Events {
         GameStart = 0,
         Act1Scene1 = 1,
         Act1Scene2 = 2,
@@ -42,21 +41,22 @@ public class MasterEventSystem : MonoBehaviour
         None
     };
 
-    private EventInfoTypes[] rooms = {EventInfoTypes.Room, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
-    private EventInfoTypes[] people = {EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien};
-
-    public enum Roles
-    {
+    public enum Roles {
         Engineer, Biologist, None
     }
 
+public class MasterEventSystem : MonoBehaviour
+{
+
+    private EventInfoTypes[] rooms = {EventInfoTypes.Room, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
+    private EventInfoTypes[] people = {EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien};
+
     private int biologyDifficulty = 0;
     private int engineerDifficulty = 0;
+    private string playerName = "";
 
     private Events currentEvent = Events.GameStart;
     private Roles currentRole = Roles.None;
-
-    Dictionary<Events, bool> eventTriggered = new Dictionary<Events, bool>();
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
 
@@ -88,19 +88,6 @@ public class MasterEventSystem : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public void ResetEventTrigger()
-    {
-        foreach (var key in eventTriggered.Keys)
-        {
-            eventTriggered[key] = false;
-        }
-    }
-
-    public void SwitchEvent(Events _event)
-    {
-        eventTriggered[_event] = true;
     }
 
     private void setDefaultEventInfo()
@@ -306,6 +293,11 @@ public class MasterEventSystem : MonoBehaviour
         return eventInfo[currentEvent];
     }
 
+    public string getAllEventInfo() {
+        string json = JsonConvert.SerializeObject(eventInfo, Formatting.Indented);
+        return json;
+    }
+
     public IEnumerable<EventInfoTypes> getInfoFromSubsection(EventInfoTypes[] subsection, bool mustBeTrue = false) {
         List <EventInfoTypes> currentItems = new List<EventInfoTypes>();
         var currentEventInfo = eventInfo[currentEvent];
@@ -357,6 +349,18 @@ public class MasterEventSystem : MonoBehaviour
         currentRole= role;
     }
 
+    public Roles getRole() {
+        return currentRole;
+    }
+
+    public void setPlayerName(string name) {
+        playerName = name;
+    }
+
+    public string getPlayerName() {
+        return playerName;
+    }
+
     public int getDifficulty(Roles role) {
         if (role == Roles.Biologist) return biologyDifficulty;
         if (role == Roles.Engineer) return engineerDifficulty;
@@ -367,5 +371,50 @@ public class MasterEventSystem : MonoBehaviour
         if (role == Roles.Biologist) biologyDifficulty = difficulty;
         else if (role == Roles.Engineer) engineerDifficulty = difficulty;
     }
+
+    public Events getCurrentScene() {
+        return currentEvent;
+    }
+
+
+    [System.Serializable]
+    class SaveData {
+        public string playerName;
+        public int biologyDifficulty;
+        public int engineerDifficulty;
+        public Events currentEvent;
+        public Roles currentRole;
+        public string eventInfo;
+        public int score;
+    }
+
+    public void Save() {
+        SaveData data = new SaveData();
+        data.playerName = MasterEventSystem.Instance.getPlayerName();
+        data.biologyDifficulty = MasterEventSystem.Instance.getDifficulty(Roles.Biologist);
+        data.engineerDifficulty = MasterEventSystem.Instance.getDifficulty(Roles.Engineer);
+        data.currentEvent = MasterEventSystem.Instance.getCurrentScene();
+        data.currentRole = MasterEventSystem.Instance.getRole();
+        data.eventInfo = MasterEventSystem.Instance.getAllEventInfo();
+
+        string json = JsonConvert.SerializeObject(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void Load() {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            // TeamColor = data.TeamColor;
+        }
+        else {
+            Debug.Log("load failed");
+        }
+    }
+
+
 
 }
