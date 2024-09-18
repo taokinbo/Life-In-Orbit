@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
 
-    public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome}
+    public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, Tester}
 
     // Start is called before the first frame update
     void Start()
@@ -78,5 +78,10 @@ public class UIController : MonoBehaviour
 
     public void exitGame() {
         Application.Quit();
+    }
+
+    public void testerFunc() {
+        MasterEventSystem.Instance.setLocation(EventInfoTypes.Biodome);
+        SceneManager.LoadScene((int)Scenes.Tester);
     }
 }

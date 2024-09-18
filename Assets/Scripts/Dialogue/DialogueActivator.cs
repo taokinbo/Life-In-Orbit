@@ -16,12 +16,29 @@ public class DialogueActivator : MonoBehaviour
     bool hasCalledStart = false;
 
 
-    void Start(){
+    private Events currentEvent;
+
+
+    // void Start(){
+    void Awake(){
         diaUI = FindObjectOfType<DialogueUI>();
+        currentEvent = MasterEventSystem.Instance.getCurrentEvent();
+        MasterEventSystem.Instance.OnEventInfoChnaged += OnEventInfoChnaged;
+
+        MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.None);
 
         // if (dialogueObject != null) Interact();
 
         // Debug.Log(GameManager.Instance.dateChosen);
+    }
+
+    void OnDestroy(){
+        MasterEventSystem.Instance.OnEventInfoChnaged -= OnEventInfoChnaged;
+    }
+
+    private void OnEventInfoChnaged(Events newEvent) {
+        currentEvent = newEvent;
+        Debug.Log("i have reciveved news of new curent info: " + currentEvent + " -> " + newEvent);
     }
 
     // public void Interact(int dia){

@@ -63,6 +63,9 @@ public class MasterEventSystem : MonoBehaviour
 
     public static MasterEventSystem Instance;
 
+    public delegate void EventInfoChangeHandler(Events newEvent);
+    public event EventInfoChangeHandler OnEventInfoChnaged;
+
     private void Awake()
     {
         // start of new code
@@ -338,12 +341,13 @@ public class MasterEventSystem : MonoBehaviour
                 currentEventInfo[EventInfoTypes.EngineeringBay] = false;
                 currentEventInfo[EventInfoTypes.Biodome] = false;
             }
-
-            if (isSceneDone()) {
-                currentEvent++;
-                Save();
-            }
         }
+        if (isSceneDone()) {
+            currentEvent++;
+            Save();
+        }
+
+        OnEventInfoChnaged?.Invoke(currentEvent);
     }
 
     public EventInfoTypes getMinigameType() {
@@ -359,7 +363,7 @@ public class MasterEventSystem : MonoBehaviour
         foreach (var val in currentEventInfo.Values) {
             notDone = notDone || val;
         }
-        return notDone;
+        return !notDone;
     }
 
     public void setRole(Roles role) {

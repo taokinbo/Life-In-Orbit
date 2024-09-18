@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -530, y: -149.45}
+  m_AnchoredPosition: {x: -529.99994, y: -149.45001}
   m_SizeDelta: {x: -564.509, y: -1152.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &24831029
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 49821745}
   - component: {fileID: 49821744}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: HawthornDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,6 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObjects:
   - {fileID: 11400000, guid: 6c90cc21a38968f419ea8cb0e5110c39, type: 2}
+  matchingSceneList: 0
 --- !u!4 &49821745
 Transform:
   m_ObjectHideFlags: 0
@@ -1399,7 +1400,7 @@ GameObject:
   - component: {fileID: 1017724875}
   - component: {fileID: 1017724876}
   m_Layer: 5
-  m_Name: Spritev2
+  m_Name: charName1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
