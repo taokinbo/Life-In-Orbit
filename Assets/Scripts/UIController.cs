@@ -5,39 +5,78 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+
+    public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome}
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ChangeSceneToPlayersQuarters()
     {
-        SceneManager.LoadScene(0);
+        MasterEventSystem.Instance.setLocation(EventInfoTypes.PlayersQuarters);
+        SceneManager.LoadScene((int)Scenes.PlayersQuarters);
     }
 
     public void ChangeSceneToHallway()
     {
-        SceneManager.LoadScene(1);
+        MasterEventSystem.Instance.setLocation(EventInfoTypes.Hallway);
+        SceneManager.LoadScene((int)Scenes.Hallway);
     }
 
     public void ChangeSceneToCommandCenter()
     {
-        SceneManager.LoadScene(2);
+        MasterEventSystem.Instance.setLocation(EventInfoTypes.CommandCenter);
+        SceneManager.LoadScene((int)Scenes.CommandCenter);
     }
     public void ChangeSceneToEngineeringBay()
     {
-        SceneManager.LoadScene(3);
+        MasterEventSystem.Instance.setLocation(EventInfoTypes.EngineeringBay);
+        SceneManager.LoadScene((int)Scenes.EngineeringBay);
     }
 
     public void ChangeSceneToBiodome()
     {
-        SceneManager.LoadScene(4);
+        MasterEventSystem.Instance.setLocation(EventInfoTypes.Biodome);
+        SceneManager.LoadScene((int)Scenes.Biodome);
+    }
+
+    public void newGame() {
+        ChangeSceneToPlayersQuarters();
+    }
+
+    public void loadGame() {
+        MasterEventSystem.Instance.Load();
+        switch(MasterEventSystem.Instance.getLocation()) {
+            case EventInfoTypes.PlayersQuarters:
+                ChangeSceneToPlayersQuarters();
+                break;
+            case EventInfoTypes.Hallway:
+                ChangeSceneToHallway();
+                break;
+            case EventInfoTypes.CommandCenter:
+                ChangeSceneToCommandCenter();
+                break;
+            case EventInfoTypes.EngineeringBay:
+                ChangeSceneToEngineeringBay();
+                break;
+            case EventInfoTypes.Biodome:
+                ChangeSceneToBiodome();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void exitGame() {
+        Application.Quit();
     }
 }

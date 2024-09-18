@@ -34,7 +34,7 @@ public enum Events {
 
     public enum EventInfoTypes
     {
-        Room, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
+        PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
         Lumina, Hawthorn, Pine, Bonnie, Alien,                  // characters
         NameSelection, JobSelection,                                // selections
         AlienActivity,
@@ -48,7 +48,7 @@ public enum Events {
 public class MasterEventSystem : MonoBehaviour
 {
 
-    private EventInfoTypes[] rooms = {EventInfoTypes.Room, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
+    private EventInfoTypes[] PlayersQuarterss = {EventInfoTypes.PlayersQuarters, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
     private EventInfoTypes[] people = {EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien};
 
     private int biologyDifficulty = 0;
@@ -57,6 +57,7 @@ public class MasterEventSystem : MonoBehaviour
 
     private Events currentEvent = Events.GameStart;
     private Roles currentRole = Roles.None;
+    private EventInfoTypes curentLocation;
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
 
@@ -90,6 +91,15 @@ public class MasterEventSystem : MonoBehaviour
 
     }
 
+    public EventInfoTypes getLocation() {
+        return curentLocation;
+    }
+
+    public void setLocation(EventInfoTypes location) {
+        curentLocation = location;
+        Save();
+    }
+
     private void setDefaultEventInfo()
     {
         //Game start
@@ -98,7 +108,7 @@ public class MasterEventSystem : MonoBehaviour
         // Act 1 Scene 1
         currentDict = new Dictionary<EventInfoTypes, bool>
         {
-            { EventInfoTypes.Room, true },
+            { EventInfoTypes.PlayersQuarters, true },
             { EventInfoTypes.Lumina, true },
         };
         eventInfo[Events.Act1Scene1] = currentDict;
@@ -139,12 +149,12 @@ public class MasterEventSystem : MonoBehaviour
         };
         eventInfo[Events.Act2Scene6] = currentDict;
         // Act 2 Scene 7 (Ascendecy Index Unlocked, will occur through item scripts)
-        currentDict = new Dictionary<EventInfoTypes, bool> // TODO: Ask jazz if all rooms need to be explored before next story progression (is preffered if so)
+        currentDict = new Dictionary<EventInfoTypes, bool> // TODO: Ask jazz if all PlayersQuarterss need to be explored before next story progression (is preffered if so)
         {
             { EventInfoTypes.CommandCenter, true },
             { EventInfoTypes.Biodome, true },
             { EventInfoTypes.EngineeringBay, true },
-            { EventInfoTypes.Room, true },
+            { EventInfoTypes.PlayersQuarters, true },
             { EventInfoTypes.AlienActivity, true },
             { EventInfoTypes.Lumina, true },
             { EventInfoTypes.Pine, true },
@@ -198,7 +208,7 @@ public class MasterEventSystem : MonoBehaviour
             { EventInfoTypes.CommandCenter, true },
             { EventInfoTypes.Biodome, true },
             { EventInfoTypes.EngineeringBay, true },
-            { EventInfoTypes.Room, true },
+            { EventInfoTypes.PlayersQuarters, true },
             { EventInfoTypes.Lumina, true },
             { EventInfoTypes.Pine, true },
             { EventInfoTypes.Bonnie, true },
@@ -209,7 +219,7 @@ public class MasterEventSystem : MonoBehaviour
 
         // Act 3 Scene 14
         currentDict = new Dictionary<EventInfoTypes, bool> {
-            {EventInfoTypes.Room, true },
+            {EventInfoTypes.PlayersQuarters, true },
             {EventInfoTypes.Lumina, true },
         };
         eventInfo[Events.Act3Scene14] = currentDict;
@@ -242,7 +252,7 @@ public class MasterEventSystem : MonoBehaviour
             {EventInfoTypes.Lumina, true },
             {EventInfoTypes.Bonnie, true },
             {EventInfoTypes.CommandCenter, true },
-            {EventInfoTypes.Room, true },
+            {EventInfoTypes.PlayersQuarters, true },
         };
         eventInfo[Events.Act4Scene17] = currentDict;
 
@@ -298,6 +308,10 @@ public class MasterEventSystem : MonoBehaviour
         return json;
     }
 
+    private void setAllEventInfo(string json) {
+        eventInfo = JsonConvert.DeserializeObject<Dictionary<Events, Dictionary<EventInfoTypes, bool>>>(json);
+    }
+
     public IEnumerable<EventInfoTypes> getInfoFromSubsection(EventInfoTypes[] subsection, bool mustBeTrue = false) {
         List <EventInfoTypes> currentItems = new List<EventInfoTypes>();
         var currentEventInfo = eventInfo[currentEvent];
@@ -308,8 +322,8 @@ public class MasterEventSystem : MonoBehaviour
         return currentItems;
     }
 
-    public IEnumerable<EventInfoTypes> getRoomForEvent(bool mustBeUnseen = false) {
-        return getInfoFromSubsection(rooms, mustBeUnseen);
+    public IEnumerable<EventInfoTypes> getPlayersQuartersForEvent(bool mustBeUnseen = false) {
+        return getInfoFromSubsection(PlayersQuarterss, mustBeUnseen);
     }
 
     public IEnumerable<EventInfoTypes> getPeopleForEvent(bool mustBeUntalked = false) {
@@ -325,7 +339,10 @@ public class MasterEventSystem : MonoBehaviour
                 currentEventInfo[EventInfoTypes.Biodome] = false;
             }
 
-            if (isSceneDone()) currentEvent++;
+            if (isSceneDone()) {
+                currentEvent++;
+                Save();
+            }
         }
     }
 
@@ -372,8 +389,12 @@ public class MasterEventSystem : MonoBehaviour
         else if (role == Roles.Engineer) engineerDifficulty = difficulty;
     }
 
-    public Events getCurrentScene() {
+    public Events getCurrentEvent() {
         return currentEvent;
+    }
+
+    private void setCurrentEvent(Events scene) {
+        currentEvent = scene;
     }
 
 
@@ -386,6 +407,7 @@ public class MasterEventSystem : MonoBehaviour
         public Roles currentRole;
         public string eventInfo;
         public int score;
+        public EventInfoTypes location;
     }
 
     public void Save() {
@@ -393,12 +415,14 @@ public class MasterEventSystem : MonoBehaviour
         data.playerName = MasterEventSystem.Instance.getPlayerName();
         data.biologyDifficulty = MasterEventSystem.Instance.getDifficulty(Roles.Biologist);
         data.engineerDifficulty = MasterEventSystem.Instance.getDifficulty(Roles.Engineer);
-        data.currentEvent = MasterEventSystem.Instance.getCurrentScene();
+        data.currentEvent = MasterEventSystem.Instance.getCurrentEvent();
         data.currentRole = MasterEventSystem.Instance.getRole();
         data.eventInfo = MasterEventSystem.Instance.getAllEventInfo();
+        data.location = MasterEventSystem.Instance.getLocation();
 
         string json = JsonConvert.SerializeObject(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        Debug.Log("saving...");
     }
 
     public void Load() {
@@ -407,8 +431,14 @@ public class MasterEventSystem : MonoBehaviour
         {
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
-
-            // TeamColor = data.TeamColor;
+            Debug.Log(json);
+            MasterEventSystem.Instance.setPlayerName(data.playerName);
+            MasterEventSystem.Instance.setDifficulty(Roles.Biologist, data.biologyDifficulty);
+            MasterEventSystem.Instance.setDifficulty(Roles.Engineer, data.engineerDifficulty);
+            MasterEventSystem.Instance.setCurrentEvent(data.currentEvent);
+            MasterEventSystem.Instance.setRole(data.currentRole);
+            MasterEventSystem.Instance.setAllEventInfo(data.eventInfo);
+            MasterEventSystem.Instance.setLocation(data.location);
         }
         else {
             Debug.Log("load failed");
