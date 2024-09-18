@@ -8,28 +8,35 @@ public class DialogueActivator : MonoBehaviour
     // private DialogueUI AmosDia;
     // private DialogueUI MikaDia;
     private DialogueUI diaUI;
+    [SerializeField] private EventInfoTypes Character;
     [SerializeField] private DialogueObject[] dialogueObjects;
-    [SerializeField] private int matchingSceneList;
+    [SerializeField] private Events[] matchingSceneList;
+    [SerializeField] private bool[] OnSceneLoad;
+    [SerializeField] private DialogueObject backupDialogue;
+
+    private int curIndex = 0;
+    private Events currentEvent;
+
 
 
     bool wait1Frame = false;
     bool hasCalledStart = false;
 
 
-    private Events currentEvent;
 
 
     // void Start(){
     void Awake(){
         diaUI = FindObjectOfType<DialogueUI>();
-        currentEvent = MasterEventSystem.Instance.getCurrentEvent();
+        setCurrentEvent(MasterEventSystem.Instance.getCurrentEvent());
         MasterEventSystem.Instance.OnEventInfoChnaged += OnEventInfoChnaged;
 
-        MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.None);
+        // if upcoming dialogue should play upon entering scene, start dialogue
+        if (matchingSceneList[curIndex] == currentEvent && OnSceneLoad[curIndex]) {
+            playDialogue();
+        }
 
-        // if (dialogueObject != null) Interact();
-
-        // Debug.Log(GameManager.Instance.dateChosen);
+        // MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.None);
     }
 
     void OnDestroy(){
@@ -37,14 +44,28 @@ public class DialogueActivator : MonoBehaviour
     }
 
     private void OnEventInfoChnaged(Events newEvent) {
-        currentEvent = newEvent;
         Debug.Log("i have reciveved news of new curent info: " + currentEvent + " -> " + newEvent);
+        setCurrentEvent(newEvent);
     }
 
-    // public void Interact(int dia){
-    //     Debug.Log("shown");
-    //     diaUI.ShowDialogue(dialogueObject);
-    // }
+    private void setCurrentEvent(Events newEvent) {
+        while (curIndex < matchingSceneList.Length && matchingSceneList[curIndex] < newEvent) {
+            curIndex++;
+        }
+        currentEvent = newEvent;
+        Debug.Log("current Index: " + curIndex);
+    }
+
+    private void playDialogue() {
+        diaUI.ShowDialogue(dialogueObjects[curIndex], Character);
+    }
+
+    public void Interacted(){
+        Debug.Log("button clicked");
+        if (matchingSceneList[curIndex] == currentEvent) {
+            playDialogue();
+        }
+    }
 
     void Update(){
         if (!wait1Frame) wait1Frame = true;

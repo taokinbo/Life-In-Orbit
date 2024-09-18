@@ -106,7 +106,10 @@ public class MasterEventSystem : MonoBehaviour
     private void setDefaultEventInfo()
     {
         //Game start
-        var currentDict = new Dictionary<EventInfoTypes, bool>();
+        // var currentDict = new Dictionary<EventInfoTypes, bool>();
+        var currentDict = new Dictionary<EventInfoTypes, bool>() { // REMOVE AFTER DONE WITH TESTING
+            { EventInfoTypes.Hawthorn, true}
+        };
         eventInfo[Events.GameStart] = currentDict;
         // Act 1 Scene 1
         currentDict = new Dictionary<EventInfoTypes, bool>

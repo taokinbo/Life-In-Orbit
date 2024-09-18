@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Reflection;
 
 
 public class DialogueUI : MonoBehaviour
@@ -85,7 +86,7 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject){
+    public void ShowDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear = EventInfoTypes.None){
         // Debug.Log("is running show Dialogue");
         historyQuest = curQuest;
 
@@ -97,7 +98,7 @@ public class DialogueUI : MonoBehaviour
         dialogueBox.SetActive(true);
         // curChoice = 0;
         points = 0;
-        StartCoroutine(StepThroughDialogue(dialogueObject));
+        StartCoroutine(StepThroughDialogue(dialogueObject, eventToClear));
     }
 
     private void SetSprite(string spriteName){
@@ -152,7 +153,7 @@ public class DialogueUI : MonoBehaviour
 
 
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject){
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear = EventInfoTypes.None){
         int index = 0;
 
         // var curQuest = 2; //some way to track conversation ig
@@ -236,6 +237,7 @@ public class DialogueUI : MonoBehaviour
         }
 
         CloseDialogueBox(true);
+        MasterEventSystem.Instance.eventTypeCleared(eventToClear);
     }
 
     private void CloseDialogueBox(bool switchScene = false){
