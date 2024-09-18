@@ -1,0 +1,873 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: AmosDate
+  m_EditorClassIdentifier:
+  dialogue:
+  - dialogue: 'The darker teal of the ocean contrasts the lighter baby blue of the
+      sky. A salty ocean breeze brushes past with a white-bellied bird gliding gracefully
+      overhead. The crashing of waves is accompanied by a chorus of seagull squawks. '
+    questNumMin: 0
+    questNumMax: 1
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite: Beach_Neutral
+    showName: 0
+    name:
+    isGrey: 0
+    shake: 0
+  - dialogue: 'What are you thinking? '
+    questNumMin: 0
+    questNumMax: 1
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Stunning view! '
+    - 'I wish I were in my house. '
+    - "It\u2019s too noisy here. "
+    - 'Wow. So serene! '
+    choiceGoTo: 02000000020000000200000002000000
+    points: 01000000000000000000000001000000
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name:
+    isGrey: 0
+    shake: 0
+  - dialogue: 'As you take in the scenery, listening to the waves crash faintly against
+      the rocks below, someone taps your shoulder lightly. '
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - Ahhhhh!
+    - "Who\u2019s there?! "
+    - 'Howdy stranger! '
+    - Hi.
+    choiceGoTo: 03000000060000000700000007000000
+    points: 00000000000000000100000001000000
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite: Beach_Blur
+    showName: 0
+    name:
+    isGrey: 1
+    shake: 0
+  - dialogue: 'Ahhhhh! '
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Upset
+    bgSprite:
+    showName: 1
+    name: Unkown Guy
+    isGrey: 0
+    shake: 0
+  - dialogue: "Sorry, I didn\u2019t mean to startle you or be startled for that matter. "
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Unkown Guy
+    isGrey: 0
+    shake: 0
+  - dialogue: The buff man stands up straighter but puts a hand to the back of his
+      head sheepishly.
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: 7
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Unkown Guy
+    isGrey: 1
+    shake: 0
+  - dialogue: "It\u2019s me. The guy you\u2019re supposed to be meeting here. "
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: 7
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Unkown Guy
+    isGrey: 0
+    shake: 0
+  - dialogue: 'The stranger crosses his arms against his chest and gives a small
+      wave with a one-sided, toothy grin. '
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Happy
+    bgSprite:
+    showName: 0
+    name: Unkown Guy
+    isGrey: 1
+    shake: 0
+  - dialogue: "S'up? Amos is the name\u2014Amos Sun. I gotta say, your profile caught
+      my eye. "
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'As a senior finance specialist for Techworld Banks, numbers are my
+      game. I enjoy crunching data, analyzing trends, and making strategic financial
+      decisions that have a real impact. When I''m not in the finance world, you
+      can find me pumping iron, pushing myself to new limits. Fitness is essential
+      to me, and I believe in maintaining a healthy body and mind. '
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: How do you respond?
+    questNumMin: 0
+    questNumMax: 3
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Nice story '
+    - "Sounds\u2026 interesting "
+    - 'Agreed! '
+    - 'Cool '
+    choiceGoTo: 0b0000000b0000000c0000000c000000
+    points: 00000000000000000100000001000000
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: "Huh\u2026? I guess you aren\u2019t the workout type. Although, I really
+      shoulda figured that out earlier. It\u2019s pretty apparent by your lack of
+      deltoid definition. "
+    questNumMin: 0
+    questNumMax: 3
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Upset
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "I've got a thing for long walks on the beach too. There's something
+      serene and calming about being close to the water, ya know? But anyways, now
+      that I've shared a bit about myself, let\u2019s hear about you. I\u2019d love
+      to strike up a conversation and see where it takes us. "
+    questNumMin: 0
+    questNumMax: 3
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'What are your interests and passions? '
+    questNumMin: 0
+    questNumMax: 4
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Investment banking '
+    - Coding
+    - 'Health-care activism '
+    - Doom-scrolling
+    choiceGoTo: 0e0000000f0000001000000011000000
+    points: 02000000000000000000000000000000
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Same! That\u2019s crazy! I guess we\u2019re just two passionate financiers.
+      Woof. Ah-oooooo! Get it? Cuz Wolf of Wallstreet? Haha, doesn\u2019t matter;
+      I thought it was funny. "
+    questNumMin: 0
+    questNumMax: 4
+    stop: 0
+    forceSkipTo: 18
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Happy
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Oh. Isn\u2019t that a bit dry all day, every day? Sorry, that was
+      rude of me\u2026 but it still stands. "
+    questNumMin: 0
+    questNumMax: 4
+    stop: 0
+    forceSkipTo: 18
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Yeah. I guess that is pretty important. '
+    questNumMin: 0
+    questNumMax: 4
+    stop: 0
+    forceSkipTo: 18
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'That sounds pretty negative. Maybe you should do something else with
+      your time. '
+    questNumMin: 0
+    questNumMax: 4
+    stop: 0
+    forceSkipTo: 18
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Upset
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Let\u2019s talk muscle composition. Where are your trapezius muscles? "
+    questNumMin: 0
+    questNumMax: 5
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Back of neck to middle of spine '
+    - 'Backs of rib cages '
+    - 'All around shoulders '
+    - 'Front of legs, hip to knee '
+    choiceGoTo: 13000000140000001500000016000000
+    points: 02000000000000000000000000000000
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Heck yeah! Seems like someone paid attention in high school gym class! '
+    questNumMin: 0
+    questNumMax: 5
+    stop: 0
+    forceSkipTo: 23
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Happy
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Ooh, so close. Those are your latissimus dorsi. '
+    questNumMin: 0
+    questNumMax: 5
+    stop: 0
+    forceSkipTo: 23
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Nope. Those are your deltoids or delts for short. '
+    questNumMin: 0
+    questNumMax: 5
+    stop: 0
+    forceSkipTo: 23
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Nah, those are your quadriceps. '
+    questNumMin: 0
+    questNumMax: 5
+    stop: 0
+    forceSkipTo: 23
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: But enough brawns talk. Let's brains talk.
+    questNumMin: 0
+    questNumMax: 5
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 1
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Amos\u2019 charisma and hidden intellect become apparent during the
+      latter half of the conversation. He even cracks a few corny jokes. It seems
+      like despite his buff appearance, he also has a soft side. "
+    questNumMin: 10
+    questNumMax: 10
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: "How\u2019d you like to do this again sometime? "
+    questNumMin: 10
+    questNumMax: 10
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Yes. '
+    - 'No. '
+    - 'I guess if I had nothing better. '
+    - 'That sounds lovely. '
+    choiceGoTo: 1a00000026000000260000001a000000
+    points: 01000000000000000000000001000000
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "I was hoping that\u2019s what you\u2019d say! "
+    questNumMin: 10
+    questNumMax: 10
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Happy
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Amos looks out to the ocean before looking back at you with soft eyes.
+      He looks very content. '
+    questNumMin: 10
+    questNumMax: 10
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: "Your eyes are as deep as the ocean. You\u2019re beautiful. "
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Thank you. '
+    - "I\u2019m aware. "
+    - ...
+    - "You\u2019re beautiful too. "
+    choiceGoTo: 220000001d0000001e00000020000000
+    points: 00000000000000000000000000000000
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Amos chuckles, the timbre deep and hardy. '
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: 34
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: 'Amos chuckles, the timbre deep and hardy. '
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: "It\u2019s true. "
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: 34
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Amos\u2019 eyes widen as if he\u2019s taken aback. "
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: 'Thank you. '
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: 34
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Happy
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Thank you for joining me here. I had a great time. '
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Amos stands, muscles on full display. '
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: "Well, have a safe trip back. I\u2019ll see you again soon!"
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Happy
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: Amos waves goodbye before walking out of site.
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: 49
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: None
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "That\u2019s a shame. I was just starting to really like you..."
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Upset
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Well, nothing I can do about it. I\u2019m heading out... Best of luck
+      in your search for love. "
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Amos waves goodbye before walking out of site. '
+    questNumMin: 10
+    questNumMax: 11
+    stop: 0
+    forceSkipTo: 49
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: None
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'You and Amos alternate between talking over each other and awkward
+      periods of silence. You struggle to establish a rhythm. '
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: "Well, you seem like a great person, but I think we\u2019ve both realized
+      by now... This isn\u2019t going to work out.  "
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'How do you respond? '
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - 'Oh, thank goodness you agree. '
+    - "No, it really isn\u2019t. "
+    - "I didn\u2019t think you\u2019d notice. "
+    - 'What? We can still work! '
+    choiceGoTo: 2f0000002c0000002d0000002e000000
+    points: 00000000000000000000000000000000
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 1
+    shake: 0
+  - dialogue: 'I get it, okay? '
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: 47
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Upset
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Tch. I see, so that\u2019s what you think of me. "
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: 47
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Upset
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Sorry, but I really don\u2019t think we can. We lack chemistry. "
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: 47
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: "Well, have a safe trip back. I\u2019m heading out. Best of luck in
+      your search for love. "
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: Amazon_Neutral
+    bgSprite:
+    showName: 1
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Amos waves goodbye before walking out of sight. '
+    questNumMin: 20
+    questNumMax: 20
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite: None
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
+  - dialogue: End of Date
+    questNumMin: 10
+    questNumMax: 20
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo:
+    points:
+    advanceQuest: 0
+    chatSprite:
+    bgSprite:
+    showName: 0
+    name: Amos Sun
+    isGrey: 0
+    shake: 0
