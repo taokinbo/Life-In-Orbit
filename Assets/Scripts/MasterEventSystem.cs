@@ -26,7 +26,11 @@ public class MasterEventSystem : MonoBehaviour
         Act3Scene14 = 14,
         Act4Scene15 = 15,
         Act4Scene16 = 16,
-        Act5Scene17 = 17,
+        Act4Scene17 = 17,
+        Act5Scene18 = 18,
+        Act5Scene19 = 19,
+        Act5Scene20 = 20,
+        Act5Scene21 = 21,
     };
 
     public enum EventInfoTypes
@@ -172,7 +176,7 @@ public class MasterEventSystem : MonoBehaviour
         {
             { EventInfoTypes.EngineeringBay, true },
             { EventInfoTypes.Biodome, true },
-            { EventInfoTypes.Alien, true },
+            { EventInfoTypes.AlienActivity, true },
         };
         eventInfo[Events.Act2Scene9] = currentDict;
         // Act 2 Scene 10
@@ -182,6 +186,118 @@ public class MasterEventSystem : MonoBehaviour
             { EventInfoTypes.Pine, true },
         };
         eventInfo[Events.Act2Scene10] = currentDict;
+
+        // Act 3 Scene 11
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.CommandCenter, true },
+            {EventInfoTypes.Hawthorn, true },
+        };
+        eventInfo[Events.Act3Scene11] = currentDict;
+
+        // Act 3 Scene 12
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.EngineeringBay, true },
+            {EventInfoTypes.Biodome, true },
+            {EventInfoTypes.Lumina, true },
+            {EventInfoTypes.AlienActivity, true },
+        };
+        eventInfo[Events.Act3Scene12] = currentDict;
+
+        // Act 3 Scene 13
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            { EventInfoTypes.CommandCenter, true },
+            { EventInfoTypes.Biodome, true },
+            { EventInfoTypes.EngineeringBay, true },
+            { EventInfoTypes.Room, true },
+            { EventInfoTypes.Lumina, true },
+            { EventInfoTypes.Pine, true },
+            { EventInfoTypes.Bonnie, true },
+            { EventInfoTypes.Hawthorn, true }
+
+        };
+        eventInfo[Events.Act3Scene13] = currentDict;
+
+        // Act 3 Scene 14
+        currentDict = new Dictionary<EventInfoTypes, bool> {
+            {EventInfoTypes.Room, true },
+            {EventInfoTypes.Lumina, true },
+        };
+        eventInfo[Events.Act3Scene14] = currentDict;
+
+        // Act 4 Scene 15
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.CommandCenter, true },
+            {EventInfoTypes.Hawthorn, true },
+        };
+        eventInfo[Events.Act4Scene15] = currentDict;
+
+        // Act 4 Scene 16
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.EngineeringBay, true },
+            {EventInfoTypes.Biodome, true },
+            {EventInfoTypes.Lumina, true },
+            {EventInfoTypes.Bonnie, true },
+            {EventInfoTypes.AlienActivity, true },
+        };
+        eventInfo[Events.Act4Scene16] = currentDict;
+
+        // Act 4 Scene 17
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.Hallway, true },
+            {EventInfoTypes.Pine, true },
+            {EventInfoTypes.Hawthorn, true },
+            {EventInfoTypes.Lumina, true },
+            {EventInfoTypes.Bonnie, true },
+            {EventInfoTypes.CommandCenter, true },
+            {EventInfoTypes.Room, true },
+        };
+        eventInfo[Events.Act4Scene17] = currentDict;
+
+        // Act 5 Scene 18
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.CommandCenter, true },
+            {EventInfoTypes.Hawthorn, true },
+        };
+        eventInfo[Events.Act5Scene18] = currentDict;
+
+        // Act 5 Scene 19
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.EngineeringBay, true },
+            {EventInfoTypes.Biodome, true },
+            {EventInfoTypes.Lumina, true },
+            {EventInfoTypes.Bonnie, true },
+            {EventInfoTypes.Hawthorn, true },
+            {EventInfoTypes.Pine, true },
+            {EventInfoTypes.AlienActivity, true },
+        };
+        eventInfo[Events.Act5Scene19] = currentDict;
+
+        // Act 5 Scene 20
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.CommandCenter, true},
+            {EventInfoTypes.Hawthorn, true },
+            {EventInfoTypes.Lumina, true },
+            {EventInfoTypes.Bonnie, true },
+            {EventInfoTypes.Pine, true },
+            {EventInfoTypes.Alien, true },
+        };
+        eventInfo[Events.Act5Scene20] = currentDict;
+
+        // Act 5 Scene 21
+        currentDict = new Dictionary<EventInfoTypes, bool>
+        {
+            {EventInfoTypes.CommandCenter, true },
+        };
+        eventInfo[Events.Act5Scene21] = currentDict;
     }
 
     // BE CARE TO NOT CHANGE VALUE WHEN CALLED. THIS EFFECTS SAVE
