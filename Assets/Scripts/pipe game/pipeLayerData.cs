@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PipeLayerData : MonoBehaviour
 {
-    //public float[] posibleRotations = { 0, 90, 180, 270 };
     int[] pipeType;
 
 
@@ -21,7 +20,7 @@ public class PipeLayerData : MonoBehaviour
 
     }
 
-    public void loadLevel1(char[,] initPos, int[] imgData)
+    public void loadLevel1(float[] initPos, int[] imgData)
    {
         pipeType = imgData;
         Debug.Log(this.pipeType[0]);
@@ -34,7 +33,8 @@ public class PipeLayerData : MonoBehaviour
             {
                 pipes[i].GetComponent<Image>().color = Color.clear;
             }
-            Debug.Log(initPos[1, 1]);
+            Debug.Log(initPos[i]);
+            pipes[i].GetComponent<Transform>().Rotate(new Vector3(0, 0, initPos[i]));
         }    
 
     }
