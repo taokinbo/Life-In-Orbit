@@ -86,7 +86,7 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear = EventInfoTypes.None){
+    public void ShowDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear){
         // Debug.Log("is running show Dialogue");
         historyQuest = curQuest;
 
@@ -153,7 +153,7 @@ public class DialogueUI : MonoBehaviour
 
 
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear = EventInfoTypes.None){
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear){
         int index = 0;
 
         // var curQuest = 2; //some way to track conversation ig
@@ -237,6 +237,7 @@ public class DialogueUI : MonoBehaviour
         }
 
         CloseDialogueBox(true);
+        Debug.Log("Please clear this event: " + eventToClear);
         MasterEventSystem.Instance.eventTypeCleared(eventToClear);
     }
 

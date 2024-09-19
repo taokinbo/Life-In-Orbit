@@ -349,6 +349,10 @@ public class MasterEventSystem : MonoBehaviour
             currentEvent++;
             Save();
         }
+        else{
+            Debug.Log("Scene is not done: ");
+            Debug.Log(getAllInfoFromScene());
+        }
 
         OnEventInfoChnaged?.Invoke(currentEvent);
     }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.EventSystems; // 1
+
 
 public class DialogueActivator : MonoBehaviour
 {
@@ -22,18 +24,27 @@ public class DialogueActivator : MonoBehaviour
     bool wait1Frame = false;
     bool hasCalledStart = false;
 
+    bool doOnUpdate = false;
+
 
 
 
     // void Start(){
-    void Awake(){
+    void Start(){
         diaUI = FindObjectOfType<DialogueUI>();
         setCurrentEvent(MasterEventSystem.Instance.getCurrentEvent());
         MasterEventSystem.Instance.OnEventInfoChnaged += OnEventInfoChnaged;
 
         // if upcoming dialogue should play upon entering scene, start dialogue
         if (matchingSceneList[curIndex] == currentEvent && OnSceneLoad[curIndex]) {
-            playDialogue();
+            Debug.Log("is upcoming dia");
+            doOnUpdate = true;
+            // playDialogue();
+        }
+        else {
+            Debug.Log("NOT MATHCING");
+            Debug.Log(matchingSceneList[curIndex] + " " + currentEvent + " " + OnSceneLoad[curIndex]);
+
         }
 
         // MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.None);
@@ -57,6 +68,7 @@ public class DialogueActivator : MonoBehaviour
     }
 
     private void playDialogue() {
+        Debug.Log("playing log");
         diaUI.ShowDialogue(dialogueObjects[curIndex], Character);
     }
 
@@ -67,13 +79,28 @@ public class DialogueActivator : MonoBehaviour
         }
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        /*
+        ps.haveRiffle = true;
+        ps.haveGun = false;
+        ps.haveBat = false;
+        ps.haveFlamethrower = false;
+       // ps.haveKnife = false;
+        */
+        Debug.Log("Click DETECTED ON RIFFLE IMAGE");
+
+    }
+
     void Update(){
         if (!wait1Frame) wait1Frame = true;
         if (wait1Frame && !hasCalledStart) {
             hasCalledStart = true;
+            playDialogue();
+
             // StartCoroutine(AudioController.Instance.musicSource.CrossFade(AudioController.Instance.musicSounds[1]));
             // AudioController.Instance.PlayMusic(1);
-            diaUI.ShowDialogue(dialogueObjects[0]);
+            // diaUI.ShowDialogue(dialogueObjects[0]);
         }
 
 
