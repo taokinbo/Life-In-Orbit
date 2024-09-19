@@ -7,7 +7,7 @@ public class DialogueActivator : MonoBehaviour
 {
     public bool removeLocationCheck = false; // keep true for easy testing of lumina
 
-    private DialogueUI diaUI;
+    public DialogueUI diaUI;
     [SerializeField] private EventInfoTypes Character;
     [SerializeField] private DialogueObject[] dialogueObjects;
     [SerializeField] private Events[] matchingSceneList;
@@ -20,8 +20,8 @@ public class DialogueActivator : MonoBehaviour
 
     [SerializeField] private DialogueObject backupDialogue;
 
-    private int curIndex = 0;
-    private Events currentEvent;
+    public int curIndex = 0;
+    public Events currentEvent;
 
 
 
@@ -76,9 +76,16 @@ public class DialogueActivator : MonoBehaviour
     private void playDialogue(bool playBackup = true) {
         if (PlayOnlyAtLocation[curIndex] != Scenes.StartMenu) playBackup = false;
         Debug.Log("playing log");
+        Debug.Log("diaUI is missing check");
+        Debug.Log(diaUI);
+        if (!diaUI) {
+            Debug.Log("Dia UI didnt exist");
+            diaUI = FindObjectOfType<DialogueUI>();
+        }
         if (diaUI.IsOpen) return;
         if (matchingSceneList[curIndex] == currentEvent && canSpeakNow() && inCorrectLocation()) {
             var tempCurIndex = curIndex;
+            Debug.Log("temp cur index is: " + tempCurIndex + "while curentIndex is: " + curIndex);
             while(flags[tempCurIndex] != Flags.None &&  !MasterEventSystem.Instance.checkFlag(flags[tempCurIndex]) ){
                 tempCurIndex++;
                 if (tempCurIndex >= matchingSceneList.Length || matchingSceneList[tempCurIndex] != currentEvent) {
@@ -134,6 +141,11 @@ public class DialogueActivator : MonoBehaviour
     void Update(){
         if (!wait1Frame) wait1Frame = true;
         if (wait1Frame && !hasCalledStart) {
+            if (!diaUI) {
+                Debug.Log("Dia UI didnt exist");
+                diaUI = FindObjectOfType<DialogueUI>();
+            }
+            else Debug.Log("dia ui found");
             hasCalledStart = true;
             if (playOnSceneDia) playDialogue();
             playOnSceneDia = false;

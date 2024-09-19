@@ -85,4 +85,8 @@ public class UIController : MonoBehaviour
         MasterEventSystem.Instance.setLocation(Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.Tester);
     }
+
+    public void cheaterFunc() {
+        MasterEventSystem.Instance.cheatNextScene();
+    }
 }

@@ -93,6 +93,8 @@ public class MasterEventSystem : MonoBehaviour
         // end of new code
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        setDefaultEventInfo();
+
     }
 
     // Start is called before the first frame update
@@ -101,7 +103,6 @@ public class MasterEventSystem : MonoBehaviour
         // if save file
         // set current event to save value
         // set event dictionary to
-        setDefaultEventInfo();
     }
 
     // Update is called once per frame
@@ -445,6 +446,12 @@ public class MasterEventSystem : MonoBehaviour
 
     private void setCurrentEvent(Events scene) {
         currentEvent = scene;
+    }
+
+    public void cheatNextScene() {
+        currentEvent++;
+        Save();
+        OnEventInfoChnaged?.Invoke(currentEvent);
     }
 
     public void changePoints(EventInfoTypes character, int pointChange) {
