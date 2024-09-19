@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class TypewriterEffect : MonoBehaviour
-{   
+{
 
     [SerializeField] private float typewriterSpeed = 50f;
 
@@ -15,13 +15,13 @@ public class TypewriterEffect : MonoBehaviour
 
     // Responsible for typing text
     private IEnumerator TypeText(string textToType, TMP_Text textLabel){
-        
+
         float t = 0;
         int charIndex = 0;
 
         while (charIndex < textToType.Length)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && t!= 0) {
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0)) && t!= 0) {
                 charIndex = textToType.Length;
                 yield return null;
                 continue;
@@ -33,7 +33,7 @@ public class TypewriterEffect : MonoBehaviour
             charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
             textLabel.text = textToType.Substring(0, charIndex);
-            
+
             yield return null;
 
         }
@@ -41,4 +41,3 @@ public class TypewriterEffect : MonoBehaviour
         textLabel.text = textToType;
     }
 }
-    

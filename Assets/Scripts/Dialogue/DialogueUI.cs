@@ -211,7 +211,7 @@ public class DialogueUI : MonoBehaviour
                 isChoice = true;
             }
             itemClicked = false;
-            yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.Space) || itemClicked || (!isChoice && Input.GetMouseButtonDown(0))));
+            yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Space) || itemClicked || (!isChoice && Input.GetMouseButtonUp(0)));
             itemClicked = false;
             isChoice = false;
             for (int i = 0; i < options.Length; i++){
@@ -229,6 +229,7 @@ public class DialogueUI : MonoBehaviour
                 // points+= dia.points[curChoice];
                 MasterEventSystem.Instance.changePoints(dia.pointsGoTo[curChoice], dia.points[curChoice]);
                 index = dia.choiceGoTo[curChoice];
+                if (dia.hasFlag) MasterEventSystem.Instance.addFlag(dia.flags[curChoice]);
                 curChoice = 0;
             }
             else{
@@ -246,7 +247,7 @@ public class DialogueUI : MonoBehaviour
         // Debug.Log("close called");
         curQuest = historyQuest;
 
-        Debug.Log("here are your points: " + points);
+        // Debug.Log("here are your points: " + points);
 
         IsOpen = false;
         IsNameOpen = false;

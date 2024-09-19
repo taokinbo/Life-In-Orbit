@@ -45,6 +45,13 @@ public enum Events {
         Engineer, Biologist, None
     }
 
+    public enum Flags{
+        None,
+        Test1, Test2, // TODO: remove test1 and test 2
+        HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
+        SupportHawthorn, SupportBonnie
+    }
+
 public class MasterEventSystem : MonoBehaviour
 {
 
@@ -64,6 +71,9 @@ public class MasterEventSystem : MonoBehaviour
     private int pointsBonnie = 0;
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
+    HashSet<Flags> flags = new HashSet<Flags>(){
+        Flags.HawthornDislike, Flags.PineDislike, Flags.BonnieDislike
+    };
 
     public static MasterEventSystem Instance;
 
@@ -325,6 +335,28 @@ public class MasterEventSystem : MonoBehaviour
         eventInfo = JsonConvert.DeserializeObject<Dictionary<Events, Dictionary<EventInfoTypes, bool>>>(json);
     }
 
+    public string getAllFlags() {
+        return JsonConvert.SerializeObject(flags, Formatting.Indented);
+    }
+
+    public void setAllFlags(string json) {
+        flags = JsonConvert.DeserializeObject<HashSet<Flags>>(json);
+    }
+
+    public void addFlag(Flags newFlag) {
+        if (newFlag == Flags.None) return;
+
+        flags.Add(newFlag);
+    }
+
+    public void removeFlag(Flags newFlag) {
+        flags.Remove(newFlag);
+    }
+
+    public bool checkFlag(Flags flag) {
+        return flags.Contains(flag);
+    }
+
     public IEnumerable<EventInfoTypes> getInfoFromSubsection(EventInfoTypes[] subsection, bool mustBeTrue = false) {
         List <EventInfoTypes> currentItems = new List<EventInfoTypes>();
         var currentEventInfo = eventInfo[currentEvent];
@@ -421,16 +453,40 @@ public class MasterEventSystem : MonoBehaviour
                 Debug.Log("hawthorn points changed from: " + pointsHawthorn);
                 pointsHawthorn += pointChange;
                 Debug.Log("-> to " + pointsHawthorn);
+                if (pointsHawthorn > 0) {
+                    removeFlag(Flags.HawthornDislike);
+                    addFlag(Flags.HawthornLike);
+                }
+                else {
+                    removeFlag(Flags.HawthornLike);
+                    addFlag(Flags.HawthornDislike);
+                }
                 break;
             case EventInfoTypes.Pine:
                 Debug.Log("Pine points changed from: " + pointsPine);
                 pointsPine += pointChange;
                 Debug.Log("-> to " + pointsPine);
+                if (pointsPine > 0) {
+                    removeFlag(Flags.PineDislike);
+                    addFlag(Flags.PineLike);
+                }
+                else {
+                    removeFlag(Flags.PineLike);
+                    addFlag(Flags.PineDislike);
+                }
                 break;
             case EventInfoTypes.Bonnie:
                 Debug.Log("Bonnie points changed from: " + pointsBonnie);
                 pointsBonnie += pointChange;
                 Debug.Log("-> to " + pointsBonnie);
+                if (pointsBonnie > 0) {
+                    removeFlag(Flags.BonnieDislike);
+                    addFlag(Flags.BonnieLike);
+                }
+                else {
+                    removeFlag(Flags.BonnieLike);
+                    addFlag(Flags.BonnieDislike);
+                }
                 break;
             default:
                 break;
@@ -480,6 +536,7 @@ public class MasterEventSystem : MonoBehaviour
         public int pointsHawthorn;
         public int pointsPine;
         public int pointsBonnie;
+        public string flags;
     }
 
     public void Save() {
@@ -494,6 +551,7 @@ public class MasterEventSystem : MonoBehaviour
         data.pointsHawthorn = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Hawthorn);
         data.pointsPine = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Pine);
         data.pointsBonnie = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Bonnie);
+        data.flags = MasterEventSystem.Instance.getAllFlags();
 
         string json = JsonConvert.SerializeObject(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
@@ -517,6 +575,7 @@ public class MasterEventSystem : MonoBehaviour
             MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Hawthorn, data.pointsHawthorn);
             MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Pine, data.pointsPine);
             MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Bonnie, data.pointsBonnie);
+            MasterEventSystem.Instance.setAllFlags(data.flags);
         }
         else {
             Debug.Log("load failed");

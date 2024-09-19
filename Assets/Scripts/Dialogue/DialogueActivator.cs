@@ -15,6 +15,7 @@ public class DialogueActivator : MonoBehaviour
     [SerializeField] private DialogueObject[] dialogueObjects;
     [SerializeField] private Events[] matchingSceneList;
     [SerializeField] private bool[] OnSceneLoad;
+    [SerializeField] private Flags[] flags;
     [SerializeField] private DialogueObject backupDialogue;
 
     private int curIndex = 0;
@@ -24,6 +25,7 @@ public class DialogueActivator : MonoBehaviour
 
     bool wait1Frame = false;
     bool hasCalledStart = false;
+    bool playOnSceneDia = false;
 
 
 
@@ -37,6 +39,7 @@ public class DialogueActivator : MonoBehaviour
         // if upcoming dialogue should play upon entering scene, start dialogue
         if (matchingSceneList[curIndex] == currentEvent && OnSceneLoad[curIndex]) {
             Debug.Log("is upcoming dia");
+            playOnSceneDia = true;
             // playDialogue();
         }
         else {
@@ -69,7 +72,15 @@ public class DialogueActivator : MonoBehaviour
         Debug.Log("playing log");
         if (diaUI.IsOpen) return;
         if (matchingSceneList[curIndex] == currentEvent && canSpeakNow()) {
-            diaUI.ShowDialogue(dialogueObjects[curIndex], Character);
+            var tempCurIndex = curIndex;
+            while(flags[tempCurIndex] != Flags.None &&  !MasterEventSystem.Instance.checkFlag(flags[tempCurIndex]) ){
+                tempCurIndex++;
+                if (tempCurIndex >= matchingSceneList.Length || matchingSceneList[tempCurIndex] != currentEvent) {
+                    diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
+                    return;
+                }
+            }
+            diaUI.ShowDialogue(dialogueObjects[tempCurIndex], Character);
         }
         else {
             diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
@@ -108,7 +119,8 @@ public class DialogueActivator : MonoBehaviour
         if (!wait1Frame) wait1Frame = true;
         if (wait1Frame && !hasCalledStart) {
             hasCalledStart = true;
-            playDialogue();
+            if (playOnSceneDia) playDialogue();
+            playOnSceneDia = false;
 
             // StartCoroutine(AudioController.Instance.musicSource.CrossFade(AudioController.Instance.musicSounds[1]));
             // AudioController.Instance.PlayMusic(1);

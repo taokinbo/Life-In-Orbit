@@ -15,6 +15,8 @@ public class DialoguePair{
     // public int correctChoice = -1;
     public int[] points;
     public EventInfoTypes[] pointsGoTo;
+    public bool hasFlag = false;
+    public Flags[] flags;
     public bool advanceQuest = false;
     public string chatSprite = "";
     public string bgSprite = "";
