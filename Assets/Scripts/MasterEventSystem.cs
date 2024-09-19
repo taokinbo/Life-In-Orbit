@@ -34,11 +34,11 @@ public enum Events {
 
     public enum EventInfoTypes
     {
+        None,
         PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
         Lumina, Hawthorn, Pine, Bonnie, Alien,                  // characters
         NameSelection, JobSelection,                                // selections
-        AlienActivity,
-        None
+        AlienActivity
     };
 
     public enum Roles {
@@ -55,8 +55,8 @@ public enum Events {
 public class MasterEventSystem : MonoBehaviour
 {
 
-    private EventInfoTypes[] PlayersQuarterss = {EventInfoTypes.PlayersQuarters, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
-    private EventInfoTypes[] people = {EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien};
+    private readonly EventInfoTypes[] rooms = {EventInfoTypes.PlayersQuarters, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
+    private readonly EventInfoTypes[] people = {EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien};
 
     private int biologyDifficulty = 0;
     private int engineerDifficulty = 0;
@@ -64,7 +64,7 @@ public class MasterEventSystem : MonoBehaviour
 
     private Events currentEvent = Events.GameStart;
     private Roles currentRole = Roles.None;
-    private EventInfoTypes curentLocation;
+    private Scenes curentLocation;
 
     private int pointsHawthorn = 0;
     private int pointsPine = 0;
@@ -110,11 +110,11 @@ public class MasterEventSystem : MonoBehaviour
 
     }
 
-    public EventInfoTypes getLocation() {
+    public Scenes getLocation() {
         return curentLocation;
     }
 
-    public void setLocation(EventInfoTypes location) {
+    public void setLocation(Scenes location) {
         curentLocation = location;
         Save();
     }
@@ -368,7 +368,7 @@ public class MasterEventSystem : MonoBehaviour
     }
 
     public IEnumerable<EventInfoTypes> getPlayersQuartersForEvent(bool mustBeUnseen = false) {
-        return getInfoFromSubsection(PlayersQuarterss, mustBeUnseen);
+        return getInfoFromSubsection(rooms, mustBeUnseen);
     }
 
     public IEnumerable<EventInfoTypes> getPeopleForEvent(bool mustBeUntalked = false) {
@@ -532,7 +532,7 @@ public class MasterEventSystem : MonoBehaviour
         public Roles currentRole;
         public string eventInfo;
         public int score;
-        public EventInfoTypes location;
+        public Scenes location;
         public int pointsHawthorn;
         public int pointsPine;
         public int pointsBonnie;

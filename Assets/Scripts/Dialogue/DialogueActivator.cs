@@ -5,17 +5,19 @@ using UnityEngine.EventSystems; // 1
 
 public class DialogueActivator : MonoBehaviour
 {
-    // [SerializeField] private DialogueObject dialogueObject;
-    // private DialogueUI OpalDia;
-    // private DialogueUI AsterDia;
-    // private DialogueUI AmosDia;
-    // private DialogueUI MikaDia;
+    public bool removeLocationCheck = false; // keep true for easy testing of lumina
+
     private DialogueUI diaUI;
     [SerializeField] private EventInfoTypes Character;
     [SerializeField] private DialogueObject[] dialogueObjects;
     [SerializeField] private Events[] matchingSceneList;
     [SerializeField] private bool[] OnSceneLoad;
     [SerializeField] private Flags[] flags;
+
+    // STUFF FOR LUMINA
+    [SerializeField] private Scenes[] PlayOnlyAtLocation; // Start menu scene will be default none
+    [SerializeField] private int altDiaBoxUsed;
+
     [SerializeField] private DialogueObject backupDialogue;
 
     private int curIndex = 0;
@@ -26,6 +28,8 @@ public class DialogueActivator : MonoBehaviour
     bool wait1Frame = false;
     bool hasCalledStart = false;
     bool playOnSceneDia = false;
+
+
 
 
 
@@ -66,24 +70,26 @@ public class DialogueActivator : MonoBehaviour
         }
         currentEvent = newEvent;
         Debug.Log("current Index: " + curIndex);
+        if (OnSceneLoad[curIndex]) playDialogue(false);
     }
 
-    private void playDialogue() {
+    private void playDialogue(bool playBackup = true) {
+        if (PlayOnlyAtLocation[curIndex] != Scenes.StartMenu) playBackup = false;
         Debug.Log("playing log");
         if (diaUI.IsOpen) return;
-        if (matchingSceneList[curIndex] == currentEvent && canSpeakNow()) {
+        if (matchingSceneList[curIndex] == currentEvent && canSpeakNow() && inCorrectLocation()) {
             var tempCurIndex = curIndex;
             while(flags[tempCurIndex] != Flags.None &&  !MasterEventSystem.Instance.checkFlag(flags[tempCurIndex]) ){
                 tempCurIndex++;
                 if (tempCurIndex >= matchingSceneList.Length || matchingSceneList[tempCurIndex] != currentEvent) {
-                    diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
+                    if (playBackup) diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
                     return;
                 }
             }
             diaUI.ShowDialogue(dialogueObjects[tempCurIndex], Character);
         }
         else {
-            diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
+            if (playBackup) diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
         }
     }
 
@@ -94,6 +100,16 @@ public class DialogueActivator : MonoBehaviour
             if (person == Character) characterFound = true;
         }
         return characterFound;
+    }
+
+    public bool inCorrectLocation() {
+        if (removeLocationCheck) return true;
+        if (PlayOnlyAtLocation[curIndex] == Scenes.StartMenu) return true;
+        var currentLocation = MasterEventSystem.Instance.getLocation();
+        if (PlayOnlyAtLocation[curIndex] == currentLocation) return true;
+        if ((currentLocation == Scenes.EngineeringBay || currentLocation == Scenes.Biodome) &&
+            (PlayOnlyAtLocation[curIndex] == Scenes.EngineeringBay || PlayOnlyAtLocation[curIndex] == Scenes.Biodome)) return true;
+        return false;
     }
 
     public void Interacted(){

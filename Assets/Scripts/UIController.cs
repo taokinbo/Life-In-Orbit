@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, Tester}
+
 public class UIController : MonoBehaviour
 {
 
-    public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, Tester}
 
     // Start is called before the first frame update
     void Start()
@@ -22,30 +23,30 @@ public class UIController : MonoBehaviour
 
     public void ChangeSceneToPlayersQuarters()
     {
-        MasterEventSystem.Instance.setLocation(EventInfoTypes.PlayersQuarters);
+        MasterEventSystem.Instance.setLocation(Scenes.PlayersQuarters);
         SceneManager.LoadScene((int)Scenes.PlayersQuarters);
     }
 
     public void ChangeSceneToHallway()
     {
-        MasterEventSystem.Instance.setLocation(EventInfoTypes.Hallway);
+        MasterEventSystem.Instance.setLocation(Scenes.Hallway);
         SceneManager.LoadScene((int)Scenes.Hallway);
     }
 
     public void ChangeSceneToCommandCenter()
     {
-        MasterEventSystem.Instance.setLocation(EventInfoTypes.CommandCenter);
+        MasterEventSystem.Instance.setLocation(Scenes.CommandCenter);
         SceneManager.LoadScene((int)Scenes.CommandCenter);
     }
     public void ChangeSceneToEngineeringBay()
     {
-        MasterEventSystem.Instance.setLocation(EventInfoTypes.EngineeringBay);
+        MasterEventSystem.Instance.setLocation(Scenes.EngineeringBay);
         SceneManager.LoadScene((int)Scenes.EngineeringBay);
     }
 
     public void ChangeSceneToBiodome()
     {
-        MasterEventSystem.Instance.setLocation(EventInfoTypes.Biodome);
+        MasterEventSystem.Instance.setLocation(Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.Biodome);
     }
 
@@ -56,19 +57,19 @@ public class UIController : MonoBehaviour
     public void loadGame() {
         MasterEventSystem.Instance.Load();
         switch(MasterEventSystem.Instance.getLocation()) {
-            case EventInfoTypes.PlayersQuarters:
+            case Scenes.PlayersQuarters:
                 ChangeSceneToPlayersQuarters();
                 break;
-            case EventInfoTypes.Hallway:
+            case Scenes.Hallway:
                 ChangeSceneToHallway();
                 break;
-            case EventInfoTypes.CommandCenter:
+            case Scenes.CommandCenter:
                 ChangeSceneToCommandCenter();
                 break;
-            case EventInfoTypes.EngineeringBay:
+            case Scenes.EngineeringBay:
                 ChangeSceneToEngineeringBay();
                 break;
-            case EventInfoTypes.Biodome:
+            case Scenes.Biodome:
                 ChangeSceneToBiodome();
                 break;
             default:
@@ -81,7 +82,7 @@ public class UIController : MonoBehaviour
     }
 
     public void testerFunc() {
-        MasterEventSystem.Instance.setLocation(EventInfoTypes.Biodome);
+        MasterEventSystem.Instance.setLocation(Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.Tester);
     }
 }

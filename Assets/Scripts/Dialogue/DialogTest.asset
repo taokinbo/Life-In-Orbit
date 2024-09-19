@@ -66,7 +66,7 @@ MonoBehaviour:
     - Bonnie
     choiceGoTo: 030000000400000005000000
     points: 010000000200000003000000
-    pointsGoTo: 060000000700000008000000
+    pointsGoTo: 070000000800000009000000
     hasFlag: 1
     flags: 090000000000000000000000
     advanceQuest: 0
