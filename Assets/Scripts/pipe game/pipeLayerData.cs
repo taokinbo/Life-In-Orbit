@@ -21,18 +21,19 @@ public class PipeLayerData : MonoBehaviour
 
     }
 
-
-    private int[] level1 = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
-
-    public void loadLevel1(char[,] initPos)
+    public void loadLevel1(char[,] initPos, int[] imgData)
    {
-        pipeType = level1;
+        pipeType = imgData;
         Debug.Log(this.pipeType[0]);
         for (int i = 0; i < pipes.Length; i++)
         {
             Debug.Log(i);
             Debug.Log(pipeType[i]);
-            pipes[i].GetComponent<Image>().sprite = sprites[1];
+            pipes[i].GetComponent<Image>().sprite = sprites[pipeType[i]];
+            if (pipeType[i] == 0)
+            {
+                pipes[i].GetComponent<Image>().color = Color.clear;
+            }
             Debug.Log(initPos[1, 1]);
         }    
 

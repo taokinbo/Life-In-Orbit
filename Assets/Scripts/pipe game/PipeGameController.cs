@@ -5,11 +5,15 @@ using System.Linq;
 
 public class PipeGameController : MonoBehaviour
 {
-    //level1
+
     public PipeLayerData layer1Data;
 
-////level2
-    PipeLayerData layer2Data;
+
+    public PipeLayerData layer2Data;
+
+
+    public PipeLayerData layer3Data;
+
 
     public LayerSwap LayerSwap;
     // Start is called before the first frame update
@@ -24,13 +28,37 @@ public class PipeGameController : MonoBehaviour
         
     }
 
+
+    private int[] level1Layer1 = {
+        1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1,
+    };
+    private int[] level1Layer2 = {
+        2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2,
+    };
+    private int[] level1Layer3 = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+    };
+
     void loadLevel()
     {
-        layer1Data.loadLevel1(blankPos);
+        layer1Data.loadLevel1(blankPos, level1Layer1);
+        layer2Data.loadLevel1(blankPos, level1Layer2);
+        layer3Data.loadLevel1(blankPos, level1Layer3);
         GameObject[] temp = { GameObject.Find("Canvas1"), GameObject.Find("Canvas2") };
         LayerSwap.loadLevel(2, temp);
     }
-
 
     public float[] initialPos;
     public int[] pipeValid;
