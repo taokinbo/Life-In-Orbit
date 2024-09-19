@@ -20,22 +20,33 @@ public class PipeLayerData : MonoBehaviour
 
     }
 
-    public void loadLevel1(float[] initPos, int[] imgData)
+    public void loadLevel1(float[] initPos, int[] imgData, Color color)
    {
         pipeType = imgData;
-        Debug.Log(this.pipeType[0]);
+        //Debug.Log(this.pipeType[0]);
         for (int i = 0; i < pipes.Length; i++)
         {
-            Debug.Log(i);
-            Debug.Log(pipeType[i]);
             pipes[i].GetComponent<Image>().sprite = sprites[pipeType[i]];
             if (pipeType[i] == 0)
             {
                 pipes[i].GetComponent<Image>().color = Color.clear;
             }
-            Debug.Log(initPos[i]);
+            else
+            {
+                pipes[i].GetComponent<Image>().color = color;
+            }
             pipes[i].GetComponent<Transform>().Rotate(new Vector3(0, 0, initPos[i]));
+            pipes[i].GetComponent<PipeScript>().curRotation = initPos[i];
         }    
 
+    }
+
+    public void init()
+    {
+        foreach (GameObject pipe in pipes)
+        {
+            //pipe.GetComponent<Image>().sprite = sprites[0];
+            pipe.GetComponent<Image>().color = Color.clear;
+        }
     }
 }

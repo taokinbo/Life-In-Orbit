@@ -5,7 +5,7 @@ using UnityEngine;
 public class PipeScript : MonoBehaviour
 {
     public float curRotation = 0;
-
+    public float curSprite = 0;
     public float[] posibleRotations = { 0, 90, 180, 270 };
 
     public void OnMouseDown()
