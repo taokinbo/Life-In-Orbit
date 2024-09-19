@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PipeScript : MonoBehaviour
 {
-    public char position = 'u';
     public float curRotation = 0;
 
     public float[] posibleRotations = { 0, 90, 180, 270 };
@@ -19,6 +18,7 @@ public class PipeScript : MonoBehaviour
         else
         {
             curRotation = 0;
+
         }
             
     }
