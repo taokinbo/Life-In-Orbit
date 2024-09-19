@@ -226,7 +226,8 @@ public class DialogueUI : MonoBehaviour
 
             if (dia.forceSkipTo != -1) index = dia.forceSkipTo;
             else if (dia.choice){
-                points+= dia.points[curChoice];
+                // points+= dia.points[curChoice];
+                MasterEventSystem.Instance.changePoints(dia.pointsGoTo[curChoice], dia.points[curChoice]);
                 index = dia.choiceGoTo[curChoice];
                 curChoice = 0;
             }

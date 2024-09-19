@@ -14,6 +14,7 @@ public class DialoguePair{
     public int[] choiceGoTo;
     // public int correctChoice = -1;
     public int[] points;
+    public EventInfoTypes[] pointsGoTo;
     public bool advanceQuest = false;
     public string chatSprite = "";
     public string bgSprite = "";
@@ -29,9 +30,8 @@ public class DialogueObject : ScriptableObject
 {
     // Giving our dialogue asset text fields
     [SerializeField] DialoguePair[] dialogue;
-   
+
 
     // Getter
     public DialoguePair[] Dialogue => dialogue;
 }
-

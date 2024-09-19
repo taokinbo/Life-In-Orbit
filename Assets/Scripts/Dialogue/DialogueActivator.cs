@@ -1,3 +1,4 @@
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.EventSystems; // 1
 
@@ -24,8 +25,6 @@ public class DialogueActivator : MonoBehaviour
     bool wait1Frame = false;
     bool hasCalledStart = false;
 
-    bool doOnUpdate = false;
-
 
 
 
@@ -38,7 +37,6 @@ public class DialogueActivator : MonoBehaviour
         // if upcoming dialogue should play upon entering scene, start dialogue
         if (matchingSceneList[curIndex] == currentEvent && OnSceneLoad[curIndex]) {
             Debug.Log("is upcoming dia");
-            doOnUpdate = true;
             // playDialogue();
         }
         else {
@@ -60,7 +58,7 @@ public class DialogueActivator : MonoBehaviour
     }
 
     private void setCurrentEvent(Events newEvent) {
-        while (curIndex < matchingSceneList.Length && matchingSceneList[curIndex] < newEvent) {
+        while (curIndex < matchingSceneList.Length - 1 && matchingSceneList[curIndex] < newEvent) {
             curIndex++;
         }
         currentEvent = newEvent;
@@ -69,14 +67,19 @@ public class DialogueActivator : MonoBehaviour
 
     private void playDialogue() {
         Debug.Log("playing log");
-        diaUI.ShowDialogue(dialogueObjects[curIndex], Character);
+        if (diaUI.IsOpen) return;
+        if (matchingSceneList[curIndex] == currentEvent) {
+            diaUI.ShowDialogue(dialogueObjects[curIndex], Character);
+        }
+        else {
+            diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
+        }
     }
 
     public void Interacted(){
         Debug.Log("button clicked");
-        if (matchingSceneList[curIndex] == currentEvent) {
-            playDialogue();
-        }
+
+        playDialogue();
     }
 
     public void OnPointerClick(PointerEventData eventData)

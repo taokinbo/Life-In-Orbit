@@ -333,10 +333,10 @@ MonoBehaviour:
   Character: 6
   dialogueObjects:
   - {fileID: 11400000, guid: 6b753717c91fc0d4f9a331bd35edf0bc, type: 2}
-  - {fileID: 11400000, guid: 6c90cc21a38968f419ea8cb0e5110c39, type: 2}
-  matchingSceneList: 0000000001000000
+  - {fileID: 11400000, guid: 180a27f0ddb2b1e44b68df2190abe95a, type: 2}
+  matchingSceneList: 0000000002000000
   OnSceneLoad: 0100
-  backupDialogue: {fileID: 0}
+  backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
 --- !u!4 &49821745
 Transform:
   m_ObjectHideFlags: 0

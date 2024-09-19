@@ -59,12 +59,18 @@ public class MasterEventSystem : MonoBehaviour
     private Roles currentRole = Roles.None;
     private EventInfoTypes curentLocation;
 
+    private int pointsHawthorn = 0;
+    private int pointsPine = 0;
+    private int pointsBonnie = 0;
+
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
 
     public static MasterEventSystem Instance;
 
     public delegate void EventInfoChangeHandler(Events newEvent);
     public event EventInfoChangeHandler OnEventInfoChnaged;
+
+
 
     private void Awake()
     {
@@ -408,6 +414,57 @@ public class MasterEventSystem : MonoBehaviour
         currentEvent = scene;
     }
 
+    public void changePoints(EventInfoTypes character, int pointChange) {
+        switch (character) {
+            case EventInfoTypes.Hawthorn:
+                Debug.Log("hawthorn points changed from: " + pointsHawthorn);
+                pointsHawthorn += pointChange;
+                Debug.Log("-> to " + pointsHawthorn);
+                break;
+            case EventInfoTypes.Pine:
+                Debug.Log("Pine points changed from: " + pointsPine);
+                pointsPine += pointChange;
+                Debug.Log("-> to " + pointsPine);
+                break;
+            case EventInfoTypes.Bonnie:
+                Debug.Log("Bonnie points changed from: " + pointsBonnie);
+                pointsBonnie += pointChange;
+                Debug.Log("-> to " + pointsBonnie);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void setRelationshipPoints(EventInfoTypes character, int point) {
+        switch (character) {
+            case EventInfoTypes.Hawthorn:
+                pointsHawthorn = point;
+                break;
+            case EventInfoTypes.Pine:
+                pointsPine = point;
+                break;
+            case EventInfoTypes.Bonnie:
+                pointsBonnie = point;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public int getRelationshipPoints(EventInfoTypes character) {
+        switch (character) {
+            case EventInfoTypes.Hawthorn:
+                return pointsHawthorn;
+            case EventInfoTypes.Pine:
+                return pointsPine;
+            case EventInfoTypes.Bonnie:
+                return pointsBonnie;
+            default:
+                return 0;
+        }
+    }
+
 
     [System.Serializable]
     class SaveData {
@@ -419,6 +476,9 @@ public class MasterEventSystem : MonoBehaviour
         public string eventInfo;
         public int score;
         public EventInfoTypes location;
+        public int pointsHawthorn;
+        public int pointsPine;
+        public int pointsBonnie;
     }
 
     public void Save() {
@@ -430,6 +490,9 @@ public class MasterEventSystem : MonoBehaviour
         data.currentRole = MasterEventSystem.Instance.getRole();
         data.eventInfo = MasterEventSystem.Instance.getAllEventInfo();
         data.location = MasterEventSystem.Instance.getLocation();
+        data.pointsHawthorn = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Hawthorn);
+        data.pointsPine = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Pine);
+        data.pointsBonnie = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Bonnie);
 
         string json = JsonConvert.SerializeObject(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
@@ -450,6 +513,9 @@ public class MasterEventSystem : MonoBehaviour
             MasterEventSystem.Instance.setRole(data.currentRole);
             MasterEventSystem.Instance.setAllEventInfo(data.eventInfo);
             MasterEventSystem.Instance.setLocation(data.location);
+            MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Hawthorn, data.pointsHawthorn);
+            MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Pine, data.pointsPine);
+            MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Bonnie, data.pointsBonnie);
         }
         else {
             Debug.Log("load failed");

@@ -16,12 +16,121 @@ MonoBehaviour:
   - dialogue: Tetsing some words here
     questNumMin: 0
     questNumMax: 1
-    stop: 1
-    forceSkipTo: 0
+    stop: 0
+    forceSkipTo: -1
     choice: 0
     choices: []
     choiceGoTo: 
     points: 
+    pointsGoTo: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: You should give a  relationship point to someone.
+    questNumMin: 0
+    questNumMax: 1
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices:
+    - Bonnie
+    - 
+    - 
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 1
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - Hawthorne
+    - Pine
+    - Bonnie
+    choiceGoTo: 030000000400000005000000
+    points: 010000000200000003000000
+    pointsGoTo: 060000000700000008000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: You give the captain a point. He still doesnt respect you.
+    questNumMin: 0
+    questNumMax: 1
+    stop: 1
+    forceSkipTo: 6
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    advanceQuest: 1
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: You gave your rival a point. He thinks its because you *like* him.
+    questNumMin: 0
+    questNumMax: 1
+    stop: 1
+    forceSkipTo: 6
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    advanceQuest: 1
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: You gave the researcher a point. She bumps your grade a percent.
+    questNumMin: 0
+    questNumMax: 1
+    stop: 1
+    forceSkipTo: 6
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    advanceQuest: 1
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: Okay, no more talking left
+    questNumMin: 1
+    questNumMax: 2
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
