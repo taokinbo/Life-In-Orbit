@@ -113,8 +113,8 @@ public class MasterEventSystem : MonoBehaviour
     {
         //Game start
         // var currentDict = new Dictionary<EventInfoTypes, bool>();
-        var currentDict = new Dictionary<EventInfoTypes, bool>() { // REMOVE AFTER DONE WITH TESTING
-            { EventInfoTypes.Hawthorn, true}
+        var currentDict = new Dictionary<EventInfoTypes, bool>() {
+            // { EventInfoTypes.Hawthorn, true} // TODO: REMOVE AFTER DONE WITH TESTING
         };
         eventInfo[Events.GameStart] = currentDict;
         // Act 1 Scene 1
@@ -122,6 +122,7 @@ public class MasterEventSystem : MonoBehaviour
         {
             { EventInfoTypes.PlayersQuarters, true },
             { EventInfoTypes.Lumina, true },
+            // { EventInfoTypes.Hawthorn, true}, // TODO: remove after done with testing
         };
         eventInfo[Events.Act1Scene1] = currentDict;
         // Act 1 Scene 2

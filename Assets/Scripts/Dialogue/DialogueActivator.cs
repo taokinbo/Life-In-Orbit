@@ -68,12 +68,21 @@ public class DialogueActivator : MonoBehaviour
     private void playDialogue() {
         Debug.Log("playing log");
         if (diaUI.IsOpen) return;
-        if (matchingSceneList[curIndex] == currentEvent) {
+        if (matchingSceneList[curIndex] == currentEvent && canSpeakNow()) {
             diaUI.ShowDialogue(dialogueObjects[curIndex], Character);
         }
         else {
             diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
         }
+    }
+
+    public bool canSpeakNow() {
+        var unspokenPeople = MasterEventSystem.Instance.getPeopleForEvent(true);
+        bool characterFound = false;
+        foreach (var person in unspokenPeople) {
+            if (person == Character) characterFound = true;
+        }
+        return characterFound;
     }
 
     public void Interacted(){
