@@ -24,13 +24,5 @@ public class PipeGameController : MonoBehaviour
         
     }
 
-    public Dictionary<char, (int, int)> pipeDirections = new Dictionary<char, (int, int)>
-    {
-        {'r', (0,1)},
-        {'l', (0,-1)},
-        {'u', (-1,0)},
-        {'d', (1,0)},
-        {' ', (0,0)}
-    };
 
 }
