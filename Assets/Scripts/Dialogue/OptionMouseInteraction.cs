@@ -10,20 +10,31 @@ public class OptionMouseInteraction : MonoBehaviour,IPointerEnterHandler, IPoint
     private DialogueUI dialogueUI;
     // bool isHover = false;
     public int index;
+    public bool isEnabled = true;
+    private bool justClicked = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueUI = FindObjectOfType<DialogueUI>();
-        
+
     }
 
     // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    void Update()
+    {
+        if (justClicked) {
+            justClicked = false;
+            StartCoroutine( switchClickBack() );
+        }
+    }
+
+    private IEnumerator switchClickBack()
+{
+        yield return new WaitForSeconds( 0.01f );
+        dialogueUI.itemClicked = false;
+    }
 
     // public void OnMouseOver()
     // {
@@ -55,6 +66,7 @@ public class OptionMouseInteraction : MonoBehaviour,IPointerEnterHandler, IPoint
     {
         if (dialogueUI && dialogueUI.isChoice) {
             dialogueUI.itemClicked = true;
+            justClicked = true;
         }
     }
 
@@ -66,5 +78,9 @@ public class OptionMouseInteraction : MonoBehaviour,IPointerEnterHandler, IPoint
             dialogueUI.curChoice = index;
             dialogueUI.StyleSelect(index);
         }
+    }
+
+    public void enableOption() {
+        isEnabled = true;
     }
 }

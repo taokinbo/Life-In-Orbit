@@ -17,6 +17,7 @@ public class DialoguePair{
     public EventInfoTypes[] pointsGoTo;
     public bool hasFlag = false;
     public Flags[] flags;
+    public Flags[] isDisabled;
     public bool advanceQuest = false;
     public string chatSprite = "";
     public string bgSprite = "";

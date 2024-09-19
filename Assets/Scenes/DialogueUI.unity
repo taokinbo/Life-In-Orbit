@@ -604,6 +604,67 @@ RectTransform:
   m_AnchoredPosition: {x: 890, y: 7}
   m_SizeDelta: {x: 901.944, y: 1200.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &328442706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.10911088
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22483261
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 106.541756
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333267434223925239, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_Name
+      value: HawthornDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333267434223925239, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
 --- !u!1 &357170087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,12 +2472,12 @@ GameObject:
   - component: {fileID: 1532500453}
   - component: {fileID: 1532500452}
   m_Layer: 0
-  m_Name: Lumina Dias
+  m_Name: LuminaDialogueController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1532500452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,13 +2494,11 @@ MonoBehaviour:
   diaUI: {fileID: 0}
   Character: 7
   dialogueObjects:
-  - {fileID: 11400000, guid: 6b753717c91fc0d4f9a331bd35edf0bc, type: 2}
-  - {fileID: 11400000, guid: 180a27f0ddb2b1e44b68df2190abe95a, type: 2}
-  - {fileID: 11400000, guid: 17761cc494bb40a4c88c5af759faf52e, type: 2}
-  matchingSceneList: 000000000100000001000000
-  OnSceneLoad: 000100
-  flags: 000000000400000009000000
-  PlayOnlyAtLocation: 000000000200000002000000
+  - {fileID: 11400000, guid: 6d48088cf61a51541a91bf141a0e7d8e, type: 2}
+  matchingSceneList: 01000000
+  OnSceneLoad: 01
+  flags: 00000000
+  PlayOnlyAtLocation: 01000000
   altDiaBoxUsed: 0
   backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
   curIndex: 0
@@ -3019,6 +3078,7 @@ SceneRoots:
   - {fileID: 1600433411}
   - {fileID: 1100596083}
   - {fileID: 1507653822}
+  - {fileID: 328442706}
   - {fileID: 1532500453}
   - {fileID: 1711890004}
   - {fileID: 1158085312}

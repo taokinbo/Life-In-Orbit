@@ -60,7 +60,7 @@ public class MasterEventSystem : MonoBehaviour
 
     private int biologyDifficulty = 0;
     private int engineerDifficulty = 0;
-    private string playerName = "";
+    private string playerName = "Aster";
 
     private Events currentEvent = Events.GameStart;
     private Roles currentRole = Roles.None;

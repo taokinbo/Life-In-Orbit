@@ -41,6 +41,7 @@ public class DialogueUI : MonoBehaviour
     private int historyQuest;
     public bool debug = false;
     private bool atEnding = false;
+    private string playerName = "";
 
 
 
@@ -87,6 +88,7 @@ public class DialogueUI : MonoBehaviour
     }
 
     public void ShowDialogue(DialogueObject dialogueObject, EventInfoTypes eventToClear){
+        playerName = MasterEventSystem.Instance.getPlayerName();
         // Debug.Log("is running show Dialogue");
         historyQuest = curQuest;
 
@@ -198,7 +200,7 @@ public class DialogueUI : MonoBehaviour
             if (dia.bgSprite != "" && dia.bgSprite != curBackground){ //need to make work with emotions better
                 SetBackground(dia.bgSprite);
             }
-            yield return TypewriterEffect.Run(dia.dialogue, textLabel);
+            yield return TypewriterEffect.Run(dia.dialogue.Replace("{PlayerName}", playerName), textLabel);
 
             if (dia.choice){
                 yield return new WaitForSeconds(0.3f);
@@ -206,12 +208,14 @@ public class DialogueUI : MonoBehaviour
 
                 StyleSelect(0);
                 for (int i = 0; i < options.Length; i++){
-                    options[i].text = dia.choices[i];
+                    // make visually striked through if flag for unEnabled
+                    options[i].text = MasterEventSystem.Instance.checkFlag(dia.isDisabled[i]) ? makeStrikeThrough(dia.choices[i]) : dia.choices[i];
                 }
                 isChoice = true;
             }
             itemClicked = false;
-            yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Space) || itemClicked || (!isChoice && Input.GetMouseButtonUp(0)));
+            // Debug.Log("should this press pass: " + (!isChoice || MasterEventSystem.Instance.checkFlag(dia.isDisabled[curChoice])));
+            yield return new WaitUntil(() => (Input.GetKeyUp(KeyCode.Space) || itemClicked || (!isChoice && Input.GetMouseButtonUp(0))) && (!isChoice || !MasterEventSystem.Instance.checkFlag(dia.isDisabled[curChoice])));
             itemClicked = false;
             isChoice = false;
             for (int i = 0; i < options.Length; i++){
@@ -241,6 +245,10 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox(true);
         Debug.Log("Please clear this event: " + eventToClear);
         MasterEventSystem.Instance.eventTypeCleared(eventToClear);
+    }
+
+    public string makeStrikeThrough(string text) {
+        return "<s>" + text + "</s>";
     }
 
     private void CloseDialogueBox(bool switchScene = false){

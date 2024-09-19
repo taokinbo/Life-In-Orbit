@@ -25,6 +25,7 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
@@ -47,6 +48,7 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
@@ -69,6 +71,7 @@ MonoBehaviour:
     pointsGoTo: 070000000800000009000000
     hasFlag: 1
     flags: 090000000000000000000000
+    isDisabled: 000000000400000000000000
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
@@ -88,6 +91,7 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
     advanceQuest: 1
     chatSprite: 
     bgSprite: 
@@ -107,6 +111,7 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
     advanceQuest: 1
     chatSprite: 
     bgSprite: 
@@ -126,6 +131,7 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
     advanceQuest: 1
     chatSprite: 
     bgSprite: 
@@ -145,6 +151,7 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
