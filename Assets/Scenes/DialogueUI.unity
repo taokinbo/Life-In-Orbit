@@ -225,62 +225,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &49821743
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 49821745}
-  - component: {fileID: 49821744}
-  m_Layer: 0
-  m_Name: HawthornDialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &49821744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49821743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba83d9498ffac94ba4af1936048c855, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  removeLocationCheck: 0
-  Character: 7
-  dialogueObjects:
-  - {fileID: 11400000, guid: 6b753717c91fc0d4f9a331bd35edf0bc, type: 2}
-  - {fileID: 11400000, guid: 180a27f0ddb2b1e44b68df2190abe95a, type: 2}
-  - {fileID: 11400000, guid: 17761cc494bb40a4c88c5af759faf52e, type: 2}
-  matchingSceneList: 000000000100000001000000
-  OnSceneLoad: 010100
-  flags: 000000000400000009000000
-  PlayOnlyAtLocation: 000000000200000002000000
-  altDiaBoxUsed: 0
-  backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
---- !u!4 &49821745
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49821743}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10911088, y: -0.22483261, z: 106.541756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &75846270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,7 +1564,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 49821744}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
         m_MethodName: Interacted
         m_Mode: 1
@@ -2486,17 +2430,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeLocationCheck: 1
+  diaUI: {fileID: 0}
   Character: 7
   dialogueObjects:
   - {fileID: 11400000, guid: 6b753717c91fc0d4f9a331bd35edf0bc, type: 2}
   - {fileID: 11400000, guid: 180a27f0ddb2b1e44b68df2190abe95a, type: 2}
   - {fileID: 11400000, guid: 17761cc494bb40a4c88c5af759faf52e, type: 2}
   matchingSceneList: 000000000100000001000000
-  OnSceneLoad: 010100
+  OnSceneLoad: 000100
   flags: 000000000400000009000000
   PlayOnlyAtLocation: 000000000200000002000000
   altDiaBoxUsed: 0
   backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
+  curIndex: 0
+  currentEvent: 0
 --- !u!4 &1532500453
 Transform:
   m_ObjectHideFlags: 0
@@ -2981,7 +2928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 49821744}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
         m_MethodName: Interacted
         m_Mode: 1
@@ -3043,7 +2990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374819db1f4e32840ace88abb58065fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diaActivator: {fileID: 49821744}
+  diaActivator: {fileID: 0}
 --- !u!95 &2079396173
 Animator:
   serializedVersion: 5
@@ -3072,7 +3019,6 @@ SceneRoots:
   - {fileID: 1600433411}
   - {fileID: 1100596083}
   - {fileID: 1507653822}
-  - {fileID: 49821745}
   - {fileID: 1532500453}
   - {fileID: 1711890004}
   - {fileID: 1158085312}
