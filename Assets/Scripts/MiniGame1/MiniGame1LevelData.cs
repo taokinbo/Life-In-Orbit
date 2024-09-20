@@ -12,7 +12,7 @@ public class LevelData : ScriptableObject
 
 	// Available angles and orientations for this level
 	public SolarPanel.PanelAngle[] availableAngles;
-	public SolarPanel.PanelOrientation availableOrientation;
+	public SolarPanel.PanelOrientation[] availableOrientation;
 
 	//Correct settings for each panel in the grid
 	public PanelSolution[] correctPanelSettings;

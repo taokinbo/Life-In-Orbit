@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class MiniGame1Manager : MonoBehavior
+public class MiniGame1Manager : MonoBehaviour
 {
     // List to store all solar panels in the grid
     public List<SolarPanel> panels; // Reference to the solar panels in the scene
@@ -16,17 +16,17 @@ public class MiniGame1Manager : MonoBehavior
 		foreach (SolarPanel panel in panels)
 		{
 			panel.availableAngles = currentLevelData.availableAngles;
-			panel.availableOrientations = currentLevelData.availableOrientations;
+			panel.availableOrientation = currentLevelData.availableOrientation;
 		}
 	}
 
 	// Method to adjust the angle of a specific panel based on its PanelID
 	public void AdjustPanelAngle(int panelID, SolarPanel.PanelAngle newAngle)
 	{
-		SolarPanel panel = panels.Find(p => p.PanelID == panelID):
+		SolarPanel panel = panels.Find(p => p.PanelID == panelID);
 		if (panel != null)
 		{
-			panel.SetAngle(newAngle)
+			panel.SetAngle(newAngle);
 		}
 	}
 
@@ -36,12 +36,12 @@ public class MiniGame1Manager : MonoBehavior
 		SolarPanel panel = panels.Find(panel => panel.PanelID == panelID);
         if (panel != null)
         {
-			panel.SetOrientation(newOrientation) 
+			panel.SetOrientation(newOrientation);
         }
     }
 
-	// Check if all panels are correctly set 
-	public pool AreAllPanelsCorrect()
+	// Check if all panels are correctly set
+	public bool AreAllPanelsCorrect()
 	{
         foreach (SolarPanel panel in panels)
         {
@@ -101,8 +101,6 @@ public class MiniGame1Manager : MonoBehavior
 	{
         // Notify event system
         MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.EngineeringBay);
-		Debug.Log("Notified EventSystem that the mini-game is complete.")
+		Debug.Log("Notified EventSystem that the mini-game is complete.");
 	}
-
-
 }

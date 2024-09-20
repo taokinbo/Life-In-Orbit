@@ -14,7 +14,7 @@ public class Level0Data : LevelData
 		maxSubmissions = -1; //no submission limit
 
 		availableAngles = new SolarPanel.PanelAngle[] { SolarPanel.PanelAngle.Angle45, SolarPanel.PanelAngle.Angle90, SolarPanel.PanelAngle.Angle180 };
-		availableOrientations = new SolarPanel.PanelOrientation[] { SolarPanel.PanelOrientation.South, SolarPanel.PanelOrientation.North, SolarPanel.PanelOrientation.West, Solar.PanelOrientation.East };
+		availableOrientation = new SolarPanel.PanelOrientation[] { SolarPanel.PanelOrientation.South, SolarPanel.PanelOrientation.North, SolarPanel.PanelOrientation.West, SolarPanel.PanelOrientation.East };
 
 		correctPanelSettings = new PanelSolution[]
 		{

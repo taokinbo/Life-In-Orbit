@@ -2,8 +2,8 @@
 
 public class SolarPanel : MonoBehaviour
 {
-	p//Panel ID to uniquely identify each panel
-		public int PanelID;
+	//Panel ID to uniquely identify each panel
+	public int PanelID;
 
 	//Enums for the available angles and orientations
 	public enum PanelAngle { Angle45 = 45, Angle90 = 90, Angle180 = 180, Angle30 = 30, Angle60 = 60, Angle120 = 120 }
@@ -20,7 +20,7 @@ public class SolarPanel : MonoBehaviour
 	//Method to check if the panel is set correctly
 	public bool IsCorrect(PanelSolution solution)
 	{
-		return currentAngle == solution.currentAngle && currentOrientation == solution.currentOrientation;
+		return currentAngle == solution.correctAngle && currentOrientation == solution.correctOrientation;
 	}
 
 	//Placeholder for getting the player's selected angle and orientation (through arrow click system)
@@ -32,4 +32,12 @@ public class SolarPanel : MonoBehaviour
         Debug.Log("Panel " + PanelID + " angle set to: " + currentAngle);
         Debug.Log("Panel " + PanelID + " orientation set to: " + currentOrientation);
     }
+
+	public void SetAngle(PanelAngle newAngle){
+		currentAngle = newAngle;
+	}
+
+	public void SetOrientation(PanelOrientation newOrientation){
+		currentOrientation = newOrientation;
+	}
 }
