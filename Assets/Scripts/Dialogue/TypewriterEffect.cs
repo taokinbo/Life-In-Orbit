@@ -41,7 +41,7 @@ public class TypewriterEffect : MonoBehaviour
 
         }
         string endText = textToType;
-        if (isBold) endText = "<b>" + endText + "</b";
+        if (isBold) endText = "<b>" + endText + "</b>";
         if (isItalic) endText = "<i>" + endText + "</i>";
         textLabel.text = endText;
     }

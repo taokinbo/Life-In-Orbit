@@ -2433,10 +2433,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeLocationCheck: 1
   diaUI: {fileID: 0}
-  Character: 7
+  Character: 8
   dialogueObjects:
-  - {fileID: 11400000, guid: f11c5c35761e5a546ad84e17afb82e8e, type: 2}
-  matchingSceneList: 02000000
+  - {fileID: 11400000, guid: 40e21ce11093acf4c815c50a8f2eabf7, type: 2}
+  matchingSceneList: 04000000
   OnSceneLoad: 01
   flags: 00000000
   PlayOnlyAtLocation: 00000000

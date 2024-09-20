@@ -1,0 +1,406 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene4Pine
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "Hey there! I\u2019m Gary Pine, Logistics Coordinator around here.
+      What about you?"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\u201CHello, I\u2019m {PlayerName}, {Role}.\u201D"
+    choiceGoTo: 02000000
+    points: 00000000
+    pointsGoTo: 00000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Ah, {Role}, huh? Tough gig. You\u2019ll need all the help you can
+      get with those upcoming rankings. Not that I\u2019m worried\u2014Logistics
+      is smooth sailing for me."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"We\u2019ll see about that. I\u2019m ready for the challenge.\""
+    - "\"Rankings? I\u2019ll cross that bridge when I get there.\""
+    - "\"I don\u2019t care about rankings, I just want to get through this.\""
+    choiceGoTo: 040000000500000006000000
+    points: 0100000000000000ffffffff
+    pointsGoTo: 080000000800000008000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 0
+    isItalic: 1
+    shake: 0
+  - dialogue: "That\u2019s the spirit! I like a little friendly competition."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 7
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Fair enough. Just know that rankings are a big deal around here. You\u2019ll
+      be thinking about them sooner than you expect."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 7
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Not into the whole competition thing, huh? Well, you might change your
+      mind once you see that board.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Anyway, as for me\u2026 I\u2019ve got my reasons for wanting to get
+      to that new planet. Clean slate, fresh start, you know?"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "There\u2019s not much left for me back on Earth. How about you? What\u2019s
+      driving you to go?"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"I\u2019m looking forward to the new beginning too.\""
+    - "\"Honestly, I\u2019m just here because It\u2019s free.\""
+    choiceGoTo: 0a0000000b000000
+    points: 01000000ffffffff
+    pointsGoTo: 0800000008000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 0000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: Yeah, I get that. Sometimes you just need a new place to make things
+      right.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 12
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Fair enough. I guess that makes sense.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Excuse me, {PlayerName}, it\u2019s time to head to your task. The
+      {Role Room} awaits."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - '"Good talking to you, Gary. See you around."'
+    - "\"I\u2019ve got to go. Later.\" "
+    choiceGoTo: 0e0000000f000000
+    points: 01000000ffffffff
+    pointsGoTo: 0800000008000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 0000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Same to you. Let\u2019s see who comes out on top, yeah?"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 16
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Yeah, yeah. See ya, {PlayerName}.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Gary goes back to his tablet.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 0
+    isItalic: 1
+    shake: 0

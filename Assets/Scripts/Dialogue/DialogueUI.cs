@@ -209,7 +209,7 @@ public class DialogueUI : MonoBehaviour
                 StyleSelect(0);
                 for (int i = 0; i < curentChoiceAmount; i++){
                     // make visually striked through if flag for unEnabled
-                    options[i].text = MasterEventSystem.Instance.checkFlag(dia.isDisabled[i]) ? makeStrikeThrough(dia.choices[i]) : dia.choices[i];
+                    options[i].text = doFormatting(MasterEventSystem.Instance.checkFlag(dia.isDisabled[i]) ? makeStrikeThrough(dia.choices[i]) : dia.choices[i], dia.isBold, dia.isItalic);
                 }
                 isChoice = true;
             }
@@ -249,6 +249,13 @@ public class DialogueUI : MonoBehaviour
 
     public string makeStrikeThrough(string text) {
         return "<s>" + text + "</s>";
+    }
+
+    public string doFormatting(string text, bool isBold = false, bool isItalic = false) {
+        string endText = text;
+        if (isBold) endText = "<b>" + endText + "</b>";
+        if (isItalic) endText = "<i>" + endText + "</i>";
+        return endText;
     }
 
     private void CloseDialogueBox(bool switchScene = false){
