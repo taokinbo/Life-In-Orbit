@@ -42,6 +42,7 @@ public class DialogueUI : MonoBehaviour
     public bool debug = false;
     private bool atEnding = false;
     private string playerName = "";
+    private int curentChoiceAmount = 3;
 
 
 
@@ -68,22 +69,20 @@ public class DialogueUI : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow)) curChoice++;
             else curChoice--;
 
-            if (curChoice < 0) curChoice = 3;
-            curChoice = curChoice % 4;
+            if (curChoice < 0) curChoice = curentChoiceAmount - 1;
+            curChoice = curChoice % curentChoiceAmount;
 
             StyleSelect(curChoice);
         }
     }
 
-    public void StyleSelect(int index){
-
-        for (int i = 0; i < options.Length; i++){
+    public void StyleSelect(int index, bool affectUnseen = true){
+        int numOfOptions = affectUnseen ? options.Length : curentChoiceAmount;
+        for (int i = 0; i < numOfOptions; i++){
             options[i].color = (i == index) ? textColor : Color.grey;
         }
-        for (int i = 0; i < carots.Length; i++){
-
+        for (int i = 0; i < numOfOptions; i++){
             carots[i].text = (i == index) ? arrowStr : "";
-
         }
     }
 
@@ -203,11 +202,12 @@ public class DialogueUI : MonoBehaviour
             yield return TypewriterEffect.Run(dia.dialogue.Replace("{PlayerName}", playerName), textLabel);
 
             if (dia.choice){
+                curentChoiceAmount = dia.choices.Length;
                 yield return new WaitForSeconds(0.3f);
                 curChoice = 0;
 
                 StyleSelect(0);
-                for (int i = 0; i < options.Length; i++){
+                for (int i = 0; i < curentChoiceAmount; i++){
                     // make visually striked through if flag for unEnabled
                     options[i].text = MasterEventSystem.Instance.checkFlag(dia.isDisabled[i]) ? makeStrikeThrough(dia.choices[i]) : dia.choices[i];
                 }
@@ -215,7 +215,7 @@ public class DialogueUI : MonoBehaviour
             }
             itemClicked = false;
             // Debug.Log("should this press pass: " + (!isChoice || MasterEventSystem.Instance.checkFlag(dia.isDisabled[curChoice])));
-            yield return new WaitUntil(() => (Input.GetKeyUp(KeyCode.Space) || itemClicked || (!isChoice && Input.GetMouseButtonUp(0))) && (!isChoice || !MasterEventSystem.Instance.checkFlag(dia.isDisabled[curChoice])));
+            yield return new WaitUntil(() => (Input.GetKeyUp(KeyCode.Space) || itemClicked || (!isChoice && Input.GetMouseButtonUp(0))) && curChoice < curentChoiceAmount && (!isChoice || !MasterEventSystem.Instance.checkFlag(dia.isDisabled[curChoice])));
             itemClicked = false;
             isChoice = false;
             for (int i = 0; i < options.Length; i++){

@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
+  isEnabled: 1
 --- !u!222 &75846273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -604,67 +605,6 @@ RectTransform:
   m_AnchoredPosition: {x: 890, y: 7}
   m_SizeDelta: {x: 901.944, y: 1200.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &328442706
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.10911088
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.22483261
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 106.541756
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2086746254336886178, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333267434223925239, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_Name
-      value: HawthornDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333267434223925239, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7cae5ecf46619c43b78114abf70e50c, type: 3}
 --- !u!1 &357170087
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  isEnabled: 1
 --- !u!222 &392282243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1267,7 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2477,7 +2418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1532500452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2805,6 +2746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 2
+  isEnabled: 1
 --- !u!222 &1943612679
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3078,7 +3020,6 @@ SceneRoots:
   - {fileID: 1600433411}
   - {fileID: 1100596083}
   - {fileID: 1507653822}
-  - {fileID: 328442706}
   - {fileID: 1532500453}
   - {fileID: 1711890004}
   - {fileID: 1158085312}

@@ -21,7 +21,7 @@ public class TypewriterEffect : MonoBehaviour
 
         while (charIndex < textToType.Length)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0)) && t!= 0) {
+            if ((Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) && t!= 0) {
                 charIndex = textToType.Length;
                 yield return null;
                 continue;

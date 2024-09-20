@@ -27,6 +27,304 @@ MonoBehaviour:
     pointsGoTo: 
     hasFlag: 0
     flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "Now, let\u2019s talk about the simulation. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "Let me give you some context about what\u2019s going on. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "Earth\u2026 Well, it didn\u2019t make it through the alien invasion. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "But don\u2019t worry, it wasn\u2019t all bad! The aliens aren\u2019t
+      malevolent\u2014just, let\u2019s say, a bit chaotic. That\u2019s where this
+      station comes in."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "Horizon Station is part of a project to test if humans can live sustainably
+      with our alien friends on a new planet. It\u2019s your job to help manage this
+      station and keep your tasks running smoothly."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - '"Wait, could you repeat that?"'
+    - "\u201CGot it, I think I understand.\u201D"
+    choiceGoTo: 070000000a000000
+    points: 0000000000000000
+    pointsGoTo: 0000000000000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 0000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: "Of course! To recap, Earth didn\u2019t make it, but the aliens that
+      caused all the chaos weren\u2019t trying to destroy us. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "Now, humanity is testing whether we can live harmoniously with them
+      on a new planet and are assessing human\u2019s skills for maintaining sustainability
+      practices at our potential new home. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "You\u2019ll be responsible for tasks that keep Horizon Station running."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 11
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "Wow, you\u2019re catching on quickly. Captain Hawthorne will love
+      that."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Now, let me introduce you to your most important tool: your tablet.
+      This will help you keep track of your tasks, relationships, and more. Go ahead
+      and open it.'
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: "As you can see, some features are still locked for now. Don\u2019t
+      worry, they\u2019ll unlock as you progress. For now, you can track your tasks
+      and get a feel for the station through this interface."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\u201CSounds good. I\u2019m ready to get started!\u201D"
+    choiceGoTo: 0e000000
+    points: 00000000
+    pointsGoTo: 00000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: "Awesome! Let\u2019s get going then. You should head over to the Command
+      Center to meet Captain Hawthorn. He\u2019s a bit strict, but he\u2019s just
+      making sure everything runs smoothly."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
     advanceQuest: 0
     chatSprite: 
     bgSprite: 

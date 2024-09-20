@@ -76,7 +76,7 @@ public class OptionMouseInteraction : MonoBehaviour,IPointerEnterHandler, IPoint
         if (dialogueUI && dialogueUI.isChoice) {
             // Debug.Log("has dia");
             dialogueUI.curChoice = index;
-            dialogueUI.StyleSelect(index);
+            dialogueUI.StyleSelect(index, false);
         }
     }
 
