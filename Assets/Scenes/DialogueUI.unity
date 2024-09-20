@@ -2435,11 +2435,11 @@ MonoBehaviour:
   diaUI: {fileID: 0}
   Character: 7
   dialogueObjects:
-  - {fileID: 11400000, guid: 6d48088cf61a51541a91bf141a0e7d8e, type: 2}
-  matchingSceneList: 01000000
+  - {fileID: 11400000, guid: f11c5c35761e5a546ad84e17afb82e8e, type: 2}
+  matchingSceneList: 02000000
   OnSceneLoad: 01
   flags: 00000000
-  PlayOnlyAtLocation: 01000000
+  PlayOnlyAtLocation: 00000000
   altDiaBoxUsed: 0
   backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
   curIndex: 0
@@ -2929,7 +2929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1532500452}
         m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
         m_MethodName: Interacted
         m_Mode: 1
@@ -2986,12 +2986,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079396167}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 374819db1f4e32840ace88abb58065fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diaActivator: {fileID: 0}
+  diaActivator: {fileID: 1532500452}
 --- !u!95 &2079396173
 Animator:
   serializedVersion: 5

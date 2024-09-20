@@ -1,0 +1,568 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene2Hawthorn
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "Ah, there you are, {PlayerName}. I\u2019m Captain Hawthorn, in charge
+      of making sure all of you inhabitants do your jobs and do them well. Welcome
+      to the station."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"Thank you, Captain. I\u2019m ready to get started.\""
+    - '"Thanks. I guess this is where it all begins." '
+    - " \"I\u2019m still not sure about all of this, but I\u2019ll go along with
+      it.\""
+    choiceGoTo: 020000000300000004000000
+    points: 0100000000000000ffffffff
+    pointsGoTo: 070000000700000007000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: "Good. Let\u2019s hope that enthusiasm holds. You\u2019ll need it"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 5
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "That\u2019s one way to put it. Let\u2019s focus on doing what needs
+      to be done. No room for hesitation."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 5
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "Hesitation isn\u2019t a luxury we have. But if you follow orders and
+      keep your head straight, you\u2019ll manage."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: <i>Hawthorn moves into orientation mode, speaking with clarity and
+      precision.</i>
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: 'Inhabitants, This simulation will last for two weeks. Every action
+      you take counts toward your performance on what we call the Ascendancy Index. '
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "You\u2019ll have a designated role aboard the station, but we\u2019ll
+      get to that later."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"What\u2019s the Ascendancy Index?\""
+    - '"Can you tell me more about these tasks?"'
+    - "\"I understand. Let\u2019s move on.\" "
+    choiceGoTo: 090000000b0000000c000000
+    points: 000000000000000000000000
+    pointsGoTo: 000000000000000000000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: "It\u2019s a ranking system. Every inhabitant is evaluated based on
+      how well they complete tasks. High performers are recognized. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "Fall too far behind, and you\u2019ll feel the pressure. Keep it simple\u2014do
+      your job, and do it well."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 13
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "Your tasks will depend on your role. You\u2019ll be responsible for
+      critical station operations. Just handle what\u2019s in front of you, and don\u2019t
+      overthink it. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 13
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "Good. No need to waste time on details. You\u2019ll figure it out
+      soon enough."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 13
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "You\u2019ll be assessed not just on how well you complete your tasks,
+      but also how you interact with the other inhabitants. Sociability is part of
+      the test."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "At the end of the simulation, you\u2019ll receive an evaluation, determining
+      if you\u2019ve earned approval to move to the new planet.  "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "So, do your job well, and don\u2019t forget\u2014this station isn\u2019t
+      just about systems and tasks, it\u2019s about people too."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "I won\u2019t sugarcoat it. This is going to be hard. But we\u2019re
+      here to prove something\u2014to ourselves and to those relying on us."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: Stick to your duties, follow the schedule, and everything will fall
+      into place. This station runs on discipline, not luck.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: <i>He pauses briefly.</i>
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: "One more thing\u2014there\u2019s been reports of an alien tampering
+      multiple simulations. Our station seems to be fine so far but it\u2019s likely
+      to cause some trouble. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "So, keep your eyes open and stay focused. We don\u2019t need any surprises."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "Understood. I\u2019ll stay on guard."
+    - "I\u2019ll keep an eye out, but I\u2019ll focus on my tasks."
+    - "Great, just what I needed\u2014more complications."
+    choiceGoTo: 160000001700000018000000
+    points: 0100000000000000ffffffff
+    pointsGoTo: 070000000700000007000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    shake: 0
+  - dialogue: "Good. Stay vigilant, and don\u2019t let it distract you from your
+      duties."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 25
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "That\u2019s fine. Just remember, distractions can lead to mistakes."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 25
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "Complications come with the job. Learn to handle them, or they\u2019ll
+      handle you."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
+  - dialogue: "Alright. Enough talk. Head over to the Job Selection Terminal and
+      choose your role. Then we\u2019ll see what you\u2019re really made of."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    shake: 0
