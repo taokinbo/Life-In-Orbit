@@ -49,7 +49,8 @@ public enum Events {
         None,
         Test1, Test2, // TODO: remove test1 and test 2
         HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
-        SupportHawthorn, SupportBonnie
+        SupportHawthorn, SupportBonnie,
+        RoleEngineer, RoleBiologist
     }
 
 public class MasterEventSystem : MonoBehaviour
@@ -148,6 +149,7 @@ public class MasterEventSystem : MonoBehaviour
         {
             { EventInfoTypes.CommandCenter, true },
             { EventInfoTypes.JobSelection, true },
+            { EventInfoTypes.Lumina, true},
         };
         eventInfo[Events.Act1Scene3] = currentDict;
         // Act 1 Scene 4

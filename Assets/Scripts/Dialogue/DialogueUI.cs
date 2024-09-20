@@ -199,7 +199,7 @@ public class DialogueUI : MonoBehaviour
             if (dia.bgSprite != "" && dia.bgSprite != curBackground){ //need to make work with emotions better
                 SetBackground(dia.bgSprite);
             }
-            yield return TypewriterEffect.Run(dia.dialogue.Replace("{PlayerName}", playerName), textLabel);
+            yield return TypewriterEffect.Run(dia.dialogue.Replace("{PlayerName}", playerName), textLabel, dia.isBold, dia.isItalic);
 
             if (dia.choice){
                 curentChoiceAmount = dia.choices.Length;

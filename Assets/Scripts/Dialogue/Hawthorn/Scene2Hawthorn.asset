@@ -34,6 +34,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: 
     questNumMin: 0
@@ -58,6 +60,8 @@ MonoBehaviour:
     showName: 0
     name: 
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Good. Let\u2019s hope that enthusiasm holds. You\u2019ll need it"
     questNumMin: 0
@@ -78,6 +82,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "That\u2019s one way to put it. Let\u2019s focus on doing what needs
       to be done. No room for hesitation."
@@ -99,6 +105,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Hesitation isn\u2019t a luxury we have. But if you follow orders and
       keep your head straight, you\u2019ll manage."
@@ -120,9 +128,10 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
-  - dialogue: <i>Hawthorn moves into orientation mode, speaking with clarity and
-      precision.</i>
+  - dialogue: Hawthorn moves into orientation mode, speaking with clarity and precision.
     questNumMin: 0
     questNumMax: 0
     stop: 0
@@ -141,6 +150,8 @@ MonoBehaviour:
     showName: 0
     name: 
     isGrey: 0
+    isBold: 0
+    isItalic: 1
     shake: 0
   - dialogue: 'Inhabitants, This simulation will last for two weeks. Every action
       you take counts toward your performance on what we call the Ascendancy Index. '
@@ -162,6 +173,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "You\u2019ll have a designated role aboard the station, but we\u2019ll
       get to that later."
@@ -183,6 +196,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: 
     questNumMin: 0
@@ -206,6 +221,8 @@ MonoBehaviour:
     showName: 0
     name: 
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "It\u2019s a ranking system. Every inhabitant is evaluated based on
       how well they complete tasks. High performers are recognized. "
@@ -227,6 +244,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Fall too far behind, and you\u2019ll feel the pressure. Keep it simple\u2014do
       your job, and do it well."
@@ -248,6 +267,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Your tasks will depend on your role. You\u2019ll be responsible for
       critical station operations. Just handle what\u2019s in front of you, and don\u2019t
@@ -270,6 +291,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Good. No need to waste time on details. You\u2019ll figure it out
       soon enough."
@@ -291,6 +314,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "You\u2019ll be assessed not just on how well you complete your tasks,
       but also how you interact with the other inhabitants. Sociability is part of
@@ -313,6 +338,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "At the end of the simulation, you\u2019ll receive an evaluation, determining
       if you\u2019ve earned approval to move to the new planet.  "
@@ -334,6 +361,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "So, do your job well, and don\u2019t forget\u2014this station isn\u2019t
       just about systems and tasks, it\u2019s about people too."
@@ -355,6 +384,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "I won\u2019t sugarcoat it. This is going to be hard. But we\u2019re
       here to prove something\u2014to ourselves and to those relying on us."
@@ -376,6 +407,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: Stick to your duties, follow the schedule, and everything will fall
       into place. This station runs on discipline, not luck.
@@ -397,8 +430,10 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
-  - dialogue: <i>He pauses briefly.</i>
+  - dialogue: He pauses briefly.
     questNumMin: 0
     questNumMax: 0
     stop: 0
@@ -417,6 +452,8 @@ MonoBehaviour:
     showName: 0
     name: 
     isGrey: 0
+    isBold: 0
+    isItalic: 1
     shake: 0
   - dialogue: "One more thing\u2014there\u2019s been reports of an alien tampering
       multiple simulations. Our station seems to be fine so far but it\u2019s likely
@@ -439,6 +476,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "So, keep your eyes open and stay focused. We don\u2019t need any surprises."
     questNumMin: 0
@@ -459,6 +498,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: 
     questNumMin: 0
@@ -482,6 +523,8 @@ MonoBehaviour:
     showName: 0
     name: 
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Good. Stay vigilant, and don\u2019t let it distract you from your
       duties."
@@ -503,6 +546,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "That\u2019s fine. Just remember, distractions can lead to mistakes."
     questNumMin: 0
@@ -523,6 +568,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Complications come with the job. Learn to handle them, or they\u2019ll
       handle you."
@@ -544,6 +591,8 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0
   - dialogue: "Alright. Enough talk. Head over to the Job Selection Terminal and
       choose your role. Then we\u2019ll see what you\u2019re really made of."
@@ -565,4 +614,6 @@ MonoBehaviour:
     showName: 1
     name: Captain Hawthorn
     isGrey: 0
+    isBold: 0
+    isItalic: 0
     shake: 0

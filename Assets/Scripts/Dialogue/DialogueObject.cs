@@ -24,6 +24,8 @@ public class DialoguePair{
     public bool showName = false;
     public string name = "";
     public bool isGrey = false;
+    public bool isBold = false;
+    public bool isItalic = false;
     public bool shake = false;
 }
 

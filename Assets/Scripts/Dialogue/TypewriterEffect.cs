@@ -9,12 +9,12 @@ public class TypewriterEffect : MonoBehaviour
     [SerializeField] private float typewriterSpeed = 50f;
 
     // Responsible for running co-routine
-    public Coroutine Run(string textToType, TMP_Text textLabel){
-        return StartCoroutine(TypeText(textToType, textLabel));
+    public Coroutine Run(string textToType, TMP_Text textLabel, bool isBold = false, bool isItalic = false){
+        return StartCoroutine(TypeText(textToType, textLabel, isBold, isItalic));
     }
 
     // Responsible for typing text
-    private IEnumerator TypeText(string textToType, TMP_Text textLabel){
+    private IEnumerator TypeText(string textToType, TMP_Text textLabel, bool isBold = false, bool isItalic = false){
 
         float t = 0;
         int charIndex = 0;
@@ -32,12 +32,17 @@ public class TypewriterEffect : MonoBehaviour
             charIndex = Mathf.FloorToInt(t);
             charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
-            textLabel.text = textToType.Substring(0, charIndex);
+            string tempText = textToType.Substring(0, charIndex);
+            if (isBold) tempText = "<b>" + tempText + "</b";
+            if (isItalic) tempText = "<i>" + tempText + "</i>";
+            textLabel.text = tempText;
 
             yield return null;
 
         }
-
-        textLabel.text = textToType;
+        string endText = textToType;
+        if (isBold) endText = "<b>" + endText + "</b";
+        if (isItalic) endText = "<i>" + endText + "</i>";
+        textLabel.text = endText;
     }
 }
