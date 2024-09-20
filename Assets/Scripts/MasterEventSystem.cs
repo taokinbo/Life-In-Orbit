@@ -50,7 +50,8 @@ public enum Events {
         Test1, Test2, // TODO: remove test1 and test 2
         HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
         SupportHawthorn, SupportBonnie,
-        RoleEngineer, RoleBiologist
+        RoleEngineer, RoleBiologist,
+        Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete,
     }
 
 public class MasterEventSystem : MonoBehaviour
@@ -73,7 +74,7 @@ public class MasterEventSystem : MonoBehaviour
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
     HashSet<Flags> flags = new HashSet<Flags>(){
-        Flags.HawthornDislike, Flags.PineDislike, Flags.BonnieDislike
+        Flags.HawthornDislike, Flags.PineDislike, Flags.BonnieDislike, Flags.Minigame1Start,
     };
 
     public static MasterEventSystem Instance;
@@ -350,6 +351,8 @@ public class MasterEventSystem : MonoBehaviour
         if (newFlag == Flags.None) return;
 
         flags.Add(newFlag);
+        Debug.Log("Flag Added: " + newFlag);
+        eventTypeCleared(EventInfoTypes.None);
     }
 
     public void removeFlag(Flags newFlag) {

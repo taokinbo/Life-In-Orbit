@@ -244,7 +244,7 @@ public class DialogueUI : MonoBehaviour
 
         CloseDialogueBox(true);
         Debug.Log("Please clear this event: " + eventToClear);
-        MasterEventSystem.Instance.eventTypeCleared(eventToClear);
+        if (eventToClear != EventInfoTypes.None) MasterEventSystem.Instance.eventTypeCleared(eventToClear);
     }
 
     public string makeStrikeThrough(string text) {

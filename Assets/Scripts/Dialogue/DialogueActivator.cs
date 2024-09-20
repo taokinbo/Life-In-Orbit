@@ -16,6 +16,7 @@ public class DialogueActivator : MonoBehaviour
 
     // STUFF FOR LUMINA
     [SerializeField] private Scenes[] PlayOnlyAtLocation; // Start menu scene will be default none
+    [SerializeField] private bool[] dontMarkCharacterDone;
     [SerializeField] private int altDiaBoxUsed;
 
     [SerializeField] private DialogueObject backupDialogue;
@@ -94,7 +95,7 @@ public class DialogueActivator : MonoBehaviour
                     return;
                 }
             }
-            diaUI.ShowDialogue(dialogueObjects[tempCurIndex], Character);
+            diaUI.ShowDialogue(dialogueObjects[tempCurIndex], dontMarkCharacterDone[tempCurIndex] ? EventInfoTypes.None : Character);
         }
         else {
             if (playBackup) diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);

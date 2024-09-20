@@ -7,6 +7,8 @@ public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, Engineer
 
 public class UIController : MonoBehaviour
 {
+    public Flags currentFlagToRemove = Flags.None;
+    public Flags currentFlagToRun = Flags.None;
 
 
     // Start is called before the first frame update
@@ -88,5 +90,10 @@ public class UIController : MonoBehaviour
 
     public void cheaterFunc() {
         MasterEventSystem.Instance.cheatNextScene();
+    }
+
+    public void markFlag() {
+        MasterEventSystem.Instance.removeFlag(currentFlagToRemove);
+        MasterEventSystem.Instance.addFlag(currentFlagToRun);
     }
 }
