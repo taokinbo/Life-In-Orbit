@@ -1810,6 +1810,7 @@ MonoBehaviour:
   LayerSwap: {fileID: 378097250}
   initialPos: []
   pipeValid: 
+  attempts: 0
 --- !u!1 &101415024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4759,7 +4760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152221429}
+      - m_Target: {fileID: 301591013}
         m_TargetAssemblyTypeName: PipeScript, Assembly-CSharp
         m_MethodName: OnMouseDown
         m_Mode: 1
@@ -27551,11 +27552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fba2eae1ef147644860b19054580e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posibleRotations:
-  - 0
-  - 90
-  - 180
-  - 270
 --- !u!1 &2018476270
 GameObject:
   m_ObjectHideFlags: 0
