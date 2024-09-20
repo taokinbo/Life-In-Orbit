@@ -76,9 +76,10 @@ public class DialogueActivator : MonoBehaviour
 
     private void playDialogue(bool playBackup = true) {
         if (PlayOnlyAtLocation[curIndex] != Scenes.StartMenu) playBackup = false;
-        Debug.Log("playing log");
-        Debug.Log("diaUI is missing check");
-        Debug.Log(diaUI);
+        // Debug.Log("Playing Backup: " + playBackup);
+        // Debug.Log("playing log");
+        // Debug.Log("diaUI is missing check");
+        // Debug.Log(diaUI);
         if (!diaUI) {
             Debug.Log("Dia UI didnt exist");
             // diaUI = FindObjectOfType<DialogueUI>();
@@ -87,7 +88,7 @@ public class DialogueActivator : MonoBehaviour
         if (diaUI.IsOpen) return;
         if (matchingSceneList[curIndex] == currentEvent && canSpeakNow() && inCorrectLocation()) {
             var tempCurIndex = curIndex;
-            Debug.Log("temp cur index is: " + tempCurIndex + "while curentIndex is: " + curIndex);
+            // Debug.Log("temp cur index is: " + tempCurIndex + "while curentIndex is: " + curIndex);
             while(flags[tempCurIndex] != Flags.None &&  !MasterEventSystem.Instance.checkFlag(flags[tempCurIndex]) ){
                 tempCurIndex++;
                 if (tempCurIndex >= matchingSceneList.Length || matchingSceneList[tempCurIndex] != currentEvent) {
@@ -136,7 +137,7 @@ public class DialogueActivator : MonoBehaviour
         ps.haveFlamethrower = false;
        // ps.haveKnife = false;
         */
-        Debug.Log("Click DETECTED ON RIFFLE IMAGE");
+        // Debug.Log("Click DETECTED ON RIFFLE IMAGE");
 
     }
 
@@ -147,7 +148,7 @@ public class DialogueActivator : MonoBehaviour
                 Debug.Log("Dia UI didnt exist");
                 diaUI = FindObjectOfType<DialogueUI>();
             }
-            else Debug.Log("dia ui found");
+            // else Debug.Log("dia ui found");
             hasCalledStart = true;
             if (playOnSceneDia) playDialogue();
             playOnSceneDia = false;
