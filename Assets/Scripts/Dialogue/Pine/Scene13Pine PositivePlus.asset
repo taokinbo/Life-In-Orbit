@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
-  m_Name: DialogTestBackup
+  m_Name: Scene13Pine PositivePlus
   m_EditorClassIdentifier: 
   dialogue:
-  - dialogue: this can play when no dia is given.
+  - dialogue: "Hey, {PlayerName}. Nice seeing you again. Don\u2019t slack off out
+      there, alright?"
     questNumMin: 0
-    questNumMax: 100
+    questNumMax: 0
     stop: 0
     forceSkipTo: -1
     choice: 0
@@ -29,8 +30,8 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
-    showName: 0
-    name: 
+    showName: 1
+    name: Gary Pine
     isGrey: 0
     isBold: 0
     isItalic: 0

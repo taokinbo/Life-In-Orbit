@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5899249971661336443}
   - component: {fileID: 1023862801585283909}
   m_Layer: 0
-  m_Name: DialogueControllerPine
+  m_Name: DialogueControllerBonnie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,23 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removeLocationCheck: 1
   diaUI: {fileID: 0}
-  Character: 8
+  Character: 9
   dialogueObjects:
-  - {fileID: 11400000, guid: 40e21ce11093acf4c815c50a8f2eabf7, type: 2}
-  - {fileID: 11400000, guid: 3acadee4329800d42ae9b55a2800d874, type: 2}
-  - {fileID: 11400000, guid: 174630731fb256b4cb94a6f4e9dc81e2, type: 2}
-  - {fileID: 11400000, guid: 654863205fa42224c8dfc428a01af780, type: 2}
-  - {fileID: 11400000, guid: a4e31f830b9a61c4198c66b83d3c2f43, type: 2}
-  - {fileID: 11400000, guid: ca871ad7ad1bbe3468151dfa7a53b8ff, type: 2}
-  - {fileID: 11400000, guid: 6be91ce3336466c4fb67b7b95d1842ff, type: 2}
-  - {fileID: 11400000, guid: ed1d6aec5abd8c14f915e4d9c65d8569, type: 2}
-  matchingSceneList: 0400000007000000070000000a0000000d0000000d0000000d0000000d000000
-  OnSceneLoad: 0100000100000000
-  flags: 0000000005000000060000000000000023000000240000000500000006000000
-  PlayOnlyAtLocation: 0000000000000000000000000000000000000000000000000000000000000000
-  dontMarkCharacterDone: 0000000000000000
-  anySkipCharChecks: 1
-  skipCharChecks: 0001010001010101
+  - {fileID: 11400000, guid: 2c0c432100000de4ca63c1fbdd684039, type: 2}
+  - {fileID: 11400000, guid: 173795c0c00ca8149b95cf3eebd1e1d1, type: 2}
+  matchingSceneList: 060000000d000000
+  OnSceneLoad: 0101
+  flags: 0000000000000000
+  PlayOnlyAtLocation: 0000000000000000
+  dontMarkCharacterDone: 00000000
+  anySkipCharChecks: 0
+  skipCharChecks: 
   altDiaBoxUsed: 0
   backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
   curIndex: 0

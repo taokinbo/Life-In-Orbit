@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
-  m_Name: DialogTestBackup
+  m_Name: Scene13Lumina EarlyRoom
   m_EditorClassIdentifier: 
   dialogue:
-  - dialogue: this can play when no dia is given.
+  - dialogue: "Not quite yet! You\u2019ve still got some exploring to do. Once you\u2019ve
+      talked to everyone and checked everything out, then you can end your day."
     questNumMin: 0
-    questNumMax: 100
-    stop: 0
+    questNumMax: 0
+    stop: 1
     forceSkipTo: -1
     choice: 0
     choices: []
@@ -29,8 +30,8 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     bgSprite: 
-    showName: 0
-    name: 
+    showName: 1
+    name: Lumina
     isGrey: 0
     isBold: 0
     isItalic: 0

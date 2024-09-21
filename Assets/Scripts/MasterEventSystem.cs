@@ -56,6 +56,9 @@ public enum Flags
     RoleEngineer, RoleBiologist,
     Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete, MG1Pass, MG1Fail,
     PineAskHawthorn, PineAskLumina, PineAskBonnie,
+    BonnieAskAlien, BonnieAskHawthorn, BonnieAskPine,
+    HawthornAskPine, HawthornAskAlien, HawthornAskBonnie,
+    HawthornLikePlus, HawthornDislikePlus, PineLikePlus, PineDislikePlus, BonnieLikePlus, BonnieDislikePlus
 }
 
 public class MasterEventSystem : MonoBehaviour
@@ -75,6 +78,7 @@ public class MasterEventSystem : MonoBehaviour
     private int pointsHawthorn = 0;
     private int pointsPine = 0;
     private int pointsBonnie = 0;
+    private int extreamRelationship = 6;
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
     HashSet<Flags> flags = new HashSet<Flags>(){
@@ -240,10 +244,10 @@ public class MasterEventSystem : MonoBehaviour
         currentDict = new Dictionary<EventInfoTypes, bool>
         {
             { EventInfoTypes.CommandCenter, true },
-            { EventInfoTypes.Biodome, true },
-            { EventInfoTypes.EngineeringBay, true },
-            { EventInfoTypes.PlayersQuarters, true },
-            { EventInfoTypes.Lumina, true },
+            // { EventInfoTypes.Biodome, true },
+            // { EventInfoTypes.EngineeringBay, true },
+            // { EventInfoTypes.PlayersQuarters, true },
+            // { EventInfoTypes.Lumina, true },
             { EventInfoTypes.Pine, true },
             { EventInfoTypes.Bonnie, true },
             { EventInfoTypes.Hawthorn, true }
@@ -506,12 +510,17 @@ public class MasterEventSystem : MonoBehaviour
                 if (pointsHawthorn > 0)
                 {
                     removeFlag(Flags.HawthornDislike);
+                    removeFlag(Flags.HawthornDislikePlus);
                     addFlag(Flags.HawthornLike);
+                    if (pointsHawthorn > extreamRelationship) addFlag(Flags.HawthornLikePlus);
                 }
                 else
                 {
                     removeFlag(Flags.HawthornLike);
+                    removeFlag(Flags.HawthornLikePlus);
                     addFlag(Flags.HawthornDislike);
+                    if (pointsHawthorn < -1 * extreamRelationship) addFlag(Flags.HawthornDislikePlus);
+
                 }
                 break;
             case EventInfoTypes.Pine:
@@ -521,12 +530,16 @@ public class MasterEventSystem : MonoBehaviour
                 if (pointsPine > 0)
                 {
                     removeFlag(Flags.PineDislike);
+                    removeFlag(Flags.PineDislikePlus);
                     addFlag(Flags.PineLike);
+                    if (pointsPine > extreamRelationship) addFlag(Flags.PineLikePlus);
                 }
                 else
                 {
                     removeFlag(Flags.PineLike);
+                    removeFlag(Flags.PineLikePlus);
                     addFlag(Flags.PineDislike);
+                    if (pointsPine < -1 * extreamRelationship) addFlag(Flags.PineDislikePlus);
                 }
                 break;
             case EventInfoTypes.Bonnie:
@@ -536,12 +549,16 @@ public class MasterEventSystem : MonoBehaviour
                 if (pointsBonnie > 0)
                 {
                     removeFlag(Flags.BonnieDislike);
+                    removeFlag(Flags.BonnieDislikePlus);
                     addFlag(Flags.BonnieLike);
+                    if (pointsBonnie > extreamRelationship) addFlag(Flags.BonnieLikePlus);
                 }
                 else
                 {
                     removeFlag(Flags.BonnieLike);
+                    removeFlag(Flags.BonnieLikePlus);
                     addFlag(Flags.BonnieDislike);
+                    if (pointsBonnie < -1 * extreamRelationship) addFlag(Flags.BonnieDislikePlus);
                 }
                 break;
             default:

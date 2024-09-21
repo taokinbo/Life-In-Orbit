@@ -40,7 +40,7 @@ public class DialogueUI : MonoBehaviour
     public int curQuest = 0; //some way to track conversation ig
     private int historyQuest;
     public bool debug = false;
-    private bool atEnding = false;
+    // private bool atEnding = false;
     private string playerName = "";
     private int curentChoiceAmount = 3;
 
