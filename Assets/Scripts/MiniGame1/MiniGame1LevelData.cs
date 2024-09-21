@@ -4,7 +4,7 @@
 public class LevelData : ScriptableObject
 {
 	//Solution Elements/UI changing elements
-	public string levelname; //label level
+	public int levelNumber; //label level
 	public string timeOfDay; //Time of day (e.g., Midday)
 	public string weatherCondition; //Weather condition (e.r., Clear Skies)
 	public string hemisphere; //Hemisphere (e.g. Northern or Southern
