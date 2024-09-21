@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Level0Data", menuName = "Levels/Level0")] //makes a new instance of the LevelData ScriptableObject
-public class Level0Data : LevelData
+public class MG1Level0Data : MiniGame1LevelData
 {
 	private void OnEnable()
 	{
 		//Set Level 0 UI and gameplay settings
-		levelname = "Level 0";
+		levelNumber = 0;
 		timeOfDay = "Midday";
 		hemisphere = "Northern";
 		weatherCondition = "Clear Skies";

@@ -11,10 +11,11 @@ public class MiniGame1Manager : MonoBehaviour
 
 	public void LoadLevelData()
 	{
-		Debug.Log("Loading leve data: " + currentLevelData.levelname);
+		Debug.Log("Loading level data: " + currentLevelData.levelNumber);
 		//Initialize the panels with level-specific data
 		foreach (SolarPanel panel in panels)
 		{
+            PanelSoultion solution = GetPanelSolution(panel.PanelID);
 			panel.availableAngles = currentLevelData.availableAngles;
 			panel.availableOrientation = currentLevelData.availableOrientation;
 		}
@@ -66,6 +67,122 @@ public class MiniGame1Manager : MonoBehaviour
         return null;
     }
 
+    private void AwardStarRating(bool completed)
+    {
+        int starRating = 0;
+
+        if (completed)
+        {
+            if (currentLevelData.levelNumber = 0)
+            {
+                if (submissionCount <= 3) { starRating  = 3; }
+                else if (submissionCount <= 6 && submissionCount > 3) { starRating = 2; }
+                else { starRating = 1; }
+            }
+            if (currentLevelData.levelNumber = 1)
+            {
+                if (submissionCount <= 2) { starRating = 3; }
+                else if (submissionCount == 3 || submissionCount == 4) { starRating = 2; }
+                else { starRating = 1; }
+            }
+            if (currentLevelData.levelNumber = 2)
+            {
+                if (submissionCount <= 2) { starRating = 3; }
+                else if (submissionCount == 3) { starRating = 2; }
+                else { starRating = 1; }
+            }
+            if (currentLevelData.levelNumber = 3)
+            {
+                if (submissionCount <= 2) { starRating = 3; }
+                else if (submissionCount == 3) { starRating = 2; }
+                else { starRating = 1; }
+            }
+            if (currentLevelData.levelNumber = 4)
+            {
+                if (submissionCount == 1) { starRating = 3; }
+                else if (submissionCount == 2) { starRating = 2; }
+                else { starRating = 1; }
+            }
+        }
+        else
+        {
+            starRating = 0;
+        }
+
+        Debug.Log("Awarded " + starRating + " star(s) for this levek.");
+        UpdateSubmissionUI(starRating);
+    }
+
+    private void GiveFeedback()
+    {
+        foreach (SolarPanel panel in panels)
+        {
+            PanelSolution solution = GetPanelSolution(panel.PanelID);
+
+            if (panel.IsCorrect(solution))
+            {
+                Debug.Log("Panel: " + panel.PanelID + " is correct.");
+                // change panel outline or overlay color to green (handled in Unity)
+            }
+            else
+            {
+                bool angleCorrect = panel.currentAngle == solution.currentAngle;
+                bool orientationCorrect = panel.orientation == solution.orientation;
+
+                if(!angleCorrect && !orientationCorrect)
+                {
+                    Debug.Log("Panel " + panel.PanelID + ": Both angle and orientation are incorrect (Red).");
+                    // change panel outline or overlay color to red (handled in Unity)
+                }
+                else if (!angleCorrect || !orientationCorrect)
+                {
+                    Debug.Log("Panel " + panel.PanelID + ": Either angle or orientation are incorrect (Yellow).");
+                    // change panel outline or overlay color to Yellow (handled in Unity)
+                }
+
+                //For levels 0-2, send feedback for Lumina to dialogue system
+                if (currentLevelData.levelNumber <= 2)
+                {
+                    string feedbackMessage = GetFeedbackMessage(panel, angleCorrect, orientationCorrect);
+                    SendFeedbackToDialogue(feedbackMessage);
+                
+                }
+            }
+            }
+        }
+
+
+    private string GetFeedbackMessage(string panel, bool angleCorrect, bool orientationCorrect)
+    {
+        if (!angleCorrect && !orientationCorrect)
+        {
+            return " ";
+        }
+        else if (!angleCorrect)
+        {
+            return " ";
+        }
+        else if (!orientationCorrect)
+        {
+            return " ";
+        }
+        return " ";
+    }
+
+    private void SendFeedbackToDialogue(string feedbackMessage)
+    {
+        Debug.Log("Sending feedback to dialogue system: " + feddbackMessage);
+    }
+
+    private void UpdateStarRatingUI(int stars)
+    {
+        //Display star ratinsg popup
+        Debug.Log("Displaying " + stars + " star(s) on the UI.");
+
+        //Trigger the pop-up in the UI
+        //UIPopupManager.Instance.ShowStarRating(stars);
+    }
+
 	//Call this method when the player submits their configuration
 	public void OnSubmit()
 	{
@@ -74,17 +191,20 @@ public class MiniGame1Manager : MonoBehaviour
         {
             Debug.Log("Submission limit reached.");
             // Handle lockout or failure logic here
+            AwardStarRating(false); //Award player 0 stars for incomplete
         }
         else if (AreAllPanelsCorrect())
         {
             Debug.Log("All panels are correct! Level complete.");
-            OnMiniGameComplete();
+            OnMiniGameComplete(); //Notify event system
+            AwardStarRating(true); //After mini-game completed, award stars based on performance
         }
         else
         {
             Debug.Log("Some panels are incorrect. Try again.");
+            GievFeedback();
         }
-		UpdateSubmissionUI();
+		UpdateSubmissionUI(); //Update screen with submission count
     }
 
     private void UpdateSubmissionUI()
