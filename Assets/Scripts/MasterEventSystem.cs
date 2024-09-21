@@ -267,6 +267,7 @@ public class MasterEventSystem : MonoBehaviour
         {
             {EventInfoTypes.CommandCenter, true },
             {EventInfoTypes.Hawthorn, true },
+            {EventInfoTypes.Lumina, true },
         };
         eventInfo[Events.Act4Scene15] = currentDict;
 
