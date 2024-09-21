@@ -54,7 +54,7 @@ public enum Flags
     HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
     SupportHawthorn, SupportBonnie,
     RoleEngineer, RoleBiologist,
-    Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete,
+    Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete, MG1Pass, MG1Fail
 }
 
 public class MasterEventSystem : MonoBehaviour
@@ -206,6 +206,7 @@ public class MasterEventSystem : MonoBehaviour
             { EventInfoTypes.EngineeringBay, true },
             { EventInfoTypes.Biodome, true },
             { EventInfoTypes.AlienActivity, true },
+            { EventInfoTypes.Lumina, true },
         };
         eventInfo[Events.Act2Scene9] = currentDict;
         // Act 2 Scene 10
