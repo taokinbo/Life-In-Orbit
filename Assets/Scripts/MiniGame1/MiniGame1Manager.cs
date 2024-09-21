@@ -5,7 +5,7 @@ public class MiniGame1Manager : MonoBehaviour
 {
     // List to store all solar panels in the grid
     public List<SolarPanel> panels; // Reference to the solar panels in the scene
-	public LevelData currentLevelData; //Data for the current level
+	public MiniGame1LevelData currentLevelData; //Data for the current level
 
 	private int submissionCount = 0; //Track how many times the player submits
 
@@ -15,7 +15,7 @@ public class MiniGame1Manager : MonoBehaviour
 		//Initialize the panels with level-specific data
 		foreach (SolarPanel panel in panels)
 		{
-            PanelSoultion solution = GetPanelSolution(panel.PanelID);
+            PanelSolution solution = GetPanelSolution(panel.PanelID);
 			panel.availableAngles = currentLevelData.availableAngles;
 			panel.availableOrientation = currentLevelData.availableOrientation;
 		}
@@ -73,31 +73,31 @@ public class MiniGame1Manager : MonoBehaviour
 
         if (completed)
         {
-            if (currentLevelData.levelNumber = 0)
+            if (currentLevelData.levelNumber == 0)
             {
                 if (submissionCount <= 3) { starRating  = 3; }
                 else if (submissionCount <= 6 && submissionCount > 3) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber = 1)
+            if (currentLevelData.levelNumber == 1)
             {
                 if (submissionCount <= 2) { starRating = 3; }
                 else if (submissionCount == 3 || submissionCount == 4) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber = 2)
+            if (currentLevelData.levelNumber == 2)
             {
                 if (submissionCount <= 2) { starRating = 3; }
                 else if (submissionCount == 3) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber = 3)
+            if (currentLevelData.levelNumber == 3)
             {
                 if (submissionCount <= 2) { starRating = 3; }
                 else if (submissionCount == 3) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber = 4)
+            if (currentLevelData.levelNumber == 4)
             {
                 if (submissionCount == 1) { starRating = 3; }
                 else if (submissionCount == 2) { starRating = 2; }
@@ -110,7 +110,7 @@ public class MiniGame1Manager : MonoBehaviour
         }
 
         Debug.Log("Awarded " + starRating + " star(s) for this levek.");
-        UpdateSubmissionUI(starRating);
+        UpdateStarRatingUI(starRating);
     }
 
     private void GiveFeedback()
@@ -126,8 +126,8 @@ public class MiniGame1Manager : MonoBehaviour
             }
             else
             {
-                bool angleCorrect = panel.currentAngle == solution.currentAngle;
-                bool orientationCorrect = panel.orientation == solution.orientation;
+                bool angleCorrect = panel.currentAngle == solution.correctAngle;
+                bool orientationCorrect = panel.currentOrientation == solution.correctOrientation;
 
                 if(!angleCorrect && !orientationCorrect)
                 {
@@ -145,14 +145,14 @@ public class MiniGame1Manager : MonoBehaviour
                 {
                     string feedbackMessage = GetFeedbackMessage(panel, angleCorrect, orientationCorrect);
                     SendFeedbackToDialogue(feedbackMessage);
-                
+
                 }
             }
             }
         }
 
 
-    private string GetFeedbackMessage(string panel, bool angleCorrect, bool orientationCorrect)
+    private string GetFeedbackMessage(SolarPanel panel, bool angleCorrect, bool orientationCorrect)
     {
         if (!angleCorrect && !orientationCorrect)
         {
@@ -171,7 +171,7 @@ public class MiniGame1Manager : MonoBehaviour
 
     private void SendFeedbackToDialogue(string feedbackMessage)
     {
-        Debug.Log("Sending feedback to dialogue system: " + feddbackMessage);
+        Debug.Log("Sending feedback to dialogue system: " + feedbackMessage);
     }
 
     private void UpdateStarRatingUI(int stars)
@@ -202,7 +202,7 @@ public class MiniGame1Manager : MonoBehaviour
         else
         {
             Debug.Log("Some panels are incorrect. Try again.");
-            GievFeedback();
+            GiveFeedback();
         }
 		UpdateSubmissionUI(); //Update screen with submission count
     }

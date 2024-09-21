@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable] //This allows class and variables to show up in the inspector.
-public class LevelData : ScriptableObject
+public class MiniGame1LevelData : ScriptableObject
 {
 	//Solution Elements/UI changing elements
 	public int levelNumber; //label level
