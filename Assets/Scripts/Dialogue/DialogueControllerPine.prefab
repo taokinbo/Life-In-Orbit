@@ -51,13 +51,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 40e21ce11093acf4c815c50a8f2eabf7, type: 2}
   - {fileID: 11400000, guid: 3acadee4329800d42ae9b55a2800d874, type: 2}
   - {fileID: 11400000, guid: 174630731fb256b4cb94a6f4e9dc81e2, type: 2}
-  matchingSceneList: 040000000700000007000000
-  OnSceneLoad: 010000
-  flags: 000000000500000006000000
-  PlayOnlyAtLocation: 000000000000000000000000
-  dontMarkCharacterDone: 000000
+  - {fileID: 11400000, guid: 654863205fa42224c8dfc428a01af780, type: 2}
+  matchingSceneList: 0400000007000000070000000a000000
+  OnSceneLoad: 01000001
+  flags: 00000000050000000600000000000000
+  PlayOnlyAtLocation: 00000000000000000000000000000000
+  dontMarkCharacterDone: 00000000
   anySkipCharChecks: 1
-  skipCharChecks: 000101
+  skipCharChecks: 00010100
   altDiaBoxUsed: 0
   backupDialogue: {fileID: 11400000, guid: 8277c68ccd907a449a99337596387291, type: 2}
   curIndex: 0

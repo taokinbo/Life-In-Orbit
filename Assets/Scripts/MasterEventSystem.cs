@@ -54,7 +54,8 @@ public enum Flags
     HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
     SupportHawthorn, SupportBonnie,
     RoleEngineer, RoleBiologist,
-    Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete, MG1Pass, MG1Fail
+    Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete, MG1Pass, MG1Fail,
+    PineAskHawthorn, PineAskLumina, PineAskBonnie,
 }
 
 public class MasterEventSystem : MonoBehaviour

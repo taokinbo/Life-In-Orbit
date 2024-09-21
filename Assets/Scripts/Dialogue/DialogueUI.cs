@@ -167,22 +167,22 @@ public class DialogueUI : MonoBehaviour
             // if ()
             // Debug.Log(dia.questNum);
             if (curQuest > dia.questNumMax || curQuest < dia.questNumMin){ //runs inclusive
-                if (curQuest > 0 && !debug && !atEnding){
-                    atEnding = true;
-                    if (points >= 5) {
-                        curQuest = 10;
-                        // StartCoroutine(AudioController.Instance.musicSource.CrossFade(AudioController.Instance.musicSounds[2]));
-                        // AudioController.Instance.PlayMusic(2);
-                        }
-                    else {
-                        curQuest = 20;
-                        // StartCoroutine(AudioController.Instance.musicSource.CrossFade(AudioController.Instance.musicSounds[3]));
-                        // AudioController.Instance.PlayMusic(3);
+                // if (curQuest > 0 && !debug && !atEnding){
+                //     atEnding = true;
+                //     if (points >= 5) {
+                //         curQuest = 10;
+                //         // StartCoroutine(AudioController.Instance.musicSource.CrossFade(AudioController.Instance.musicSounds[2]));
+                //         // AudioController.Instance.PlayMusic(2);
+                //         }
+                //     else {
+                //         curQuest = 20;
+                //         // StartCoroutine(AudioController.Instance.musicSource.CrossFade(AudioController.Instance.musicSounds[3]));
+                //         // AudioController.Instance.PlayMusic(3);
 
-                    }
+                //     }
 
-                    continue;
-                }
+                //     continue;
+                // }
                 index++;
                 continue;
             }
@@ -227,6 +227,8 @@ public class DialogueUI : MonoBehaviour
             if (dia.stop) break;
 
             if (dia.advanceQuest) curQuest ++;// advance quest;
+            if (debug) Debug.Log("my questVal = " + curQuest);
+
 
             if (dia.forceSkipTo != -1) index = dia.forceSkipTo;
             else if (dia.choice){
