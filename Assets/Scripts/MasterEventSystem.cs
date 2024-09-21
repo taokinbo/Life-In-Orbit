@@ -7,58 +7,61 @@ using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
 
-public enum Events {
-        GameStart = 0,
-        Act1Scene1 = 1,
-        Act1Scene2 = 2,
-        Act1Scene3 = 3,
-        Act1Scene4 = 4,
-        Act2Scene5 = 5,
-        Act2Scene6 = 6,
-        Act2Scene7 = 7,
-        Act2Scene8 = 8,
-        Act2Scene9 = 9,
-        Act2Scene10 = 10,
-        Act3Scene11 = 11,
-        Act3Scene12 = 12,
-        Act3Scene13 = 13,
-        Act3Scene14 = 14,
-        Act4Scene15 = 15,
-        Act4Scene16 = 16,
-        Act4Scene17 = 17,
-        Act5Scene18 = 18,
-        Act5Scene19 = 19,
-        Act5Scene20 = 20,
-        Act5Scene21 = 21,
-    };
+public enum Events
+{
+    GameStart = 0,
+    Act1Scene1 = 1,
+    Act1Scene2 = 2,
+    Act1Scene3 = 3,
+    Act1Scene4 = 4,
+    Act2Scene5 = 5,
+    Act2Scene6 = 6,
+    Act2Scene7 = 7,
+    Act2Scene8 = 8,
+    Act2Scene9 = 9,
+    Act2Scene10 = 10,
+    Act3Scene11 = 11,
+    Act3Scene12 = 12,
+    Act3Scene13 = 13,
+    Act3Scene14 = 14,
+    Act4Scene15 = 15,
+    Act4Scene16 = 16,
+    Act4Scene17 = 17,
+    Act5Scene18 = 18,
+    Act5Scene19 = 19,
+    Act5Scene20 = 20,
+    Act5Scene21 = 21,
+};
 
-    public enum EventInfoTypes
-    {
-        None,
-        PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
-        Lumina, Hawthorn, Pine, Bonnie, Alien,                  // characters
-        NameSelection, JobSelection,                                // selections
-        AlienActivity
-    };
+public enum EventInfoTypes
+{
+    None,
+    PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
+    Lumina, Hawthorn, Pine, Bonnie, Alien,                  // characters
+    NameSelection, JobSelection,                                // selections
+    AlienActivity, AscendecyIndex
+};
 
-    public enum Roles {
-        Engineer, Biologist, None
-    }
+public enum Roles
+{
+    Engineer, Biologist, None
+}
 
-    public enum Flags{
-        None,
-        Test1, Test2, // TODO: remove test1 and test 2
-        HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
-        SupportHawthorn, SupportBonnie,
-        RoleEngineer, RoleBiologist,
-        Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete,
-    }
+public enum Flags
+{
+    None,
+    Test1, Test2, // TODO: remove test1 and test 2
+    HawthornLike, HawthornDislike, PineLike, PineDislike, BonnieLike, BonnieDislike,
+    SupportHawthorn, SupportBonnie,
+    RoleEngineer, RoleBiologist,
+    Minigame1Start, MG1Tut, MG1F1, MG1F2, MG1F3, MG1F4, MG1F5, MG1F6, MG1Complete,
+}
 
 public class MasterEventSystem : MonoBehaviour
 {
 
-    private readonly EventInfoTypes[] rooms = {EventInfoTypes.PlayersQuarters, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway};
-    private readonly EventInfoTypes[] people = {EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien};
+    private readonly EventInfoTypes[] rooms = { EventInfoTypes.PlayersQuarters, EventInfoTypes.CommandCenter, EventInfoTypes.Biodome, EventInfoTypes.EngineeringBay, EventInfoTypes.Hallway, EventInfoTypes.AscendecyIndex };
+    private readonly EventInfoTypes[] people = { EventInfoTypes.Lumina, EventInfoTypes.Hawthorn, EventInfoTypes.Pine, EventInfoTypes.Bonnie, EventInfoTypes.Alien };
 
     private int biologyDifficulty = 0;
     private int engineerDifficulty = 0;
@@ -113,11 +116,13 @@ public class MasterEventSystem : MonoBehaviour
 
     }
 
-    public Scenes getLocation() {
+    public Scenes getLocation()
+    {
         return curentLocation;
     }
 
-    public void setLocation(Scenes location) {
+    public void setLocation(Scenes location)
+    {
         curentLocation = location;
         Save();
     }
@@ -126,7 +131,8 @@ public class MasterEventSystem : MonoBehaviour
     {
         //Game start
         // var currentDict = new Dictionary<EventInfoTypes, bool>();
-        var currentDict = new Dictionary<EventInfoTypes, bool>() {
+        var currentDict = new Dictionary<EventInfoTypes, bool>()
+        {
             // { EventInfoTypes.Hawthorn, true} // TODO: REMOVE AFTER DONE WITH TESTING
         };
         eventInfo[Events.GameStart] = currentDict;
@@ -184,7 +190,6 @@ public class MasterEventSystem : MonoBehaviour
             { EventInfoTypes.PlayersQuarters, true },
             { EventInfoTypes.AlienActivity, true },
             { EventInfoTypes.Lumina, true },
-            { EventInfoTypes.Pine, true },
 
         };
         eventInfo[Events.Act2Scene7] = currentDict;
@@ -325,29 +330,35 @@ public class MasterEventSystem : MonoBehaviour
     }
 
     // BE CARE TO NOT CHANGE VALUE WHEN CALLED. THIS EFFECTS SAVE
-    public Dictionary<EventInfoTypes, bool> getAllInfoFromScene(){
+    public Dictionary<EventInfoTypes, bool> getAllInfoFromScene()
+    {
 
         return eventInfo[currentEvent];
     }
 
-    public string getAllEventInfo() {
+    public string getAllEventInfo()
+    {
         string json = JsonConvert.SerializeObject(eventInfo, Formatting.Indented);
         return json;
     }
 
-    private void setAllEventInfo(string json) {
+    private void setAllEventInfo(string json)
+    {
         eventInfo = JsonConvert.DeserializeObject<Dictionary<Events, Dictionary<EventInfoTypes, bool>>>(json);
     }
 
-    public string getAllFlags() {
+    public string getAllFlags()
+    {
         return JsonConvert.SerializeObject(flags, Formatting.Indented);
     }
 
-    public void setAllFlags(string json) {
+    public void setAllFlags(string json)
+    {
         flags = JsonConvert.DeserializeObject<HashSet<Flags>>(json);
     }
 
-    public void addFlag(Flags newFlag) {
+    public void addFlag(Flags newFlag)
+    {
         if (newFlag == Flags.None) return;
 
         flags.Add(newFlag);
@@ -355,46 +366,57 @@ public class MasterEventSystem : MonoBehaviour
         eventTypeCleared(EventInfoTypes.None);
     }
 
-    public void removeFlag(Flags newFlag) {
+    public void removeFlag(Flags newFlag)
+    {
         flags.Remove(newFlag);
     }
 
-    public bool checkFlag(Flags flag) {
+    public bool checkFlag(Flags flag)
+    {
         return flags.Contains(flag);
     }
 
-    public IEnumerable<EventInfoTypes> getInfoFromSubsection(EventInfoTypes[] subsection, bool mustBeTrue = false) {
-        List <EventInfoTypes> currentItems = new List<EventInfoTypes>();
+    public IEnumerable<EventInfoTypes> getInfoFromSubsection(EventInfoTypes[] subsection, bool mustBeTrue = false)
+    {
+        List<EventInfoTypes> currentItems = new List<EventInfoTypes>();
         var currentEventInfo = eventInfo[currentEvent];
 
-        foreach (var item in subsection){
+        foreach (var item in subsection)
+        {
             if (currentEventInfo.ContainsKey(item) && (!mustBeTrue || currentEventInfo[item])) currentItems.Add(item);
         }
         return currentItems;
     }
 
-    public IEnumerable<EventInfoTypes> getPlayersQuartersForEvent(bool mustBeUnseen = false) {
+    public IEnumerable<EventInfoTypes> getPlayersQuartersForEvent(bool mustBeUnseen = false)
+    {
         return getInfoFromSubsection(rooms, mustBeUnseen);
     }
 
-    public IEnumerable<EventInfoTypes> getPeopleForEvent(bool mustBeUntalked = false) {
+    public IEnumerable<EventInfoTypes> getPeopleForEvent(bool mustBeUntalked = false)
+    {
         return getInfoFromSubsection(people, mustBeUntalked);
     }
 
-    public void eventTypeCleared(EventInfoTypes clearedItem) {
+    public void eventTypeCleared(EventInfoTypes clearedItem)
+    {
         var currentEventInfo = eventInfo[currentEvent];
-        if (currentEventInfo.ContainsKey(clearedItem)) {
+        if (currentEventInfo.ContainsKey(clearedItem))
+        {
             currentEventInfo[clearedItem] = false;
-            if (clearedItem == EventInfoTypes.EngineeringBay || clearedItem == EventInfoTypes.Biodome) {
+            if (clearedItem == EventInfoTypes.EngineeringBay || clearedItem == EventInfoTypes.Biodome)
+            {
                 currentEventInfo[EventInfoTypes.EngineeringBay] = false;
                 currentEventInfo[EventInfoTypes.Biodome] = false;
             }
         }
-        if (isSceneDone()) {
+        if (isSceneDone())
+        {
             currentEvent++;
             Save();
         }
-        else{
+        else
+        {
             Debug.Log("Scene is not done: ");
             Debug.Log(getAllInfoFromScene());
         }
@@ -402,74 +424,90 @@ public class MasterEventSystem : MonoBehaviour
         OnEventInfoChnaged?.Invoke(currentEvent);
     }
 
-    public EventInfoTypes getMinigameType() {
+    public EventInfoTypes getMinigameType()
+    {
         var currentEventInfo = eventInfo[currentEvent];
         if (currentRole == Roles.Engineer && currentEventInfo.ContainsKey(EventInfoTypes.EngineeringBay)) return EventInfoTypes.EngineeringBay;
         if (currentRole == Roles.Biologist && currentEventInfo.ContainsKey(EventInfoTypes.Biodome)) return EventInfoTypes.Biodome;
         return EventInfoTypes.None;
     }
 
-    public bool isSceneDone() {
+    public bool isSceneDone()
+    {
         var currentEventInfo = eventInfo[currentEvent];
         bool notDone = false;
-        foreach (var val in currentEventInfo.Values) {
+        foreach (var val in currentEventInfo.Values)
+        {
             notDone = notDone || val;
         }
         return !notDone;
     }
 
-    public void setRole(Roles role) {
-        currentRole= role;
+    public void setRole(Roles role)
+    {
+        currentRole = role;
     }
 
-    public Roles getRole() {
+    public Roles getRole()
+    {
         return currentRole;
     }
 
-    public void setPlayerName(string name) {
+    public void setPlayerName(string name)
+    {
         playerName = name;
     }
 
-    public string getPlayerName() {
+    public string getPlayerName()
+    {
         return playerName;
     }
 
-    public int getDifficulty(Roles role) {
+    public int getDifficulty(Roles role)
+    {
         if (role == Roles.Biologist) return biologyDifficulty;
         if (role == Roles.Engineer) return engineerDifficulty;
         return -1;
     }
 
-    public void setDifficulty(Roles role, int difficulty) {
+    public void setDifficulty(Roles role, int difficulty)
+    {
         if (role == Roles.Biologist) biologyDifficulty = difficulty;
         else if (role == Roles.Engineer) engineerDifficulty = difficulty;
     }
 
-    public Events getCurrentEvent() {
+    public Events getCurrentEvent()
+    {
         return currentEvent;
     }
 
-    private void setCurrentEvent(Events scene) {
+    private void setCurrentEvent(Events scene)
+    {
         currentEvent = scene;
     }
 
-    public void cheatNextScene() {
+    public void cheatNextScene()
+    {
         currentEvent++;
         Save();
         OnEventInfoChnaged?.Invoke(currentEvent);
     }
 
-    public void changePoints(EventInfoTypes character, int pointChange) {
-        switch (character) {
+    public void changePoints(EventInfoTypes character, int pointChange)
+    {
+        switch (character)
+        {
             case EventInfoTypes.Hawthorn:
                 Debug.Log("hawthorn points changed from: " + pointsHawthorn);
                 pointsHawthorn += pointChange;
                 Debug.Log("-> to " + pointsHawthorn);
-                if (pointsHawthorn > 0) {
+                if (pointsHawthorn > 0)
+                {
                     removeFlag(Flags.HawthornDislike);
                     addFlag(Flags.HawthornLike);
                 }
-                else {
+                else
+                {
                     removeFlag(Flags.HawthornLike);
                     addFlag(Flags.HawthornDislike);
                 }
@@ -478,11 +516,13 @@ public class MasterEventSystem : MonoBehaviour
                 Debug.Log("Pine points changed from: " + pointsPine);
                 pointsPine += pointChange;
                 Debug.Log("-> to " + pointsPine);
-                if (pointsPine > 0) {
+                if (pointsPine > 0)
+                {
                     removeFlag(Flags.PineDislike);
                     addFlag(Flags.PineLike);
                 }
-                else {
+                else
+                {
                     removeFlag(Flags.PineLike);
                     addFlag(Flags.PineDislike);
                 }
@@ -491,11 +531,13 @@ public class MasterEventSystem : MonoBehaviour
                 Debug.Log("Bonnie points changed from: " + pointsBonnie);
                 pointsBonnie += pointChange;
                 Debug.Log("-> to " + pointsBonnie);
-                if (pointsBonnie > 0) {
+                if (pointsBonnie > 0)
+                {
                     removeFlag(Flags.BonnieDislike);
                     addFlag(Flags.BonnieLike);
                 }
-                else {
+                else
+                {
                     removeFlag(Flags.BonnieLike);
                     addFlag(Flags.BonnieDislike);
                 }
@@ -505,8 +547,10 @@ public class MasterEventSystem : MonoBehaviour
         }
     }
 
-    public void setRelationshipPoints(EventInfoTypes character, int point) {
-        switch (character) {
+    public void setRelationshipPoints(EventInfoTypes character, int point)
+    {
+        switch (character)
+        {
             case EventInfoTypes.Hawthorn:
                 pointsHawthorn = point;
                 break;
@@ -521,8 +565,10 @@ public class MasterEventSystem : MonoBehaviour
         }
     }
 
-    public int getRelationshipPoints(EventInfoTypes character) {
-        switch (character) {
+    public int getRelationshipPoints(EventInfoTypes character)
+    {
+        switch (character)
+        {
             case EventInfoTypes.Hawthorn:
                 return pointsHawthorn;
             case EventInfoTypes.Pine:
@@ -536,7 +582,8 @@ public class MasterEventSystem : MonoBehaviour
 
 
     [System.Serializable]
-    class SaveData {
+    class SaveData
+    {
         public string playerName;
         public int biologyDifficulty;
         public int engineerDifficulty;
@@ -551,7 +598,8 @@ public class MasterEventSystem : MonoBehaviour
         public string flags;
     }
 
-    public void Save() {
+    public void Save()
+    {
         SaveData data = new SaveData();
         data.playerName = MasterEventSystem.Instance.getPlayerName();
         data.biologyDifficulty = MasterEventSystem.Instance.getDifficulty(Roles.Biologist);
@@ -570,7 +618,8 @@ public class MasterEventSystem : MonoBehaviour
         Debug.Log("saving...");
     }
 
-    public void Load() {
+    public void Load()
+    {
         string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
@@ -589,7 +638,8 @@ public class MasterEventSystem : MonoBehaviour
             MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Bonnie, data.pointsBonnie);
             MasterEventSystem.Instance.setAllFlags(data.flags);
         }
-        else {
+        else
+        {
             Debug.Log("load failed");
         }
     }

@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, Tester}
+
+public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, Tester, AscendecyIndex}
 
 public class UIController : MonoBehaviour
 {
     public Flags currentFlagToRemove = Flags.None;
     public Flags currentFlagToRun = Flags.None;
+    // public TMP_Dropdown dropdown;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        // dropdown = FindCompoentOfTYpe
     }
 
     // Update is called once per frame
@@ -95,5 +99,11 @@ public class UIController : MonoBehaviour
     public void markFlag() {
         MasterEventSystem.Instance.removeFlag(currentFlagToRemove);
         MasterEventSystem.Instance.addFlag(currentFlagToRun);
+    }
+
+    public void TestSetLocation(TMP_Dropdown dropdown){
+        Debug.Log("is setting location");
+        MasterEventSystem.Instance.setLocation((Scenes)dropdown.value);
+        MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.None);
     }
 }

@@ -17,6 +17,8 @@ public class DialogueActivator : MonoBehaviour
     // STUFF FOR LUMINA
     [SerializeField] private Scenes[] PlayOnlyAtLocation; // Start menu scene will be default none
     [SerializeField] private bool[] dontMarkCharacterDone;
+    [SerializeField] private bool anySkipCharChecks;
+    [SerializeField] private bool[] skipCharChecks;
     [SerializeField] private int altDiaBoxUsed;
 
     [SerializeField] private DialogueObject backupDialogue;
@@ -86,10 +88,11 @@ public class DialogueActivator : MonoBehaviour
             // setCurrentEvent(MasterEventSystem.Instance.getCurrentEvent());
         }
         if (diaUI.IsOpen) return;
-        if (matchingSceneList[curIndex] == currentEvent && canSpeakNow() && inCorrectLocation()) {
+        if (matchingSceneList[curIndex] == currentEvent && canSpeakNow(curIndex)) {
             var tempCurIndex = curIndex;
             // Debug.Log("temp cur index is: " + tempCurIndex + "while curentIndex is: " + curIndex);
-            while(flags[tempCurIndex] != Flags.None &&  !MasterEventSystem.Instance.checkFlag(flags[tempCurIndex]) ){
+            Debug.Log("whyNoPlay: " + (flags[tempCurIndex] != Flags.None) +   !MasterEventSystem.Instance.checkFlag(flags[tempCurIndex]) + "" + !inCorrectLocation(tempCurIndex));
+            while(!((flags[tempCurIndex] == Flags.None || MasterEventSystem.Instance.checkFlag(flags[tempCurIndex])) && inCorrectLocation(tempCurIndex) && canSpeakNow(tempCurIndex))){
                 tempCurIndex++;
                 if (tempCurIndex >= matchingSceneList.Length || matchingSceneList[tempCurIndex] != currentEvent) {
                     if (playBackup) diaUI.ShowDialogue(backupDialogue, EventInfoTypes.None);
@@ -103,7 +106,8 @@ public class DialogueActivator : MonoBehaviour
         }
     }
 
-    public bool canSpeakNow() {
+    public bool canSpeakNow(int index) {
+        if (anySkipCharChecks && skipCharChecks[index]) return true;
         var unspokenPeople = MasterEventSystem.Instance.getPeopleForEvent(true);
         bool characterFound = false;
         foreach (var person in unspokenPeople) {
@@ -112,13 +116,12 @@ public class DialogueActivator : MonoBehaviour
         return characterFound;
     }
 
-    public bool inCorrectLocation() {
-        if (removeLocationCheck) return true;
-        if (PlayOnlyAtLocation[curIndex] == Scenes.StartMenu) return true;
+    public bool inCorrectLocation(int index) {
+        if (removeLocationCheck || PlayOnlyAtLocation[index] == Scenes.StartMenu) return true;
         var currentLocation = MasterEventSystem.Instance.getLocation();
-        if (PlayOnlyAtLocation[curIndex] == currentLocation) return true;
-        if ((currentLocation == Scenes.EngineeringBay || currentLocation == Scenes.Biodome) &&
-            (PlayOnlyAtLocation[curIndex] == Scenes.EngineeringBay || PlayOnlyAtLocation[curIndex] == Scenes.Biodome)) return true;
+        if (PlayOnlyAtLocation[index] == currentLocation) return true;
+        // if ((currentLocation == Scenes.EngineeringBay || currentLocation == Scenes.Biodome) &&
+        //     (PlayOnlyAtLocation[curIndex] == Scenes.EngineeringBay || PlayOnlyAtLocation[curIndex] == Scenes.Biodome)) return true;
         return false;
     }
 

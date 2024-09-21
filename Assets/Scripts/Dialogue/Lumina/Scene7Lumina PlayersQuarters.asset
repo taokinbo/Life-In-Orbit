@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene7Lumina PlayersQuarters
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: So, {PlayerName}, how are you feeling about your role so far?
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"I\u2019m really liking it. Feels like I\u2019m making a difference.\" "
+    - "\"It\u2019s okay. I\u2019m still figuring things out.\" "
+    - "\"Not what I expected. I\u2019m not sure this is for me.\" "
+    choiceGoTo: 020000000300000004000000
+    points: 000000000000000000000000
+    pointsGoTo: 000000000000000000000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: "That\u2019s great to hear! You\u2019re off to a strong start. Keep
+      up the momentum and you\u2019ll get the hang of things quickly."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Totally understandable. These things take time. You\u2019re doing
+      fine, and it\u2019ll start to feel more natural as you go."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "That\u2019s okay. It\u2019s still early\u2014sometimes it takes a
+      bit of time to find your rhythm. Don\u2019t give up just yet."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
