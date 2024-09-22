@@ -39,7 +39,8 @@ public enum EventInfoTypes
     PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
     Lumina, Hawthorn, Pine, Bonnie, Alien,                  // characters
     NameSelection, JobSelection,                                // selections
-    AlienActivity, AscendecyIndex
+    OpenTablet, OpenDirectory, OpenResearch, OpenExitGame, //tablet
+    AlienActivity, AscendecyIndex, RelationshipUpdated
 };
 
 public enum Roles
@@ -446,6 +447,19 @@ public class MasterEventSystem : MonoBehaviour
         if (currentRole == Roles.Engineer && currentEventInfo.ContainsKey(EventInfoTypes.EngineeringBay)) return EventInfoTypes.EngineeringBay;
         if (currentRole == Roles.Biologist && currentEventInfo.ContainsKey(EventInfoTypes.Biodome)) return EventInfoTypes.Biodome;
         return EventInfoTypes.None;
+    }
+
+    public int getMinigameLevel()
+    {
+        int curScene = (int)currentEvent;
+
+        if (curScene <= 5) return 0;
+        if (curScene <= 9) return 1;
+        if (curScene <= 12) return 2;
+        if (curScene <= 16) return 3;
+        if (curScene <= 19) return 4;
+        else return -1;
+
     }
 
     public bool isSceneDone()
