@@ -24,7 +24,7 @@ public class ButtonImageSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void changeButtonImage()
@@ -32,27 +32,31 @@ public class ButtonImageSwitch : MonoBehaviour
         int selectedPanel = gameController.getSelectedPanel();
         Image curImage = panels[panels.Length - 1 - selectedPanel].GetComponentsInChildren<Image>()[1];
 
+        foreach (Select_Panel panel in panels)
+        {
+            if (panel.PanelID == selectedPanel) 
+            {
+                curImage = panel.GetComponentsInChildren<Image>()[1];
+            }
+        }
+
         var imageComponent = panelImage;
 
-        switch(curImage.sprite.name)
+        switch (curImage.sprite.name)
         {
             case "Panel_Front":
-                Debug.Log("Panel front");
                 imageComponent.sprite = South;
                 break;
             case "Panel_Left":
-                Debug.Log("Panel left");
                 imageComponent.sprite = West;
                 break;
             case "Panel_Back":
-                Debug.Log("Panel back");
                 imageComponent.sprite = North;
                 break;
             case "Panel_Right":
-                Debug.Log("Panel right");
                 imageComponent.sprite = East;
                 break;
-         }
+        }
 
     }
 }
