@@ -8,12 +8,15 @@ public class SolarGameController : MonoBehaviour
     public int selectedPanel = -1;
     private ButtonImageSwitch button;
     private ChangeAngle changeAngle;
+    private int level;
     // Start is called before the first frame update
     void Start()
     {
         panels = FindObjectsOfType<Select_Panel>();
         button = FindObjectOfType<ButtonImageSwitch>();
         changeAngle = FindObjectOfType<ChangeAngle>();
+        level = MasterEventSystem.Instance.getMinigameLevel();
+        setUpLevel(level);
     }
 
     // Update is called once per frame
@@ -42,5 +45,10 @@ public class SolarGameController : MonoBehaviour
     public void changeButtonImage()
     {
         button.changeButtonImage();
+    }
+
+    private void setUpLevel(int level)
+    {
+
     }
 }
