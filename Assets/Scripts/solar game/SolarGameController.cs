@@ -7,11 +7,13 @@ public class SolarGameController : MonoBehaviour
     private Select_Panel[] panels;
     public int selectedPanel = -1;
     private ButtonImageSwitch button;
+    private ChangeAngle changeAngle;
     // Start is called before the first frame update
     void Start()
     {
         panels = FindObjectsOfType<Select_Panel>();
         button = FindObjectOfType<ButtonImageSwitch>();
+        changeAngle = FindObjectOfType<ChangeAngle>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class SolarGameController : MonoBehaviour
     public void setSelectedPanel(int panel)
     {
         selectedPanel = panel;
+        changeAngle.setAngleImageDirection();
     }
 
     public int getSelectedPanel()

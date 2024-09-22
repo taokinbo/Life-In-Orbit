@@ -16,9 +16,11 @@ public class Select_Panel : MonoBehaviour
     private int direction;
     public Image panelImage;
     // Start is called before the first frame update
+    private Select_Panel[] panels;
     void Start()
     {
         if (!gameController) gameController = GetComponent<SolarGameController>();
+        panels = FindObjectsOfType<Select_Panel>();
     }
 
     // Update is called once per frame
@@ -33,9 +35,27 @@ public class Select_Panel : MonoBehaviour
         {
             gameController = GetComponent<SolarGameController>();
         }
+
+        int selectedPanel = gameController.getSelectedPanel();
+        if (selectedPanel != -1) {
+            //turn UI back to normal
+            var panelComponent = panels[panels.Length - 1 - selectedPanel];
+
+            panelComponent.GetComponent<Image>().color = Color.white;
+        }
+
+        //set new selected panel
         gameController.setSelectedPanel(PanelID);
+        setPanelSelectedColor();
     }
 
+    private void setPanelSelectedColor()
+    {
+        int selectedPanel = gameController.getSelectedPanel();
+        var panelComponent = panels[panels.Length - 1 - selectedPanel];
+
+        panelComponent.GetComponent<Image>().color = Color.magenta;
+    }
     public void switchImage()
     {
         direction = (direction + 1) % 4;
