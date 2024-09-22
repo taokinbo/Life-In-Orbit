@@ -150,7 +150,7 @@ MonoBehaviour:
   gameController: {fileID: 0}
   North: {fileID: 21300000, guid: 450ae58598ad8d74a9f286f00e589bda, type: 3}
   East: {fileID: 21300000, guid: 1566ced765b738a44be86b1fda47f397, type: 3}
-  South: {fileID: 21300000, guid: d9c12ea267f744c48b75a32b94ad9325, type: 3}
+  South: {fileID: 21300000, guid: 1a4f8635911ed1f418cfc9cfb653b2ea, type: 3}
   West: {fileID: 21300000, guid: 5082ec1775f6eb0488190a6de11cc59e, type: 3}
   Empty: {fileID: 0}
   panelImage: {fileID: 2684420389169857396}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d9c12ea267f744c48b75a32b94ad9325, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a4f8635911ed1f418cfc9cfb653b2ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

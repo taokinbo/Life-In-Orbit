@@ -65,7 +65,13 @@ public class ChangeAngle : MonoBehaviour
     public void changeAngleImage()
     {
         int selectedPanel = gameController.getSelectedPanel();
-        textBox = panels[panels.Length - 1 - selectedPanel].GetComponentInChildren<TextMeshProUGUI>();
+        foreach (Select_Panel panel in panels) 
+        { 
+            if(panel.PanelID == selectedPanel)
+            {
+                textBox = panel.GetComponentInChildren<TextMeshProUGUI>();
+            }
+        }
 
         direction = (direction + 1) % 5;
 
