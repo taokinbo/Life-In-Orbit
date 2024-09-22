@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene20Bonnie Liked
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "You know, out of everything, I think I\u2019ll miss the research the
+      most. And especially Lilly Pilly\u2019s antics. She may have been a handful,
+      but she made the experience enjoyable."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Anyway, I\u2019ve updated your tablet with the final bits of research
+      from the station. You might find it interesting.\""
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 'Dr. Bonnie glances over some data on her tablet, nodding slightly
+      before looking up at you. '
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0
+  - dialogue: "You\u2019ve done good work, {PlayerName}. I respect what you\u2019ve
+      contributed, though there\u2019s still more to prove if you want to make lasting
+      breakthroughs. "
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "I\u2019ll be keeping an eye on your future efforts. Don\u2019t disappoint."
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"I appreciate that, Dr. Bonnie. I\u2019ll keep striving for more\u2014who
+      knows, in the future, I could surprise you.\""
+    choiceGoTo: 06000000
+    points: 00000000
+    pointsGoTo: 00000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: "We\u2019ll see. Surprise me, and maybe next time I see you, we\u2019ll
+      talk about something groundbreaking."
+    questNumMin: 0
+    questNumMax: 2
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0

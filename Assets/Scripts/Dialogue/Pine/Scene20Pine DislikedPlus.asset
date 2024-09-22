@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene20Pine DislikedPlus
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: 'Gary crosses his arms, his expression hard as he glares at you, clearly
+      fed up. '
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0
+  - dialogue: "{PlayerName}. Guess it\u2019s fitting we meet here at the end of it
+      all. You\u2019ve been nothing but a thorn in my side. Let\u2019s just hope
+      I don\u2019t have to deal with you again."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"Feeling mutual, Gary. I\u2019m sure we\u2019ll cross paths again on the
+      new planet, though.\""
+    choiceGoTo: 03000000
+    points: 00000000
+    pointsGoTo: 00000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: He sneers, turning away.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0
+  - dialogue: "Let\u2019s hope not, if you even pass your evaluation. See you never."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0

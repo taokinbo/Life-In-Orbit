@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene20Hawthorn Dislike
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "{PlayerName}, you\u2019ve made it this far, but I\u2019ve had my doubts
+      about you. You\u2019ve been unpredictable, and that\u2019s made things difficult. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: In the future, you need to work on your consistency.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"I get it. I\u2019ll do better.\""
+    choiceGoTo: 03000000
+    points: 00000000
+    pointsGoTo: 00000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000
+    advanceQuest: 1
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: I hope so.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Captain Hawthorn
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0

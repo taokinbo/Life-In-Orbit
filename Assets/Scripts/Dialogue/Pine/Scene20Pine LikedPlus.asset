@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene20Pine LikedPlus
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: Gary leans back with a broad grin, crossing his arms as he gives you
+      a playful look.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0
+  - dialogue: "Well, look who it is! {PlayerName}, my closest friend through it all.
+      Couldn\u2019t have asked for a better companion. We pulled through some tough
+      challenges, didn\u2019t we?"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"Yeah, Gary. We made a pretty good team. Who knows what kind of stuff we\u2019ll
+      could get into next on the new planet.\""
+    choiceGoTo: 03000000
+    points: 00000000
+    pointsGoTo: 00000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 00000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: He pats you on the shoulder, smirking.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0
+  - dialogue: "Damn right! Don\u2019t think this is the last time we team up\u2014there\u2019s
+      always another adventure around the corner."
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0

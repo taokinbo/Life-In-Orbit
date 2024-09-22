@@ -62,6 +62,7 @@ public enum Flags
     BonnieHint, BonnieNoHint,
     AiHigh, AiLow, AiHighHawthorn, AiLowHawthorn, AiHighBonnie, AiLowBonnie,
     PineHint, PineNoHint,
+    AIHighLikePlus, AIHighLike, AIHighDislike, AIHighDislikePlus, AILowLikePlus, AILowLike, AILowDislike, AILowDislikePlus,
 }
 
 public class MasterEventSystem : MonoBehaviour
@@ -508,6 +509,17 @@ public class MasterEventSystem : MonoBehaviour
         OnEventInfoChnaged?.Invoke(currentEvent);
     }
 
+    private void removeAIRelationshipFlags() {
+        flags.Remove(Flags.AIHighDislike);
+        flags.Remove(Flags.AIHighDislike);
+        flags.Remove(Flags.AIHighLikePlus);
+        flags.Remove(Flags.AIHighLike);
+        flags.Remove(Flags.AILowDislike);
+        flags.Remove(Flags.AILowDislike);
+        flags.Remove(Flags.AILowLikePlus);
+        flags.Remove(Flags.AILowLike);
+    }
+
     public void changePoints(EventInfoTypes character, int pointChange)
     {
         switch (character)
@@ -516,19 +528,33 @@ public class MasterEventSystem : MonoBehaviour
                 Debug.Log("hawthorn points changed from: " + pointsHawthorn);
                 pointsHawthorn += pointChange;
                 Debug.Log("-> to " + pointsHawthorn);
+                removeAIRelationshipFlags();
+                bool isFlagHigh = checkFlag(Flags.AiHigh);
                 if (pointsHawthorn > 0)
                 {
                     removeFlag(Flags.HawthornDislike);
                     removeFlag(Flags.HawthornDislikePlus);
                     addFlag(Flags.HawthornLike);
-                    if (pointsHawthorn > extreamRelationship) flags.Add(Flags.HawthornLikePlus);
+                    if (pointsHawthorn > extreamRelationship) {
+                        flags.Add(Flags.HawthornLikePlus);
+                        flags.Add(isFlagHigh? Flags.AIHighLikePlus : Flags.AILowLikePlus);
+                    }
+                    else flags.Remove(Flags.HawthornLikePlus);
+                    flags.Add(isFlagHigh? Flags.AIHighLike : Flags.AILowLike);
+
+
                 }
                 else
                 {
                     removeFlag(Flags.HawthornLike);
                     removeFlag(Flags.HawthornLikePlus);
                     addFlag(Flags.HawthornDislike);
-                    if (pointsHawthorn < -1 * extreamRelationship) flags.Add(Flags.HawthornDislikePlus);
+                    if (pointsHawthorn < -1 * extreamRelationship) {
+                        flags.Add(Flags.HawthornDislikePlus);
+                        flags.Add(isFlagHigh? Flags.AIHighDislikePlus : Flags.AILowDislikePlus);
+                    }
+                    else flags.Remove(Flags.HawthornDislikePlus);
+                    flags.Add(isFlagHigh? Flags.AIHighDislike : Flags.AILowDislike);
 
                 }
                 break;
@@ -544,6 +570,7 @@ public class MasterEventSystem : MonoBehaviour
                     flags.Add(Flags.PineHint);
                     addFlag(Flags.PineLike);
                     if (pointsPine > extreamRelationship) flags.Add(Flags.PineLikePlus);
+                    else flags.Remove(Flags.PineLikePlus);
                 }
                 else
                 {
@@ -553,6 +580,7 @@ public class MasterEventSystem : MonoBehaviour
                     flags.Add(Flags.PineNoHint);
                     addFlag(Flags.PineDislike);
                     if (pointsPine < -1 * extreamRelationship) flags.Add(Flags.PineDislikePlus);
+                    else flags.Remove(Flags.PineDislikePlus);
                 }
                 break;
             case EventInfoTypes.Bonnie:
@@ -567,6 +595,7 @@ public class MasterEventSystem : MonoBehaviour
                     flags.Add(Flags.BonnieHint);
                     addFlag(Flags.BonnieLike);
                     if (pointsBonnie > extreamRelationship) flags.Add(Flags.BonnieLikePlus);
+                    else flags.Remove(Flags.BonnieLikePlus);
                 }
                 else
                 {
@@ -576,6 +605,7 @@ public class MasterEventSystem : MonoBehaviour
                     flags.Add(Flags.BonnieNoHint);
                     addFlag(Flags.BonnieDislike);
                     if (pointsBonnie < -1 * extreamRelationship) flags.Add(Flags.BonnieDislikePlus);
+                    else flags.Remove(Flags.BonnieDislikePlus);
                 }
                 break;
             default:
