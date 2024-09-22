@@ -50,10 +50,12 @@ MonoBehaviour:
   dialogueObjects:
   - {fileID: 11400000, guid: 2c0c432100000de4ca63c1fbdd684039, type: 2}
   - {fileID: 11400000, guid: 173795c0c00ca8149b95cf3eebd1e1d1, type: 2}
-  matchingSceneList: 060000000d000000
-  OnSceneLoad: 0101
-  flags: 0000000000000000
-  PlayOnlyAtLocation: 0000000000000000
+  - {fileID: 11400000, guid: 6244d7e6040413444b75fc1b6e491e0b, type: 2}
+  - {fileID: 11400000, guid: be94d3ed5c879cf469a0eb333437cc21, type: 2}
+  matchingSceneList: 060000000d0000001100000011000000
+  OnSceneLoad: 01010000
+  flags: 00000000000000000a00000009000000
+  PlayOnlyAtLocation: 00000000000000000000000000000000
   dontMarkCharacterDone: 00000000
   anySkipCharChecks: 0
   skipCharChecks: 

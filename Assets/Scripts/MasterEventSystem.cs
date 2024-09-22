@@ -59,7 +59,8 @@ public enum Flags
     BonnieAskAlien, BonnieAskHawthorn, BonnieAskPine,
     HawthornAskPine, HawthornAskAlien, HawthornAskBonnie,
     HawthornLikePlus, HawthornDislikePlus, PineLikePlus, PineDislikePlus, BonnieLikePlus, BonnieDislikePlus,
-    BonnieHint, BonnieNoHint
+    BonnieHint, BonnieNoHint,
+    AiHigh, AiLow, AiHighHawthorn, AiLowHawthorn, AiHighBonnie, AiLowBonnie,
 }
 
 public class MasterEventSystem : MonoBehaviour
@@ -289,7 +290,6 @@ public class MasterEventSystem : MonoBehaviour
             {EventInfoTypes.Hallway, true },
             {EventInfoTypes.Pine, true },
             {EventInfoTypes.Hawthorn, true },
-            {EventInfoTypes.Lumina, true },
             {EventInfoTypes.Bonnie, true },
             {EventInfoTypes.CommandCenter, true },
             {EventInfoTypes.PlayersQuarters, true },
@@ -371,6 +371,14 @@ public class MasterEventSystem : MonoBehaviour
 
         flags.Add(newFlag);
         Debug.Log("Flag Added: " + newFlag);
+        if (newFlag == Flags.SupportBonnie) {
+            if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighBonnie);
+            else flags.Add(Flags.AiLowBonnie);
+        }
+        if (newFlag == Flags.SupportHawthorn) {
+            if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighHawthorn);
+            else flags.Add(Flags.AiLowHawthorn);
+        }
         eventTypeCleared(EventInfoTypes.None);
     }
 

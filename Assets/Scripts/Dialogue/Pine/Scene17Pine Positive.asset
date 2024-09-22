@@ -1,0 +1,340 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene17Pine Positive
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "Hey, {PlayerName}, just wrapped up your task, huh? Looks like you
+      handled it pretty well. You\u2019re making me nervous\u2014might actually have
+      some competition!"
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"Careful, I\u2019m coming for that top spot.\""
+    - "\"I\u2019m just doing my thing.\""
+    - '"Nervous? You should be."'
+    choiceGoTo: 020000000300000004000000
+    points: 0100000000000000ffffffff
+    pointsGoTo: 080000000800000008000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: "Now we\u2019re talking! A little friendly competition never hurt anyone.
+      Just don\u2019t get too cocky, I am definitely going to be at the top tomorrow."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 5
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "\u2018Just doing your thing,\u2019 huh? Well, your \u2018thing\u2019
+      seems to be working. Don\u2019t get too comfortable though, I\u2019m still
+      ahead."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 5
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Oh, I\u2019m shaking in my boots! But don\u2019t worry\u2014I\u2019ll
+      still be here at the top when the dust settles."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"We\u2019ll see about that.\""
+    - "\"I\u2019m just getting started.\" "
+    - '"You might want to start packing your things."'
+    choiceGoTo: 060000000700000008000000
+    points: 0100000000000000ffffffff
+    pointsGoTo: 080000000800000008000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: "Yeah, yeah. Just don\u2019t cry when I leave you in the dust tomorrow."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 9
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "That\u2019s the spirit! If you keep this up, I might actually have
+      to try tomorrow."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 9
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Packing my things? Please, I live here at the top. You\u2019re just
+      visiting."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - "\"We\u2019ll see who\u2019s laughing tomorrow.\""
+    - "\"Let\u2019s see if you can back up all that talk.\""
+    - '"Enjoy the top while you can."'
+    choiceGoTo: 0a0000000b0000000c000000
+    points: 0100000000000000ffffffff
+    pointsGoTo: 080000000800000008000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 000000000000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: Ha! I like your style, {PlayerName}. Bring your A-game tomorrow!
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 13
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Back it up? Please. Just make sure you keep up.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: 13
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "You talk big, but I\u2019m staying right where I am\u2014at the top."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Gary Pine
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Gary walks away, still grinning.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0

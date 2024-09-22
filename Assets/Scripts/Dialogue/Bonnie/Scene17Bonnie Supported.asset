@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene17Bonnie Supported
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "Decent work on your last task. Pilly has created some chaos but you\u2019re
+      finding your way around out. Nothing groundbreaking, but you didn\u2019t make
+      a mess of things either."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "I\u2019ve also updated your tablet with the latest data on sustainability.
+      Should be useful for your final task tomorrow."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: And thanks for having my back earlier. Captain Hawthorn is always so
+      fixated on immediate results, but you understand the bigger picture.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - '"You deserve the support. Your research is vital."'
+    - "\"Don\u2019t mention it. I just didn\u2019t want you all to keep arguing.\""
+    choiceGoTo: 0400000005000000
+    points: 01000000ffffffff
+    pointsGoTo: 0900000009000000
+    hasFlag: 0
+    flags: 
+    isDisabled: 0000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: Finally, someone who gets it. Keep that in mind for your task tomorrow.
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: 6
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Fair enough. Either way, it was appreciated.
+    questNumMin: 0
+    questNumMax: 2
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Anyway, tomorrow\u2019s the big day. Don\u2019t let Hawthorn scare
+      you too much. Everything should be fine."
+    questNumMin: 0
+    questNumMax: 2
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 1
+    chatSprite: 
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
