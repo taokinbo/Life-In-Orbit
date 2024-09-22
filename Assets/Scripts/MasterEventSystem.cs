@@ -58,7 +58,8 @@ public enum Flags
     PineAskHawthorn, PineAskLumina, PineAskBonnie,
     BonnieAskAlien, BonnieAskHawthorn, BonnieAskPine,
     HawthornAskPine, HawthornAskAlien, HawthornAskBonnie,
-    HawthornLikePlus, HawthornDislikePlus, PineLikePlus, PineDislikePlus, BonnieLikePlus, BonnieDislikePlus
+    HawthornLikePlus, HawthornDislikePlus, PineLikePlus, PineDislikePlus, BonnieLikePlus, BonnieDislikePlus,
+    BonnieHint, BonnieNoHint
 }
 
 public class MasterEventSystem : MonoBehaviour
