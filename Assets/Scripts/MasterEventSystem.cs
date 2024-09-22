@@ -39,7 +39,8 @@ public enum EventInfoTypes
     PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome,      // settings
     Lumina, Hawthorn, Pine, Bonnie, Alien,                  // characters
     NameSelection, JobSelection,                                // selections
-    AlienActivity, AscendecyIndex
+    OpenTablet, OpenDirectory, OpenResearch, OpenExitGame, //tablet
+    AlienActivity, AscendecyIndex, RelationshipUpdated
 };
 
 public enum Roles
