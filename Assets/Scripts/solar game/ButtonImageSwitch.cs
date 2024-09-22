@@ -32,15 +32,25 @@ public class ButtonImageSwitch : MonoBehaviour
         int selectedPanel = gameController.getSelectedPanel();
         Image curImage = panels[panels.Length - 1 - selectedPanel].GetComponentsInChildren<Image>()[1];
 
-        switch(curImage.name)
+        var imageComponent = panelImage;
+
+        switch(curImage.sprite.name)
         {
             case "Panel_Front":
+                Debug.Log("Panel front");
+                imageComponent.sprite = South;
                 break;
             case "Panel_Left":
+                Debug.Log("Panel left");
+                imageComponent.sprite = West;
                 break;
             case "Panel_Back":
+                Debug.Log("Panel back");
+                imageComponent.sprite = North;
                 break;
             case "Panel_Right":
+                Debug.Log("Panel right");
+                imageComponent.sprite = East;
                 break;
          }
 
