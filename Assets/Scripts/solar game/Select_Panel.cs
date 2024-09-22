@@ -36,25 +36,32 @@ public class Select_Panel : MonoBehaviour
             gameController = GetComponent<SolarGameController>();
         }
 
-        int selectedPanel = gameController.getSelectedPanel();
-        if (selectedPanel != -1) {
-            //turn UI back to normal
-            var panelComponent = panels[panels.Length - 1 - selectedPanel];
+        //int selectedPanel = gameController.getSelectedPanel();
+        //if (selectedPanel != -1)
+        //{
+        //    //turn UI back to normal
+        //    //var panelComponent = panels[panels.Length - 1 - selectedPanel];
 
-            panelComponent.GetComponent<Image>().color = Color.white;
-        }
+        //    GetComponent<Image>().color = Color.white;
+        //}
 
         //set new selected panel
         gameController.setSelectedPanel(PanelID);
         setPanelSelectedColor();
     }
 
+    public void unSelect()
+    {
+        Debug.Log("unslect is called");
+        GetComponent<Image>().color = Color.white;
+    }
+
     private void setPanelSelectedColor()
     {
-        int selectedPanel = gameController.getSelectedPanel();
-        var panelComponent = panels[panels.Length - 1 - selectedPanel];
+        //int selectedPanel = gameController.getSelectedPanel();
+        //var panelComponent = panels[panels.Length - 1 - selectedPanel];
 
-        panelComponent.GetComponent<Image>().color = Color.magenta;
+        GetComponent<Image>().color = Color.magenta;
     }
     public void switchImage()
     {

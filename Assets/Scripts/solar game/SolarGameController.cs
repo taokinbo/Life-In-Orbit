@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
 
 public class SolarGameController : MonoBehaviour
 {
@@ -15,8 +16,13 @@ public class SolarGameController : MonoBehaviour
         panels = FindObjectsOfType<Select_Panel>();
         button = FindObjectOfType<ButtonImageSwitch>();
         changeAngle = FindObjectOfType<ChangeAngle>();
+<<<<<<< Updated upstream
         level = MasterEventSystem.Instance.getMinigameLevel();
         setUpLevel(level);
+=======
+        //int level = MasterEventSystem.Instance.getMinigameLevel();
+        //setUpLevel(level);
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -29,6 +35,11 @@ public class SolarGameController : MonoBehaviour
     {
         selectedPanel = panel;
         changeAngle.setAngleImageDirection();
+        foreach (var curPanel in panels)
+        {
+            if (curPanel.PanelID != selectedPanel) curPanel.unSelect();
+        }
+
     }
 
     public int getSelectedPanel()
@@ -39,7 +50,10 @@ public class SolarGameController : MonoBehaviour
     public void changePanelImage()
     {
         if (selectedPanel == -1) return;
-        panels[panels.Length - 1 - selectedPanel].switchImage();
+        foreach (var panel in panels)
+        {
+            if (panel.PanelID == selectedPanel) panel.switchImage();
+        }
     }
 
     public void changeButtonImage()
@@ -47,8 +61,29 @@ public class SolarGameController : MonoBehaviour
         button.changeButtonImage();
     }
 
+<<<<<<< Updated upstream
     private void setUpLevel(int level)
     {
 
     }
+=======
+    /*
+    private void setUpLevel(int level)
+    {
+        if(level < 1)
+        {
+            for(int i = 3; i < panels.Length; i++)
+            {
+                panels[i].GetComponent<Button>().interactable = false;
+            }
+        }
+        else if (level < 2)
+        {
+            for(int i = 6; i < panels.Length; i++)
+            {
+                panels[i].GetComponent<Button>().interactable = false;
+            }
+        }
+    }*/
+>>>>>>> Stashed changes
 }

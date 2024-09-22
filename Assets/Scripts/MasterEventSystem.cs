@@ -449,6 +449,10 @@ public class MasterEventSystem : MonoBehaviour
         return EventInfoTypes.None;
     }
 
+<<<<<<< Updated upstream
+=======
+    /*
+>>>>>>> Stashed changes
     public int getMinigameLevel()
     {
         int curScene = (int)currentEvent;
@@ -459,7 +463,11 @@ public class MasterEventSystem : MonoBehaviour
         if (curScene <= 16) return 3;
         if (curScene <= 19) return 4;
         else return -1;
+<<<<<<< Updated upstream
     }
+=======
+    }*/
+>>>>>>> Stashed changes
 
     public bool isSceneDone()
     {
