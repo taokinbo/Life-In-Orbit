@@ -26,13 +26,19 @@ public class ChangeAngle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void setAngleImageDirection()
     {
         int selectedPanel = gameController.getSelectedPanel();
-        textBox = panels[panels.Length - 1 - selectedPanel].GetComponentInChildren<TextMeshProUGUI>();
+        foreach (Select_Panel panel in panels)
+        {
+            if (panel.PanelID == selectedPanel)
+            {
+                textBox = panel.GetComponentInChildren<TextMeshProUGUI>();
+            }
+        }
 
         switch (textBox.text)
         {
@@ -65,15 +71,24 @@ public class ChangeAngle : MonoBehaviour
     public void changeAngleImage()
     {
         int selectedPanel = gameController.getSelectedPanel();
-        foreach (Select_Panel panel in panels) 
-        { 
-            if(panel.PanelID == selectedPanel)
+        foreach (Select_Panel panel in panels)
+        {
+            if (panel.PanelID == selectedPanel)
             {
                 textBox = panel.GetComponentInChildren<TextMeshProUGUI>();
             }
         }
 
+        int level = MasterEventSystem.Instance.getMinigameLevel();
+
         direction = (direction + 1) % 5;
+        if (level == 0 || level == 1)
+        {
+            if(direction == 1 || direction == 3)
+            {
+                direction++;
+            }
+        }
 
         var imageComponent = panelImage;
 

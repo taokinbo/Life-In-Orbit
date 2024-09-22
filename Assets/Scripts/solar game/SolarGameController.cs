@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class SolarGameController : MonoBehaviour
 {
@@ -9,17 +9,14 @@ public class SolarGameController : MonoBehaviour
     public int selectedPanel = -1;
     private ButtonImageSwitch button;
     private ChangeAngle changeAngle;
-    private int level;
     // Start is called before the first frame update
     void Start()
     {
         panels = FindObjectsOfType<Select_Panel>();
         button = FindObjectOfType<ButtonImageSwitch>();
         changeAngle = FindObjectOfType<ChangeAngle>();
-        level = MasterEventSystem.Instance.getMinigameLevel();
+        int level = MasterEventSystem.Instance.getMinigameLevel();
         setUpLevel(level);
-        //int level = MasterEventSystem.Instance.getMinigameLevel();
-        //setUpLevel(level);
     }
 
     // Update is called once per frame
@@ -58,22 +55,28 @@ public class SolarGameController : MonoBehaviour
         button.changeButtonImage();
     }
 
-    /*
+    
     private void setUpLevel(int level)
     {
         if(level < 1)
         {
-            for(int i = 3; i < panels.Length; i++)
+            foreach(var panel in panels)
             {
-                panels[i].GetComponent<Button>().interactable = false;
+                if(panel.PanelID > 2)
+                {
+                    panel.GetComponent<Button>().interactable = false;
+                }
             }
         }
         else if (level < 2)
         {
-            for(int i = 6; i < panels.Length; i++)
+            foreach (var panel in panels)
             {
-                panels[i].GetComponent<Button>().interactable = false;
+                if (panel.PanelID > 5)
+                {
+                    panel.GetComponent<Button>().interactable = false;
+                }
             }
         }
-    }*/
+    }
 }
