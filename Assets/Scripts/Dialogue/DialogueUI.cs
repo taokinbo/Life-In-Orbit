@@ -15,6 +15,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text[] options;
     [SerializeField] private TMP_Text[] carots;
 
+    [SerializeField] private GameObject chatSpriteGO;
     [SerializeField] private Animator chatSprite;
     [SerializeField] private Image spriteImage;
     [SerializeField] private Transform spriteTransform;
@@ -97,6 +98,7 @@ public class DialogueUI : MonoBehaviour
 
         IsOpen = true;
         dialogueBox.SetActive(true);
+        chatSpriteGO.SetActive(true);
         // curChoice = 0;
         points = 0;
         StartCoroutine(StepThroughDialogue(dialogueObject, eventToClear));
@@ -272,6 +274,7 @@ public class DialogueUI : MonoBehaviour
         SetSprite("None");
         dialogueBox.SetActive(false);
         nameBox.SetActive(false);
+        chatSpriteGO.SetActive(false);
         curChoice = 0;
         textLabel.text = string.Empty;
         for (int i = 0; i < options.Length; i++){

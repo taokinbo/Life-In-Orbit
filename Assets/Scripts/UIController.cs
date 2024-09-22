@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, Tester, AscendecyIndex}
+public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, DialogueUI, AscendecyIndex}
 
 public class UIController : MonoBehaviour
 {
@@ -31,29 +31,34 @@ public class UIController : MonoBehaviour
     {
         MasterEventSystem.Instance.setLocation(Scenes.PlayersQuarters);
         SceneManager.LoadScene((int)Scenes.PlayersQuarters);
+        SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
     }
 
     public void ChangeSceneToHallway()
     {
         MasterEventSystem.Instance.setLocation(Scenes.Hallway);
         SceneManager.LoadScene((int)Scenes.Hallway);
+        SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
     }
 
     public void ChangeSceneToCommandCenter()
     {
         MasterEventSystem.Instance.setLocation(Scenes.CommandCenter);
         SceneManager.LoadScene((int)Scenes.CommandCenter);
+        SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
     }
     public void ChangeSceneToEngineeringBay()
     {
         MasterEventSystem.Instance.setLocation(Scenes.EngineeringBay);
         SceneManager.LoadScene((int)Scenes.EngineeringBay);
+        SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
     }
 
     public void ChangeSceneToBiodome()
     {
         MasterEventSystem.Instance.setLocation(Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.Biodome);
+        SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
     }
 
     public void newGame() {
@@ -89,7 +94,7 @@ public class UIController : MonoBehaviour
 
     public void testerFunc() {
         MasterEventSystem.Instance.setLocation(Scenes.Biodome);
-        SceneManager.LoadScene((int)Scenes.Tester);
+        SceneManager.LoadScene((int)Scenes.DialogueUI);
     }
 
     public void cheaterFunc() {

@@ -134,6 +134,28 @@ public class MasterEventSystem : MonoBehaviour
     public void setLocation(Scenes location)
     {
         curentLocation = location;
+        EventInfoTypes roomEvent;
+        switch (location) {
+            case Scenes.PlayersQuarters:
+                roomEvent = EventInfoTypes.PlayersQuarters;
+                break;
+            case Scenes.Hallway:
+                roomEvent = EventInfoTypes.Hallway;
+                break;
+            case Scenes.CommandCenter:
+                roomEvent = EventInfoTypes.CommandCenter;
+                break;
+            case Scenes.EngineeringBay:
+                roomEvent = EventInfoTypes.EngineeringBay;
+                break;
+            case Scenes.Biodome:
+                roomEvent = EventInfoTypes.Biodome;
+                break;
+            default:
+                roomEvent = EventInfoTypes.None;
+                break;
+        }
+        eventTypeCleared(roomEvent);
         Save();
     }
 
@@ -165,7 +187,7 @@ public class MasterEventSystem : MonoBehaviour
         currentDict = new Dictionary<EventInfoTypes, bool>
         {
             { EventInfoTypes.CommandCenter, true },
-            { EventInfoTypes.JobSelection, true },
+            // { EventInfoTypes.JobSelection, true },
             { EventInfoTypes.Lumina, true},
         };
         eventInfo[Events.Act1Scene3] = currentDict;
@@ -430,6 +452,7 @@ public class MasterEventSystem : MonoBehaviour
         if (isSceneDone())
         {
             currentEvent++;
+            setLocation(curentLocation);
             Save();
         }
         else
