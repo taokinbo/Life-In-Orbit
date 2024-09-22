@@ -20,6 +20,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private Image spriteImage;
     [SerializeField] private Transform spriteTransform;
     [SerializeField] private Animator backgroundSprite;
+    private CharSpriteController charController;
 
     private string curSprite = "None";
     private string curBackground = "None";
@@ -49,6 +50,7 @@ public class DialogueUI : MonoBehaviour
 
 
     private void Start(){
+        charController = chatSpriteGO.GetComponent<CharSpriteController>();
         historyQuest = curQuest;
         StyleSelect(-1);
 

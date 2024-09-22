@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: f7e2057458f639c40b7f528f9042eeb7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Empty: {instanceID: 0}
+  - Alien_neutral: {instanceID: 0}
+  - Alien_laugh: {instanceID: 0}
+  - Alien_suprise: {instanceID: 0}
+  - Captain_neutral: {instanceID: 0}
+  - Captain_speak: {instanceID: 0}
+  - Captain_angry: {instanceID: 0}
+  - Captain_dissapointed: {instanceID: 0}
+  - Captain_happy: {instanceID: 0}
+  - Captain_suprise: {instanceID: 0}
+  - Doc_neutral: {instanceID: 0}
+  - Doc_speak: {instanceID: 0}
+  - Doc_angry: {instanceID: 0}
+  - Doc_dissapointed: {instanceID: 0}
+  - Doc_happy: {instanceID: 0}
+  - Doc_suprise: {instanceID: 0}
+  - Rival_neutral: {instanceID: 0}
+  - Rival_speak: {instanceID: 0}
+  - Rival_angry: {instanceID: 0}
+  - Rival_dissapointed: {instanceID: 0}
+  - Rival_happy: {instanceID: 0}
+  - Rival_suprise: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
