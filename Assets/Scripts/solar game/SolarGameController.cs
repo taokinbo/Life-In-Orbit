@@ -16,13 +16,10 @@ public class SolarGameController : MonoBehaviour
         panels = FindObjectsOfType<Select_Panel>();
         button = FindObjectOfType<ButtonImageSwitch>();
         changeAngle = FindObjectOfType<ChangeAngle>();
-<<<<<<< Updated upstream
         level = MasterEventSystem.Instance.getMinigameLevel();
         setUpLevel(level);
-=======
         //int level = MasterEventSystem.Instance.getMinigameLevel();
         //setUpLevel(level);
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -61,12 +58,6 @@ public class SolarGameController : MonoBehaviour
         button.changeButtonImage();
     }
 
-<<<<<<< Updated upstream
-    private void setUpLevel(int level)
-    {
-
-    }
-=======
     /*
     private void setUpLevel(int level)
     {
@@ -85,5 +76,4 @@ public class SolarGameController : MonoBehaviour
             }
         }
     }*/
->>>>>>> Stashed changes
 }
