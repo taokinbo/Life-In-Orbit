@@ -123,7 +123,7 @@ public class RelationshipManager : MonoBehaviour
                 "You’re reliable and competent, and Captain Hawthorn knows he can count on you to get the job done.\r\n";
         else if (captainHawthornRelationship >= -6)
             return "Unreliable Cadet\n" +
-                "Captain Hawthorn isn’t sure he can trust you—your unpredictability makes working together tense.\r\n";
+                "Captain Hawthorn isn’t sure he can trust you— your unpredictability makes working together tense.\r\n";
         else
             return "Loose Cannon\n" +
                 "Captain Hawthorn sees you as unpredictable and a danger to the station’s stability.";

@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.IO.Pipes;
+using System.Linq;
+using TMPro;
+using TreeEditor;
+using UnityEngine;
 
 public class AscendancyIndexManager : MonoBehaviour
 {
@@ -66,5 +72,10 @@ public class AscendancyIndexManager : MonoBehaviour
     {
         ascendancyIndex += score;
         ascendancyIndex = Mathf.Clamp(ascendancyIndex, 0, 100);
+    }
+
+    public float GetAscendancyIndex()
+    {
+        return ascendancyIndex;
     }
 }
