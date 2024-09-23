@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3594363890470460375}
   - component: {fileID: 5204604199364521095}
   - component: {fileID: 1083681924374267362}
+  - component: {fileID: 7634116054687414113}
   m_Layer: 5
   m_Name: Cell
   m_TagString: Untagged
@@ -154,6 +155,23 @@ MonoBehaviour:
   West: {fileID: 21300000, guid: 5082ec1775f6eb0488190a6de11cc59e, type: 3}
   Empty: {fileID: 0}
   panelImage: {fileID: 2684420389169857396}
+--- !u!114 &7634116054687414113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857899604878193557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d63545c084a9c4f8d257d99418e1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelID: 0
+  currentAngle: 0
+  currentOrientation: 0
+  availableAngles: 
+  availableOrientation: 
 --- !u!1 &7838903377168268508
 GameObject:
   m_ObjectHideFlags: 0
