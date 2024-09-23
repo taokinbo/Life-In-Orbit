@@ -18,6 +18,7 @@ public class SolarGameController : MonoBehaviour
     private MiniGame1LevelData levelData;
     private int level;
     private int submissions;
+    public MiniGame1Manager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -193,19 +194,50 @@ public class SolarGameController : MonoBehaviour
                 {
                     panel.GetComponent<Image>().color = Color.red;
                     allCorrect = false;
+
+                    if(level <= 2)
+                    {
+                        string feedback;
+                        if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle && SolarPanels[panel.PanelID].currentOrientation != solution[panel.PanelID].correctOrientation)
+                        {
+                            feedback = "Panel " + panel.PanelID + 1 + " has an incorrect angle and orientation";
+                        }
+                        else if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle)
+                        {
+                            feedback = "Panel " + panel.PanelID + 1 + " has an incorrect angle";
+                        }
+                        else
+                        {
+                            feedback = "Panel " + panel.PanelID + 1 + " has an incorrect orientation";
+                        }
+
+                        manager.SendFeedbackToDialogue(feedback);
+                    }
+
                 }
             }
         }
 
-        if(submissions >= levelData.maxSubmissions)
+        if (levelData.maxSubmissions != -1 && submissions >= levelData.maxSubmissions && !allCorrect)
         {
-            if (!allCorrect)
+            //If we've run out of submissions and not all correct, disable and complete
+            foreach(var panel in panels)
             {
-                foreach(var panel in panels)
-                {
-                    panel.GetComponent<Button>().interactable = false;
-                }
-
+                panel.GetComponent<Button>().interactable = false;
+            }
+            manager.AwardStarRating(false, level, submissions);
+            manager.OnMiniGameComplete();
+        }
+        else
+        {
+            if (allCorrect)
+            {
+                manager.AwardStarRating(true, level, submissions);
+                manager.OnMiniGameComplete();
+            }
+            else
+            {
+                manager.UpdateSubmissionUI(submissions, levelData.maxSubmissions);
             }
         }
     }
