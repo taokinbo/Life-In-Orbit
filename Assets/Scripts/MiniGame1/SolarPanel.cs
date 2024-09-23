@@ -6,7 +6,7 @@ public class SolarPanel : MonoBehaviour
 	public int PanelID;
 
 	//Enums for the available angles and orientations
-	public enum PanelAngle { Angle45 = 45, Angle90 = 90, Angle180 = 180, Angle30 = 30, Angle60 = 60, Angle120 = 120 }
+	public enum PanelAngle { Angle45 = 45, Angle90 = 90, Angle30 = 30, Angle60 = 60, Angle0 = 0 }
 	public enum PanelOrientation { North, East, South, West }
 
 	//Assume that the arrow click system updates these values
@@ -40,4 +40,7 @@ public class SolarPanel : MonoBehaviour
 	public void SetOrientation(PanelOrientation newOrientation){
 		currentOrientation = newOrientation;
 	}
+
+	public PanelAngle GetAngle() {  return currentAngle; }
+	public PanelOrientation GetOrientation() { return currentOrientation; }
 }

@@ -97,21 +97,26 @@ public class ChangeAngle : MonoBehaviour
             case 0:
                 panelImage.sprite = Angle0;
                 changeText("0");
+                gameController.SetSolarPanelAngle(SolarPanel.PanelAngle.Angle0, selectedPanel);
                 break;
             case 1:
                 panelImage.sprite = Angle30;
+                gameController.SetSolarPanelAngle(SolarPanel.PanelAngle.Angle30, selectedPanel);
                 changeText("30");
                 break;
             case 2:
                 panelImage.sprite = Angle45;
+                gameController.SetSolarPanelAngle(SolarPanel.PanelAngle.Angle45, selectedPanel);
                 changeText("45");
                 break;
             case 3:
                 panelImage.sprite = Angle60;
+                gameController.SetSolarPanelAngle(SolarPanel.PanelAngle.Angle60, selectedPanel);
                 changeText("60");
                 break;
             case 4:
                 panelImage.sprite = Angle90;
+                gameController.SetSolarPanelAngle(SolarPanel.PanelAngle.Angle90, selectedPanel);
                 changeText("90");
                 break;
             default:

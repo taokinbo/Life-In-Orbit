@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class MiniGame1Manager : MonoBehaviour
 {
     // List to store all solar panels in the grid
     public List<SolarPanel> panels; // Reference to the solar panels in the scene
 	public MiniGame1LevelData currentLevelData; //Data for the current level
+    public Sprite Zero;
+    public Sprite One;
+    public Sprite Two;
+    public Sprite Three;
 
 	private int submissionCount = 0; //Track how many times the player submits
 
@@ -67,40 +72,40 @@ public class MiniGame1Manager : MonoBehaviour
         return null;
     }
 
-    private void AwardStarRating(bool completed)
+    public void AwardStarRating(bool completed, int level, int submissions, Image image)
     {
         int starRating = 0;
 
         if (completed)
         {
-            if (currentLevelData.levelNumber == 0)
+            if (level == 0)
             {
-                if (submissionCount <= 3) { starRating  = 3; }
-                else if (submissionCount <= 6 && submissionCount > 3) { starRating = 2; }
+                if (submissions <= 3) { starRating  = 3; }
+                else if (submissions <= 6 && submissions > 3) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber == 1)
+            if (level == 1)
             {
-                if (submissionCount <= 2) { starRating = 3; }
-                else if (submissionCount == 3 || submissionCount == 4) { starRating = 2; }
+                if (submissions <= 2) { starRating = 3; }
+                else if (submissionCount == 3 || submissions == 4) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber == 2)
+            if (level == 2)
             {
-                if (submissionCount <= 2) { starRating = 3; }
-                else if (submissionCount == 3) { starRating = 2; }
+                if (submissions <= 2) { starRating = 3; }
+                else if (submissions == 3) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber == 3)
+            if (level == 3)
             {
-                if (submissionCount <= 2) { starRating = 3; }
-                else if (submissionCount == 3) { starRating = 2; }
+                if (submissions <= 2) { starRating = 3; }
+                else if (submissions == 3) { starRating = 2; }
                 else { starRating = 1; }
             }
-            if (currentLevelData.levelNumber == 4)
+            if (level == 4)
             {
-                if (submissionCount == 1) { starRating = 3; }
-                else if (submissionCount == 2) { starRating = 2; }
+                if (submissions == 1) { starRating = 3; }
+                else if (submissions == 2) { starRating = 2; }
                 else { starRating = 1; }
             }
         }
@@ -109,8 +114,8 @@ public class MiniGame1Manager : MonoBehaviour
             starRating = 0;
         }
 
-        Debug.Log("Awarded " + starRating + " star(s) for this levek.");
-        UpdateStarRatingUI(starRating);
+        Debug.Log("Awarded " + starRating + " star(s) for this level.");
+        UpdateStarRatingUI(starRating, image);
     }
 
     private void GiveFeedback()
@@ -169,18 +174,37 @@ public class MiniGame1Manager : MonoBehaviour
         return " ";
     }
 
-    private void SendFeedbackToDialogue(string feedbackMessage)
+    public void SendFeedbackToDialogue(string feedbackMessage)
     {
         Debug.Log("Sending feedback to dialogue system: " + feedbackMessage);
     }
 
-    private void UpdateStarRatingUI(int stars)
+    private void UpdateStarRatingUI(int stars, Image image)
     {
         //Display star ratinsg popup
         Debug.Log("Displaying " + stars + " star(s) on the UI.");
+        var imageComponent = image;
 
         //Trigger the pop-up in the UI
         //UIPopupManager.Instance.ShowStarRating(stars);
+        switch (stars)
+        {
+            case 0:
+                imageComponent.sprite = Zero;
+                break;
+            case 1:
+                imageComponent.sprite = One;
+                break;
+            case 2:
+                imageComponent.sprite = Two;
+                break;
+            case 3:
+                imageComponent.sprite = Three;
+                break;
+            default:
+                break;
+        }
+        
     }
 
 	//Call this method when the player submits their configuration
@@ -191,29 +215,29 @@ public class MiniGame1Manager : MonoBehaviour
         {
             Debug.Log("Submission limit reached.");
             // Handle lockout or failure logic here
-            AwardStarRating(false); //Award player 0 stars for incomplete
+            //AwardStarRating(false); //Award player 0 stars for incomplete
         }
         else if (AreAllPanelsCorrect())
         {
             Debug.Log("All panels are correct! Level complete.");
             OnMiniGameComplete(); //Notify event system
-            AwardStarRating(true); //After mini-game completed, award stars based on performance
+            //AwardStarRating(true); //After mini-game completed, award stars based on performance
         }
         else
         {
             Debug.Log("Some panels are incorrect. Try again.");
             GiveFeedback();
         }
-		UpdateSubmissionUI(); //Update screen with submission count
+		//UpdateSubmissionUI(); //Update screen with submission count
     }
 
-    private void UpdateSubmissionUI()
+    public void UpdateSubmissionUI(int submissions, int maxSubmissions)
     {
         // This will update the UI to display the current submission count and remaining submissions
-        Debug.Log("Submissions: " + submissionCount);
-        if (currentLevelData.maxSubmissions != -1)
+        Debug.Log("Submissions: " + submissions);
+        if (maxSubmissions != -1)
         {
-            Debug.Log("Submissions left: " + (currentLevelData.maxSubmissions - submissionCount));
+            Debug.Log("Submissions left: " + (maxSubmissions - submissions));
         }
     }
     //Notify EventSystem that mini-game is complete

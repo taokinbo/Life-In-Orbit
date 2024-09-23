@@ -187,7 +187,7 @@ public class MasterEventSystem : MonoBehaviour
         currentDict = new Dictionary<EventInfoTypes, bool>
         {
             { EventInfoTypes.CommandCenter, true },
-            // { EventInfoTypes.JobSelection, true },
+            { EventInfoTypes.JobSelection, true },
             { EventInfoTypes.Lumina, true},
         };
         eventInfo[Events.Act1Scene3] = currentDict;

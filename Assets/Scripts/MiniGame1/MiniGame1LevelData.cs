@@ -20,6 +20,7 @@ public class MiniGame1LevelData : ScriptableObject
 	//Submission-related
 	public int maxSubmissions;
 
+
     // Commenting for clarity:
     // - timeOfDay will change the displayed time on the screen.
     // - hemisphere will change the globe icon (north or south).

@@ -13,17 +13,17 @@ public class MG1Level1Data : MiniGame1LevelData
         overcastCondition = "None";
         maxSubmissions = 6; //no submission limit
 
-        availableAngles = new SolarPanel.PanelAngle[] { SolarPanel.PanelAngle.Angle45, SolarPanel.PanelAngle.Angle90, SolarPanel.PanelAngle.Angle180 };
+        availableAngles = new SolarPanel.PanelAngle[] { SolarPanel.PanelAngle.Angle45, SolarPanel.PanelAngle.Angle90, SolarPanel.PanelAngle.Angle0 };
         availableOrientation = new SolarPanel.PanelOrientation[] { SolarPanel.PanelOrientation.South, SolarPanel.PanelOrientation.North, SolarPanel.PanelOrientation.West, SolarPanel.PanelOrientation.East };
 
         correctPanelSettings = new PanelSolution[]
         {
+            new PanelSolution {panelID = 0, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.North},
             new PanelSolution {panelID = 1, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.North},
-            new PanelSolution {panelID = 2, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.North},
-            new PanelSolution {panelID = 3, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.East},
-            new PanelSolution {panelID = 4, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.North},
-            new PanelSolution {panelID = 5, correctAngle = SolarPanel.PanelAngle.Angle180, correctOrientation = SolarPanel.PanelOrientation.North},
-            new PanelSolution {panelID = 6, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.East}
+            new PanelSolution {panelID = 2, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.East},
+            new PanelSolution {panelID = 3, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.North},
+            new PanelSolution {panelID = 4, correctAngle = SolarPanel.PanelAngle.Angle0, correctOrientation = SolarPanel.PanelOrientation.North},
+            new PanelSolution {panelID = 5, correctAngle = SolarPanel.PanelAngle.Angle45, correctOrientation = SolarPanel.PanelOrientation.East}
 
         };
 
