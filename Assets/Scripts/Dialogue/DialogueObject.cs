@@ -20,6 +20,8 @@ public class DialoguePair{
     public Flags[] isDisabled;
     public bool advanceQuest = false;
     public string chatSprite = "";
+    public CharSprites charSprites = CharSprites.None;
+    public AudioBits soundBit = AudioBits.None;
     public string bgSprite = "";
     public bool showName = false;
     public string name = "";

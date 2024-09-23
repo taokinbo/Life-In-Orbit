@@ -106,6 +106,16 @@ public class DialogueUI : MonoBehaviour
         StartCoroutine(StepThroughDialogue(dialogueObject, eventToClear));
     }
 
+    private void SetCharSprite(CharSprites charSprites){
+        if (charSprites == CharSprites.None) return;
+        charController.switchImage(charSprites);
+    }
+
+    private void playVoiceFx(AudioBits soundBit) {
+        if (soundBit == AudioBits.None) return;
+        charController.playVoiceSound(soundBit);
+    }
+
     private void SetSprite(string spriteName){
 
         string[] splitArray =  curSprite.Split(char.Parse("_"));
@@ -195,9 +205,13 @@ public class DialogueUI : MonoBehaviour
                 IsNameOpen = !IsNameOpen;
             }
             nameLabel.text = dia.name;
-            if (dia.chatSprite != "" && dia.chatSprite != curSprite){ //need to make work with emotions better
-                SetSprite(dia.chatSprite);
-            }
+            // if (dia.chatSprite != "" && dia.chatSprite != curSprite){ //need to make work with emotions better
+            //     // SetSprite(dia.charSprites);
+
+            // }
+            SetCharSprite(dia.charSprites);
+            playVoiceFx(dia.soundBit);
+
             if (dia.isGrey) spriteImage.color = Color.grey;
             else spriteImage.color = Color.white;
             if (dia.bgSprite != "" && dia.bgSprite != curBackground){ //need to make work with emotions better
@@ -273,7 +287,8 @@ public class DialogueUI : MonoBehaviour
         IsOpen = false;
         IsNameOpen = false;
         // chatSprite.SetBool(curSprite, false);
-        SetSprite("None");
+        // SetSprite("None");
+        SetCharSprite(CharSprites.Empty);
         dialogueBox.SetActive(false);
         nameBox.SetActive(false);
         chatSpriteGO.SetActive(false);

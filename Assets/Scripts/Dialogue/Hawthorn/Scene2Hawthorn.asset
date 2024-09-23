@@ -30,6 +30,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -56,6 +58,8 @@ MonoBehaviour:
     isDisabled: 000000000000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -78,6 +82,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -101,6 +107,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -124,6 +132,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 8
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -146,6 +156,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -169,6 +181,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -192,6 +206,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -217,6 +233,8 @@ MonoBehaviour:
     isDisabled: 00000000000000000000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -240,6 +258,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -263,6 +283,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -287,6 +309,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -310,6 +334,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -334,6 +360,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -357,6 +385,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -380,6 +410,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -403,6 +435,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -426,6 +460,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -448,6 +484,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -472,6 +510,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -494,6 +534,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -519,6 +561,8 @@ MonoBehaviour:
     isDisabled: 000000000000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -542,6 +586,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -564,6 +610,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -587,6 +635,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 8
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -610,6 +660,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 9
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
