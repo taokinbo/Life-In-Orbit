@@ -28,6 +28,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -51,6 +53,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 22
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -75,6 +79,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -97,6 +103,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -119,6 +127,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -141,6 +151,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -164,6 +176,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 9
+    soundBit: 26
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -187,6 +201,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -209,6 +225,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -231,6 +249,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -254,6 +274,8 @@ MonoBehaviour:
     isDisabled: 00000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -279,6 +301,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 1
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Lumina

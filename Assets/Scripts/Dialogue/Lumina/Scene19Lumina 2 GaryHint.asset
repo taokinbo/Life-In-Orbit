@@ -30,6 +30,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 9
     bgSprite: 
     showName: 1
     name: Lumina

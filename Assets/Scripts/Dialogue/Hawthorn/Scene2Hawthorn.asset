@@ -31,7 +31,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 6
-    soundBit: 0
+    soundBit: 27
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -83,7 +83,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 24
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -108,7 +108,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 5
-    soundBit: 0
+    soundBit: 20
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -133,7 +133,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 8
-    soundBit: 0
+    soundBit: 27
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -259,7 +259,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 21
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -310,7 +310,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 21
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -335,7 +335,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 24
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -386,7 +386,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 22
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -461,7 +461,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 25
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -587,7 +587,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 24
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -611,7 +611,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 5
-    soundBit: 0
+    soundBit: 20
     bgSprite: 
     showName: 1
     name: Captain Hawthorn

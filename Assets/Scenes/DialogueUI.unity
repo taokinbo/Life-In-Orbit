@@ -4019,6 +4019,56 @@ MonoBehaviour:
   spriteImage: {fileID: 2079396170}
   audioSource: {fileID: 2079396177}
   Lumina_Alright: {fileID: 8300000, guid: a9b0c256fa83d734699d2e2bd7546d91, type: 3}
+  Lumina_FYI: {fileID: 8300000, guid: a742eef5d1d0a9c4baab77ca934a36d8, type: 3}
+  Lumina_Talk: {fileID: 8300000, guid: fc41838e3571fdf41b87e7084bfe4eae, type: 3}
+  Lumina_Think: {fileID: 8300000, guid: cb07ac6fdf26e16498efd88e485d54b0, type: 3}
+  Lumina_ImLumina: {fileID: 8300000, guid: 9e7ee3753e8c2d541b82ef68bca18adf, type: 3}
+  Lumina_Welcome: {fileID: 8300000, guid: 4216475eb9ec4104389170bcf42bcf83, type: 3}
+  Lumina_Wow: {fileID: 8300000, guid: 89eba558519d11040a46023fafb43578, type: 3}
+  Lumina_Congrats: {fileID: 8300000, guid: 8978cf76b393b7b4383358e2bd29773b, type: 3}
+  Lumina_UseThis: {fileID: 8300000, guid: 551758120ab1f7c43a221d1503a0afdc, type: 3}
+  Lumina_How: {fileID: 8300000, guid: 1539055dccf6fda4d8876c50bc562024, type: 3}
+  Lumina_Excellent: {fileID: 8300000, guid: 008a8c32195de8c4488d7bcb1e23b768, type: 3}
+  Lumina_Oh: {fileID: 8300000, guid: 88b5b025165bc6640b400f0360e75ab2, type: 3}
+  Lumina_Wait: {fileID: 8300000, guid: a45537093221a644bb3b18589a70835c, type: 3}
+  Lumina_Almost: {fileID: 8300000, guid: 9ae7f8435f402f649adbbda0a9c11bc7, type: 3}
+  Lumina_Hmm: {fileID: 8300000, guid: 757b03e24a7200349bc5c2bacf9652e4, type: 3}
+  Lumina_OhNo: {fileID: 8300000, guid: 799201648db0de54dbdcad1b536713eb, type: 3}
+  Lumina_AccessDenied: {fileID: 8300000, guid: d2f1fd9ae03eeb54780d8ac16c8e53e3, type: 3}
+  Lumina_Here: {fileID: 8300000, guid: e1208d87e7126404e8ce80425a1b3f5e, type: 3}
+  Captain_Welcome: {fileID: 8300000, guid: 2aa6a50d8059d2e4cbdc78370bdef318, type: 3}
+  Captain_Hmm: {fileID: 8300000, guid: f4838f8d1ebc6ad419cfa3166e97a1a1, type: 3}
+  Captain_Simply: {fileID: 8300000, guid: 4bbe180ad50d9ac4db580ecd94c81376, type: 3}
+  Captain_Listen: {fileID: 8300000, guid: 2b845f3cecd183046b0d313a7560a879, type: 3}
+  Captain_OnThatNote: {fileID: 8300000, guid: d1864040353d3fe47bba5d17137c1afd, type: 3}
+  Captain_Great: {fileID: 8300000, guid: f297c6335ff94d34e905e851455dfcde, type: 3}
+  Captain_YouCan: {fileID: 8300000, guid: 6c6d14bc9acb1ba45a7a8c361f94b4b2, type: 3}
+  Captain_KeepUp: {fileID: 8300000, guid: 5a2ca6f112415a341a72f7bba49e7f46, type: 3}
+  Captain_Well: {fileID: 8300000, guid: 75610dcf15ec3fc46a50c7a3b07eb191, type: 3}
+  Captain_Hey: {fileID: 8300000, guid: dcfcee0d6ae7d9642933f1b84a57686a, type: 3}
+  Captain_DamnIt: {fileID: 8300000, guid: 4a4da1a3136e77545a819b5a32222253, type: 3}
+  Doc_Hello: {fileID: 8300000, guid: 668b0e8e906279a4a8eb0aea5fa6be1e, type: 3}
+  Doc_Hmm: {fileID: 8300000, guid: fb930f8764d57d14ebfb869d4bd4789b, type: 3}
+  Doc_Heh: {fileID: 8300000, guid: 83e290fd2f8b3db4a8234ecdc293f5d9, type: 3}
+  Doc_Now: {fileID: 8300000, guid: 9b1a9ea6da7952346b4b946fc6135dd5, type: 3}
+  Doc_About: {fileID: 8300000, guid: 191a2aef4e0b1fd46be109d5d746a582, type: 3}
+  Doc_Exactly: {fileID: 8300000, guid: a2a1550cdcec18a4797a92e80189302d, type: 3}
+  Doc_Thanks: {fileID: 8300000, guid: cc81e8a81b20c92488faa6265e35f336, type: 3}
+  Doc_Really: {fileID: 8300000, guid: 84ede254fa1ba0a4ba318018b6b46430, type: 3}
+  Doc_Oh: {fileID: 8300000, guid: c98e49d2bd86e414e81ed26af0696bec, type: 3}
+  Doc_Ehh: {fileID: 8300000, guid: 2e7e696a6cb27444ba927004c34dadd5, type: 3}
+  Doc_Ugh: {fileID: 8300000, guid: 071fda42a61bf7d4badc59cc8dc57829, type: 3}
+  Rival_HeyThere: {fileID: 0}
+  Rival_WellThen: {fileID: 0}
+  Rival_Hmmm: {fileID: 0}
+  Rival_Fair: {fileID: 0}
+  Rival_Ha: {fileID: 0}
+  Rival_Yeah: {fileID: 0}
+  Rival_Later: {fileID: 0}
+  Rival_Yes: {fileID: 0}
+  Rival_Lets: {fileID: 0}
+  Rival_Oh: {fileID: 0}
+  Rival_YouAgain: {fileID: 0}
 --- !u!82 &2079396177
 AudioSource:
   m_ObjectHideFlags: 0
