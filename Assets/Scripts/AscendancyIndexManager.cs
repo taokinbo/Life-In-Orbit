@@ -7,6 +7,26 @@ public class AscendancyIndexManager : MonoBehaviour
     public TextMeshProUGUI ascendancyIndexText; // UI text for displaying the score
     public float ascendancyIndex = 0;
 
+    //mini-game 1 connections
+    private SolarGameController solarGameController;
+    private MiniGame1Manager miniGame1Manager;
+
+    private void Start()
+    {
+        // Find the SolarGameController in the scene
+        solarGameController = FindObjectOfType<SolarGameController>();
+        if (solarGameController == null)
+        {
+            Debug.LogError("SolarGameController not found!");
+        }
+
+        miniGame1Manager = FindObjectOfType<MiniGame1Manager>();
+        if (miniGame1Manager == null)
+        {
+            Debug.LogError("MiniGame1Manager not found!");
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -22,7 +42,7 @@ public class AscendancyIndexManager : MonoBehaviour
 
     private float CalculatingEngineerScore(int starRating)
     {
-        int level = SolarGameController.Instance.GetCurrentLevel(); // Get the current level from SolarGameController
+        int level = solarGameController.GetCurrentLevel(); // Get the current level from SolarGameController
         float score = 0;
 
         switch (level)
@@ -212,7 +232,7 @@ public class AscendancyIndexManager : MonoBehaviour
     // Update the UI element to show the current Ascendancy Index
     private void UpdateAscendancyScoreUI(float totalScore)
     {
-        ascendancyIndexText.text = Mathf.RoundToInt(totalScore).ToString();
+        ascendancyIndexText.text = totalScore.ToString("F1");
     }
 
     // Calculate the final Ascendancy Index score based on star ratings and relationships
@@ -225,10 +245,10 @@ public class AscendancyIndexManager : MonoBehaviour
         {
 
             //get star rating for the engineer minigame (minigame1)
-            int starRating = MiniGame1Manager.Instance.GetStarRating();
+            int starRating = miniGame1Manager.GetStarRating();
             totalScore = CalculatingEngineerScore(starRating);
         }
-        else if (MasterEventSystem.Instance.getRole() = Roles.Biologist)
+        else if (MasterEventSystem.Instance.getRole() == Roles.Biologist)
         {
             // Placeholder for Biologist's score (MiniGame2)
             /*
@@ -241,8 +261,8 @@ public class AscendancyIndexManager : MonoBehaviour
         UpdateAscendancyScoreUI(ascendancyIndex);
     }
 
-    public int GetAIScore() //for ranking system
+    public float GetAIScore() //for ranking system
     {
-        return ascendancyIndex;  // Returns the  star rating  the player ecieved
+        return ascendancyIndex;  // Returns the score the player has
     }
 }

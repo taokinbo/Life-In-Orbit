@@ -12,7 +12,9 @@ public class MiniGame1Manager : MonoBehaviour
     public Sprite Two;
     public Sprite Three;
 
-	private int submissionCount = 0; //Track how many times the player submits
+    public int starRating;
+
+    private int submissionCount = 0; //Track how many times the player submits
 
 	public void LoadLevelData()
 	{
@@ -74,7 +76,7 @@ public class MiniGame1Manager : MonoBehaviour
 
     public void AwardStarRating(bool completed, int level, int submissions, Image image)
     {
-        int starRating = 0;
+        
 
         if (completed)
         {
