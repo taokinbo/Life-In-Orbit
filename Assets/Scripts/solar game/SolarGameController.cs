@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ public class SolarGameController : MonoBehaviour
     private int level;
     private int submissions;
     public MiniGame1Manager manager;
+    public Image starRating;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class SolarGameController : MonoBehaviour
         button = FindObjectOfType<ButtonImageSwitch>();
         changeAngle = FindObjectOfType<ChangeAngle>();
         level = MasterEventSystem.Instance.getMinigameLevel();
+        starRating.GetComponent<Image>().enabled = false;
         setUpLevel();
     }
 
@@ -102,7 +105,6 @@ public class SolarGameController : MonoBehaviour
         }
 
         var images = GetComponentsInChildren<Image>();
-        Debug.Log(images.Length);
         var image = images[0];
         foreach(var i in images)
         {
@@ -225,14 +227,18 @@ public class SolarGameController : MonoBehaviour
             {
                 panel.GetComponent<Button>().interactable = false;
             }
-            manager.AwardStarRating(false, level, submissions);
+            //starRating.enabled = true;
+            starRating.GetComponent<Image>().enabled = true;
+            manager.AwardStarRating(false, level, submissions, starRating);
             manager.OnMiniGameComplete();
         }
         else
         {
             if (allCorrect)
             {
-                manager.AwardStarRating(true, level, submissions);
+                //starRating.enabled = true;
+                starRating.GetComponent<Image>().enabled = true;
+                manager.AwardStarRating(true, level, submissions, starRating);
                 manager.OnMiniGameComplete();
             }
             else
