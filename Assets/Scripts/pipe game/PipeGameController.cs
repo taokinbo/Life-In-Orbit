@@ -64,29 +64,31 @@ public class PipeGameController : MonoBehaviour
         //Debug.Log(finalPos.GetLength(0));
         for (int i = 0; i < finalPos.GetLength(1); i++)
         {
-            //    if (this.pipeValid[i] == 0)
-            //    {
-            float[] floats = new float[finalPos.GetLength(0)];
-            for (int j = 0; j < finalPos.GetLength(0); j++)
+            if (this.pipeValid[i] == 0)
             {
-                floats[j] = finalPos[j, i];
-            }
-            Debug.Log(Array.IndexOf(floats, layer1Data.pipes[i].GetComponent<PipeScript>().curRotation));
-            if (Array.IndexOf(floats, layer1Data.pipes[i].GetComponent<PipeScript>().curRotation) == -1)
-            {
-                Debug.Log(i);
-                Debug.Log(layer1Data.pipes[i].GetComponent<PipeScript>().curRotation);
-                match = false;
-                break;
+                float[] floats = new float[finalPos.GetLength(0)];
+                for (int j = 0; j < finalPos.GetLength(0); j++)
+                {
+                    floats[j] = finalPos[j, i];
+                }
+                Debug.Log(Array.IndexOf(floats, layer1Data.pipes[i].GetComponent<PipeScript>().curRotation));
+                if (Array.IndexOf(floats, layer1Data.pipes[i].GetComponent<PipeScript>().curRotation) == -1)
+                {
+                    Debug.Log(i);
+                    Debug.Log(layer1Data.pipes[i].GetComponent<PipeScript>().curRotation);
+                    match = false;
+                    break;
+                }
             }
 
         }
         Debug.Log(match);
         if (match == true)
         {
-            level = level + 1;
-            Debug.Log(level);
-            loadLevelData(level);
+            Debug.Log(this.level);
+            this.level = this.level + 1;
+            Debug.Log(this.level);
+            loadLevelData(this.level);
         }
         else
         {
@@ -100,7 +102,7 @@ public class PipeGameController : MonoBehaviour
         switch (level)
         {
             case 1:
-                level = 1;
+                this.level = 1;
                 this.initialPos = level1Start;
                 this.finalPos = lvl1Answer;
                 this.pipeValid = lvl1valid;
@@ -111,7 +113,7 @@ public class PipeGameController : MonoBehaviour
                 LayerSwap.loadLevel(1, temp2);
                 break;
             case 2:
-                level = 1;
+                this.level = 2;
                 this.initialPos = level2Start;
                 this.finalPos = lvl2Answer;
                 this.pipeValid = lvl2valid;
@@ -122,8 +124,17 @@ public class PipeGameController : MonoBehaviour
                 LayerSwap.loadLevel(1, temp);
                 break;
 
-            case 3: break;
-
+            case 3: 
+                this.level = 3;
+                this.initialPos = level3Start;
+                this.finalPos = lvl3Answer;
+                this.pipeValid = lvl3valid;
+                layer1Data.loadLevel1(level3Start, level3Layer1, color1);
+                layer2Data.loadLevel1(level3Startlayer2, level3Layer2, color2);
+                layer3Data.loadLevel1(level3Start, level3Layer3, color3);
+                GameObject[] temp3 = { GameObject.Find("Canvas1"), GameObject.Find("Canvas2") };
+                LayerSwap.loadLevel(2, temp3);
+                break;
             case 4: break;
 
             case 5: break;
@@ -165,23 +176,17 @@ public class PipeGameController : MonoBehaviour
     public static float[,] lvl1Answer =
     {
         { 
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0, 180,  0,  0,   0,  0,  0,   90,  0,
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0,   0,  0,  0, 270,  0,  0,   90,  0,
-        0,   0,  0,  0,  90,  0,  0,    0,  0,},
+        0,   0,   0,   0,   0,   0,   0,  180,  0,
+        0, 180,   0,   0,   0,   0,   0,   90,  0,
+        0,   0,   0,   0,   0,   0,   0,  180,  0,
+        0,   0,   0,   0, 270,   0,   0,   90,  0,
+        0,   0,   0,   0,  90,   0,   0,    0,  0,},
         {
-        0,   0,  0,  0,   0,  180, 180, 180,  0,
-        0, 180, 180, 180,  180,  180, 180,  90,  0,
-        0,   0, 180, 180,  180,  180, 180, 180,  0,
-        0,   0,  0,  0, 270,  180, 180,  90,  0,
-        0,   0,  0,  0, 270,   0,  0,   0,  0,},
-        {
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0, 270,  0,  0,   0,  0,  0,   90,  0,
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0,   0,  0,  0, 270,  0,  0,   90,  0,
-        0,   0,  0,  0, 270,  0,  0,    0,  0,},
+        0,   0,   0,   0,   0, 180, 180, 180,   0,
+        0, 270, 180, 180, 180, 180, 180,  90,   0,
+        0,   0, 180, 180, 180, 180, 180, 180,   0,
+        0,   0,   0,   0, 270, 180, 180,  90,   0,
+        0,   0,   0,   0, 270,   0,   0,   0,   0,},
     };
     public static int[] lvl1valid =
     {
@@ -196,11 +201,11 @@ public class PipeGameController : MonoBehaviour
 
     //level 2
     private int[] level2Layer1 = {
-        2, 0, 2, 0, 2, 1, 1, 2, 0,
-        0, 3, 1, 1, 1, 1, 1, 2, 0,
-        1, 2, 1, 1, 1, 1, 1, 2, 1,
-        4, 2, 0, 3, 2, 1, 1, 2, 1,
-        1, 0, 0, 1, 1, 1, 1, 1, 1,
+        3, 2, 2, 2, 1, 2, 4, 1, 4,
+        0, 2, 1, 1, 2, 2, 3, 2, 0,
+        2, 3, 2, 2, 1, 1, 1, 1, 2,
+        1, 2, 1, 3, 2, 2, 1, 2, 1,
+        1, 2, 0, 2, 1, 2, 4, 2, 1,
     };
     private int[] level2Layer2 = {
         0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -227,31 +232,97 @@ public class PipeGameController : MonoBehaviour
     public static float[,] lvl2Answer =
     {
         {
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0, 180,  0,  0,   0,  0,  0,   90,  0,
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0,   0,  0,  0, 270,  0,  0,   90,  0,
-        0,   0,  0,  0,  90,  0,  0,    0,  0,},
+        0,   0,   0,   0,  90,   0,   0,   0,   0,
+        0,  90,   0,   0,  90,   0,   0,   0,   0,
+      270,  90,   0, 270,   0,   0,   0,   0, 180,
+       90,   0,   0,   0, 180,   0,   0,   0,  90,
+       90,   0,   0,   0,  90,   0,   0,   0,  90,},
         {
-        0,   0,  0,  0,   0,  180, 180, 180,  0,
-        0, 180, 180, 180,  180,  180, 180,  90,  0,
-        0,   0, 180, 180,  180,  180, 180, 180,  0,
-        0,   0,  0,  0, 270,  180, 180,  90,  0,
-        0,   0,  0,  0, 270,   0,  0,   0,  0,},
-        {
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0, 270,  0,  0,   0,  0,  0,   90,  0,
-        0,   0,  0,  0,   0,  0,  0,  180,  0,
-        0,   0,  0,  0, 270,  0,  0,   90,  0,
-        0,   0,  0,  0, 270,  0,  0,    0,  0,},
+        0,   0,   0,   0, 270,   0,   0,   0,   0,
+        0,  90, 180, 180,  90,   0,   0,   0,   0,
+      270,  90,   0, 270, 180, 180, 180, 180, 180,
+      270,   0, 180,   0, 180,   0,   0,   0, 270,
+      270,   0,   0,   0, 270,   0,   0,   0, 270,},
     };
     public static int[] lvl2valid =
     {
-        1, 1, 1, 1, 0, 0, 0, 0, 1,
-        1, 0, 0, 0, 0, 0, 0, 0, 1,
-        1, 0, 0, 0, 0, 0, 0, 0, 1,
-        1, 1, 1, 1, 0, 0, 0, 0, 1,
         1, 1, 1, 1, 0, 1, 1, 1, 1,
+        1, 0, 0, 0, 0, 1, 1, 1, 1,
+        0, 0, 1, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1, 1, 1, 0,
+        0, 1, 1, 1, 0, 1, 1, 1, 0,
     };
 
+
+
+    // level1
+    private int[] level3Layer1 = {
+        0, 0, 0, 0, 2, 2, 0, 0, 2,
+        3, 0, 2, 0, 1, 2, 2, 0, 0,
+        4, 1, 0, 2, 2, 1, 3, 1, 0,
+        2, 1, 1, 1, 3, 0, 1, 0, 1,
+        1, 0, 0, 0, 1, 0, 2, 1, 2,
+    };
+    private int[] level3Layer2 = {
+        0, 0, 0, 0, 1, 0, 0, 0, 4,
+        0, 0, 0, 0, 1, 2, 3, 0, 0,
+        2, 1, 1, 3, 3, 1, 2, 1, 0,
+        1, 2, 0, 1, 1, 0, 2, 1, 2,
+        1, 0, 0, 2, 2, 0, 4, 0, 1,
+    };
+    private int[] level3Layer3 = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+    };
+    public static float[] level3Start =
+    {
+        0,   0,   0,   0, 180,   0,  90,   0,   0,
+        0,   0,  90, 180,   0,   0, 180,  90,   0,
+        0,   0,   0,   0,   0,   0,  90,   0,   0,
+        0,   0,   0,   0, 270,   0,   0,   0,   0,
+        0,   0,   0,   0,   0,   0,   0,   0,   0,
+    };
+    public static float[] level3Startlayer2 =
+   {
+        0,   0,   0,   0, 270,   0,   0,   0,   0,
+        0,   0,   0,   0,  90,  90,   0,   0,   0,
+        0,   0,   0,   0, 090,   0, 180,   0,   0,
+        0,   0,   0,  90,   0,   0, 270,   0,   0,
+        0,   0,   0,   0, 270,   0,   0,   0,  90,
+    };
+    public static float[,] lvl3Answer =
+    {
+        {
+        0,   0,   0,   0,   0, 180,   0,   0,   0,
+        0,   0,   0,   0,   0,   0, 180,   0,   0,
+      270,   0,   0, 180, 270,   0,  90,   0,   0,
+      270,   0,   0,   0,  90,   0,  90,   0, 180,
+       90,   0,   0,   0, 270,   0,   0,   0, 180,},
+        {
+        0,   0,   0,   0,   0, 180,   0,   0,   0,
+        0,   0,   0,   0, 180,   0, 180,   0,   0,
+      270,   0,   0, 180, 270,   0,  90,   0,   0,
+      270, 180, 180, 180,  90,   0,  90,   0, 180,
+      270,   0,   0,   0, 270,   0,   0, 180, 180,},
+    };
+    public static int[] lvl3valid =
+    {
+        1, 1, 1, 1, 0, 0, 1, 1, 1,
+        1, 1, 1, 1, 0, 0, 0, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 1, 1,
+        0, 0, 0, 0, 0, 1, 0, 0, 0,
+        0, 1, 1, 0, 0, 1, 0, 0, 0
+    };
+
+
+//    private int[] level3Layer1 = {
+//        0, 0, 0, 0, 2, 2, 0, 0, 0,
+//        0, 0, 0, 0, 0, 2, 2, 0, 0,
+//        0, 0, 0, 0, 0, 0, 0, 0, 0,
+//        0, 0, 0, 0, 0, 0, 0, 0, 0,
+//        0, 0, 0, 0, 0, 0, 0, 0, 0,
+//    };
 }

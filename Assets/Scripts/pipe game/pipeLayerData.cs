@@ -35,6 +35,7 @@ public class PipeLayerData : MonoBehaviour
             {
                 pipes[i].GetComponent<Image>().color = color;
             }
+            pipes[i].GetComponent<Transform>().Rotate(new Vector3(0, 0, 0));
             pipes[i].GetComponent<Transform>().Rotate(new Vector3(0, 0, initPos[i]));
             pipes[i].GetComponent<PipeScript>().curRotation = initPos[i];
         }    
@@ -46,6 +47,7 @@ public class PipeLayerData : MonoBehaviour
         foreach (GameObject pipe in pipes)
         {
             //pipe.GetComponent<Image>().sprite = sprites[0];
+            pipe.GetComponent<Transform>().Rotate(new Vector3(0, 0, 0));
             pipe.GetComponent<Image>().color = Color.clear;
         }
     }
