@@ -5,7 +5,6 @@ using System.Linq;
 using TMPro;
 using TreeEditor;
 using UnityEngine;
-using TMPro;
 
 public class AscendancyIndexManager : MonoBehaviour
 {
