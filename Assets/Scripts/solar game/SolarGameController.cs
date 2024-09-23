@@ -187,7 +187,9 @@ public class SolarGameController : MonoBehaviour
         submissions++;
         submissionsUsed.text = submissions.ToString();
 
-        submissionsLeft.text = (levelData.maxSubmissions - submissions).ToString();
+        if(levelData.maxSubmissions != -1)
+            submissionsLeft.text = (levelData.maxSubmissions - submissions).ToString();
+
         bool allCorrect = true;
         foreach (var panel in panels)
         {
@@ -204,7 +206,7 @@ public class SolarGameController : MonoBehaviour
                 }
                 else
                 {
-                    panel.GetComponent<Image>().color = Color.red;
+                    bool twoWrong = false;
                     allCorrect = false;
 
                     if(level <= 2)
@@ -213,6 +215,7 @@ public class SolarGameController : MonoBehaviour
                         if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle && SolarPanels[panel.PanelID].currentOrientation != solution[panel.PanelID].correctOrientation)
                         {
                             feedback = "Panel " + panel.PanelID + 1 + " has an incorrect angle and orientation";
+                            twoWrong = true;
                         }
                         else if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle)
                         {
@@ -224,6 +227,15 @@ public class SolarGameController : MonoBehaviour
                         }
 
                         manager.SendFeedbackToDialogue(feedback);
+                    }
+
+                    if (twoWrong)
+                    {
+                        panel.GetComponent<Image>().color = Color.red;
+                    }
+                    else
+                    {
+                        panel.GetComponent<Image>().color = Color.yellow;
                     }
 
                 }
