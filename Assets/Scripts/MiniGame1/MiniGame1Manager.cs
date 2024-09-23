@@ -118,6 +118,11 @@ public class MiniGame1Manager : MonoBehaviour
         UpdateStarRatingUI(starRating, image);
     }
 
+    public int GetStarRating() //for ascendancy index
+    {
+        return starRating;  // Returns the  star rating  the player ecieved
+    }
+
     private void GiveFeedback()
     {
         foreach (SolarPanel panel in panels)

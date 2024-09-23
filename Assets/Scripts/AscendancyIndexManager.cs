@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class AscendancyIndexManager : MonoBehaviour
 {
     public static AscendancyIndexManager Instance;
-
+    public TextMeshProUGUI ascendancyIndexText; // UI text for displaying the score
     public float ascendancyIndex = 0;
 
     private void Awake()
@@ -19,52 +20,223 @@ public class AscendancyIndexManager : MonoBehaviour
         }
     }
 
-    //Method to adjust Ascendancy Index based on relationship status
-    public void UpdateAscendancyBasedOnRelationships(int captainRelationship, int bonnieRelationship, int garyRelationship)
+    private float CalculatingEngineerScore(int starRating)
     {
-        float newIndex = ascendancyIndex;
+        int level = SolarGameController.Instance.GetCurrentLevel(); // Get the current level from SolarGameController
+        float score = 0;
 
-        //Captain's relationship effect
-        newIndex = AdjustIndexBasedOnRelationship(newIndex, captainRelationship, 10, -10, 5, -5);
-
-        //Dr. Bonnie's relationship effect
-        newIndex = AdjustIndexBasedOnRelationship(newIndex, bonnieRelationship, 10, -10, 5, -5);
-
-        //Gary's relationship effect
-        newIndex = AdjustIndexBasedOnRelationship(newIndex, garyRelationship, 10, -10, 5, -5);
-
-        //Update the final Ascendancy Index (clamped between 0 and 100)
-        ascendancyIndex = Mathf.Clamp(newIndex, 0, 100);
-        Debug.Log("Ascendancy Index updated: " + ascendancyIndex);
-
+        switch (level)
+        {
+            case 0:
+                if (starRating == 3)
+                    score = 5f;
+                else if (starRating == 2)
+                    score = 3.75f;
+                else if (starRating == 1)
+                    score = 2.5f;
+                break;
+            case 1: // Level 1
+                if (starRating == 3)
+                    score = 15f; // 3 stars = 15 points
+                else if (starRating == 2)
+                    score = 11.25f; // 2 stars = 11.25 points
+                else if (starRating == 1)
+                    score = 7.5f; // 1 star = 7.5 points
+                else
+                    score = 0f;
+                break;
+            case 2: // Level 2
+                if (starRating == 3)
+                    score = 20f; // 3 stars = 20 points
+                else if (starRating == 2)
+                    score = 15f; // 2 stars = 15 points
+                else if (starRating == 1)
+                    score = 10f; // 1 star = 10 points
+                else
+                    score = 0f; // 0 stars = 0 points
+                break;
+            case 3:
+                if (starRating == 3)
+                    score = 30f; // 3 stars = 30 points
+                else if (starRating == 2)
+                    score = 22.5f; // 2 stars = 22.5 points
+                else if (starRating == 1)
+                    score = 15f; // 1 star = 15 points
+                else
+                    score = 0f; // 0 stars = 0 points
+                break;
+            case 4: // Level 4 (Final Level)
+                if (starRating == 3)
+                    score = 50f; // 3 stars = 50 points
+                else if (starRating == 2)
+                    score = 37.5f; // 2 stars = 37.5 points
+                else if (starRating == 1)
+                    score = 25f; // 1 star = 25 points
+                else
+                    score = 0f; // 0 stars = 0 points
+                break;
+            default:
+                Debug.LogError("Invalid level number");
+                break;
+        }
+        return score;
     }
 
-    //helper function to apply relationship effects by percentage
-    private float AdjustIndexBasedOnRelationship(float index, int relationship, float extraPositiveBoost, float extraNegativeDrain, float positiveBoost, float negativeDrain )
+    // Placeholder for Biologist's minigame score (MiniGame2)
+    /*
+    private float CalculateBiologistScore(int starRating)
     {
-        if (relationship >= 7) //extra positive
-        {
-            index += index * (extraPositiveBoost / 100); // 10% boost
+        int level = PipeGameController.Instance.GetCurrentLevel();  // Get the current level
+        float score = 0;
+    
+        // Add similar logic to calculate score based on star ratings once the Biologist minigame is implemented
 
-        }
-        else if (relationship <= -7) //extra negative 
+        switch (level)
         {
-            index -= index * (extraNegativeDrain / 100); //10% boost
+            case 0:
+                if (starRating == 3)
+                    score = 5f;
+                else if (starRating == 2)
+                    score = 3.75f;
+                else if (starRating == 1)
+                    score = 2.5f;
+                break;
+            case 1: // Level 1
+                if (starRating == 3)
+                    score = 15f; // 3 stars = 15 points
+                else if (starRating == 2)
+                    score = 11.25f; // 2 stars = 11.25 points
+                else if (starRating == 1)
+                    score = 7.5f; // 1 star = 7.5 points
+                else
+                    score = 0f;
+                break;
+            case 2: // Level 2
+                if (starRating == 3)
+                    score = 20f; // 3 stars = 20 points
+                else if (starRating == 2)
+                    score = 15f; // 2 stars = 15 points
+                else if (starRating == 1)
+                    score = 10f; // 1 star = 10 points
+                else
+                    score = 0f; // 0 stars = 0 points
+                break;
+            case 3:
+                if (starRating == 3)
+                    score = 30f; // 3 stars = 30 points
+                else if (starRating == 2)
+                    score = 22.5f; // 2 stars = 22.5 points
+                else if (starRating == 1)
+                    score = 15f; // 1 star = 15 points
+                else
+                    score = 0f; // 0 stars = 0 points
+                break;
+            case 4: // Level 4 (Final Level)
+                if (starRating == 3)
+                    score = 50f; // 3 stars = 50 points
+                else if (starRating == 2)
+                    score = 37.5f; // 2 stars = 37.5 points
+                else if (starRating == 1)
+                    score = 25f; // 1 star = 25 points
+                else
+                    score = 0f; // 0 stars = 0 points
+                break;
+            default:
+                Debug.LogError("Invalid level number");
+                break;
         }
-        else if (relationship > 0) //positive
+       
+        return score;
+    }
+    */
+
+    private float ApplyRelationshipModifiers(float currentScore)
+    {
+        // Assuming the relationships are based on characters' flags from MasterEventSystem
+        if (MasterEventSystem.Instance.checkFlag(Flags.HawthornLikePlus))
         {
-            index += index * (positiveBoost / 100); //5% boost
+            currentScore *= 1.10f; // +10% boost
         }
-        else if (relationship < 0) //negative
+        else if (MasterEventSystem.Instance.checkFlag(Flags.HawthornLike))
         {
-            index -= index * (negativeDrain / 100);
+            currentScore *= 1.05f; // +5% boost
         }
-        return index;
+        else if (MasterEventSystem.Instance.checkFlag(Flags.HawthornDislike))
+        {
+            currentScore *= 0.95f; // -5% drain
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.HawthornDislikePlus))
+        {
+            currentScore *= 0.90f; // -10% drain
+        }
+
+        // Dr. Aspen Bonnie Relationship
+        if (MasterEventSystem.Instance.checkFlag(Flags.BonnieLikePlus))
+        {
+            currentScore *= 1.10f; // +10% boost
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.BonnieLike))
+        {
+            currentScore *= 1.05f; // +5% boost
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.BonnieDislike))
+        {
+            currentScore *= 0.95f; // -5% drain
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.BonnieDislikePlus))
+        {
+            currentScore *= 0.90f; // -10% drain
+        }
+
+        // Gary Pine Relationship
+        if (MasterEventSystem.Instance.checkFlag(Flags.PineLikePlus))
+        {
+            currentScore *= 1.10f; // +10% boost
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.PineLike))
+        {
+            currentScore *= 1.05f; // +5% boost
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.PineDislike))
+        {
+            currentScore *= 0.95f; // -5% drain
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.PineDislikePlus))
+        {
+            currentScore *= 0.90f; // -10% drain
+        }
+
+        return currentScore;
     }
 
-    public void UpdateAscendancyWithMinigameScore(int score)
+    // Update the UI element to show the current Ascendancy Index
+    private void UpdateAscendancyScoreUI(float totalScore)
     {
-        ascendancyIndex += score;
-        ascendancyIndex = Mathf.Clamp(ascendancyIndex, 0, 100);
+        ascendancyIndexText.text = Mathf.RoundToInt(totalScore).ToString();
+    }
+
+    // Calculate the final Ascendancy Index score based on star ratings and relationships
+    public void CalculateFinalScore()
+    {
+        float totalScore = 0;
+
+        //check player role and calculate the score accordingly
+        if (MasterEventSystem.Instance.getRole() == Roles.Engineer)
+        {
+
+            //get star rating for the engineer minigame (minigame1)
+            int starRating = MiniGame1Manager.Instance.GetStarRating();
+            totalScore = CalculatingEngineerScore(starRating);
+        }
+        else if (MasterEventSystem.Instance.getRole() = Roles.Biologist)
+        {
+            // Placeholder for Biologist's score (MiniGame2)
+            /*
+            int starRating = PipeGameController.Instance.GetStarRating();
+            totalScore = CalculateBiologistScore(starRating);
+            */
+        }
+        totalScore = ApplyRelationshipModifiers(totalScore);
+        UpdateAscendancyScoreUI(totalScore);
     }
 }

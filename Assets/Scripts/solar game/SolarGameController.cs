@@ -72,7 +72,12 @@ public class SolarGameController : MonoBehaviour
     {
         button.changeButtonImage();
     }
-    
+
+    public int GetCurrentLevel() //for ascendancy index
+    {
+        return level;  // Returns the current level the player is on
+    }
+
     private void setUpLevel()
     {
         if(level < 1)
