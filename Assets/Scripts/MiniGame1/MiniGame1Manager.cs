@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class MiniGame1Manager : MonoBehaviour
 {
     // List to store all solar panels in the grid
     public List<SolarPanel> panels; // Reference to the solar panels in the scene
 	public MiniGame1LevelData currentLevelData; //Data for the current level
+    public Sprite Zero;
+    public Sprite One;
+    public Sprite Two;
+    public Sprite Three;
 
 	private int submissionCount = 0; //Track how many times the player submits
 
@@ -67,7 +72,7 @@ public class MiniGame1Manager : MonoBehaviour
         return null;
     }
 
-    public void AwardStarRating(bool completed, int level, int submissions)
+    public void AwardStarRating(bool completed, int level, int submissions, Image image)
     {
         int starRating = 0;
 
@@ -110,7 +115,7 @@ public class MiniGame1Manager : MonoBehaviour
         }
 
         Debug.Log("Awarded " + starRating + " star(s) for this level.");
-        UpdateStarRatingUI(starRating);
+        UpdateStarRatingUI(starRating, image);
     }
 
     private void GiveFeedback()
@@ -174,13 +179,32 @@ public class MiniGame1Manager : MonoBehaviour
         Debug.Log("Sending feedback to dialogue system: " + feedbackMessage);
     }
 
-    private void UpdateStarRatingUI(int stars)
+    private void UpdateStarRatingUI(int stars, Image image)
     {
         //Display star ratinsg popup
         Debug.Log("Displaying " + stars + " star(s) on the UI.");
+        var imageComponent = image;
 
         //Trigger the pop-up in the UI
         //UIPopupManager.Instance.ShowStarRating(stars);
+        switch (stars)
+        {
+            case 0:
+                imageComponent.sprite = Zero;
+                break;
+            case 1:
+                imageComponent.sprite = One;
+                break;
+            case 2:
+                imageComponent.sprite = Two;
+                break;
+            case 3:
+                imageComponent.sprite = Three;
+                break;
+            default:
+                break;
+        }
+        
     }
 
 	//Call this method when the player submits their configuration
