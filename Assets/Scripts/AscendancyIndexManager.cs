@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.IO.Pipes;
+using System.Linq;
+using TMPro;
+using TreeEditor;
+using UnityEngine;
 using TMPro;
 
 public class AscendancyIndexManager : MonoBehaviour
@@ -264,5 +270,10 @@ public class AscendancyIndexManager : MonoBehaviour
     public float GetAIScore() //for ranking system
     {
         return ascendancyIndex;  // Returns the score the player has
+    }
+
+    public float GetAscendancyIndex()
+    {
+        return ascendancyIndex;
     }
 }
