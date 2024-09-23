@@ -40,16 +40,6 @@ public class PipeGameController : MonoBehaviour
     }
 
    
-
-    //void loadLevel()
-    //{
-    //    layer1Data.loadLevel1(level1Start, level1Layer1, color1);
-    //    layer2Data.loadLevel1(level1Start, level1Layer2, color2);
-    //    layer3Data.loadLevel1(level1Start, level1Layer3, color3);
-    //    GameObject[] temp = { GameObject.Find("Canvas1") };
-    //    LayerSwap.loadLevel(1, temp);
-    //}
-
     public float[] initialPos;
     public int[] pipeValid;
     public float[,] finalPos;
@@ -60,8 +50,6 @@ public class PipeGameController : MonoBehaviour
     {
         attempts += 1;
         bool match = true;
-        //Debug.Log(finalPos.GetLength(1));
-        //Debug.Log(finalPos.GetLength(0));
         for (int i = 0; i < finalPos.GetLength(1); i++)
         {
             if (this.pipeValid[i] == 0)
@@ -143,7 +131,9 @@ public class PipeGameController : MonoBehaviour
                 break;
         }
     }
+
     // level1
+    //the image of the pipe on the layer
     private int[] level1Layer1 = {
         2, 0, 2, 0, 2, 1, 1, 2, 0,
         0, 3, 1, 1, 1, 1, 1, 2, 0,
@@ -165,14 +155,16 @@ public class PipeGameController : MonoBehaviour
         0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0,
     };
+    //starting angles
     public static float[] level1Start =
     {
-        0, 0, 0, 0, 180, 0, 90, 0, 0,
-        0, 0, 90, 180, 0, 0, 180, 90, 0,
-        0, 0, 0, 0, 0, 0, 90, 0, 0,
-        0, 0, 0, 0, 270, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0,   0,   0,   0, 180,   0,  90,   0,   0,
+        0,   0,  90, 180,   0,   0, 180,  90,   0,
+        0,   0,   0,   0,   0,   0,  90,   0,   0,
+        0,   0,   0,   0, 270,   0,   0,   0,   0,
+        0,   0,   0,   0,   0,   0,   0,   0,   0,
     };
+    //there are multiple possible answers sometimes because visually on a straight pipe a 90 is the same as 270 etc.
     public static float[,] lvl1Answer =
     {
         { 
@@ -188,6 +180,7 @@ public class PipeGameController : MonoBehaviour
         0,   0,   0,   0, 270, 180, 180,  90,   0,
         0,   0,   0,   0, 270,   0,   0,   0,   0,},
     };
+    //which squares need to be checked for this to be correct (avoids wasting time trying to create answers for all the extraneous pipes that dont matter)
     public static int[] lvl1valid =
     {
         1, 1, 1, 1, 0, 0, 0, 0, 1,
@@ -199,7 +192,7 @@ public class PipeGameController : MonoBehaviour
 
 
 
-    //level 2
+    // level 2
     private int[] level2Layer1 = {
         3, 2, 2, 2, 1, 2, 4, 1, 4,
         0, 2, 1, 1, 2, 2, 3, 2, 0,
@@ -223,11 +216,11 @@ public class PipeGameController : MonoBehaviour
     };
     public static float[] level2Start =
     {
-        0, 0, 0, 0, 180, 0, 90, 0, 0,
-        0, 0, 90, 180, 0, 0, 180, 90, 0,
-        0, 0, 0, 0, 0, 0, 90, 0, 0,
-        0, 0, 0, 0, 270, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0,   0,   0,   0, 180,   0,  90,   0,   0,
+        0,   0,  90, 180,   0,   0, 180,  90,   0,
+        0,   0,   0,   0,   0,   0,  90,   0,   0,
+        0,   0,   0,   0, 270,   0,   0,   0,   0,
+        0,   0,   0,   0,   0,   0,   0,   0,   0,
     };
     public static float[,] lvl2Answer =
     {
@@ -254,8 +247,7 @@ public class PipeGameController : MonoBehaviour
     };
 
 
-
-    // level1
+    // level3
     private int[] level3Layer1 = {
         0, 0, 0, 0, 2, 2, 0, 0, 2,
         3, 0, 2, 0, 1, 2, 2, 0, 0,
@@ -314,15 +306,15 @@ public class PipeGameController : MonoBehaviour
         1, 1, 1, 1, 0, 0, 0, 1, 1,
         0, 0, 0, 0, 0, 0, 0, 1, 1,
         0, 0, 0, 0, 0, 1, 0, 0, 0,
-        0, 1, 1, 0, 0, 1, 0, 0, 0
+        0, 1, 1, 0, 0, 1, 0, 0, 0,
     };
 
 
-//    private int[] level3Layer1 = {
-//        0, 0, 0, 0, 2, 2, 0, 0, 0,
-//        0, 0, 0, 0, 0, 2, 2, 0, 0,
-//        0, 0, 0, 0, 0, 0, 0, 0, 0,
-//        0, 0, 0, 0, 0, 0, 0, 0, 0,
-//        0, 0, 0, 0, 0, 0, 0, 0, 0,
-//    };
+//    base copy
+//    0, 0, 0, 0, 0, 0, 0, 0, 0,
+//    0, 0, 0, 0, 0, 0, 0, 0, 0,
+//    0, 0, 0, 0, 0, 0, 0, 0, 0,
+//    0, 0, 0, 0, 0, 0, 0, 0, 0,
+//    0, 0, 0, 0, 0, 0, 0, 0, 0,
+//   
 }
