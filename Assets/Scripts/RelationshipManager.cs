@@ -8,9 +8,6 @@ public class RelationshipManager : MonoBehaviour
 	public static RelationshipManager Instance; //Single instance for easy access
 	
 	//Relationship values for each character
-	public int captainHawthornRelationship = 0;
-	public int drAspenBonnieRelationship = 0;
-	public int garyPineRelationship = 0;
 
 	//UI text for each character status
 	public TextMeshProUGUI captainHawthornStatusText;
@@ -73,31 +70,6 @@ public class RelationshipManager : MonoBehaviour
         Debug.Log("Returned to home screen.");
     }
 
-    public void UpdateRelationship(string characterName, int changeValue)
-	{
-		switch (characterName)
-		{
-			case "CaptainHawthorn":
-				captainHawthornRelationship += changeValue;
-				break;
-			case "DrAspenBonnie":
-				drAspenBonnieRelationship += changeValue; 
-				break;
-			case "GaryPine":
-				garyPineRelationship += changeValue; 
-				break;
-		}
-
-        // Ensure the relationship value stays within range
-        captainHawthornRelationship = Mathf.Clamp(captainHawthornRelationship, -11, 11);
-        drAspenBonnieRelationship = Mathf.Clamp(drAspenBonnieRelationship, -10, 10);
-        garyPineRelationship = Mathf.Clamp(garyPineRelationship, -12, 12);
-
-		//Uodate the Ascendancy Index based on the relationship change
-		AscendancyIndexManager.Instance.UpdateAscendancyBasedOnRelationships(captainHawthornRelationship, drAspenBonnieRelationship, garyPineRelationship);
-
-    }
-
     public string GetRelationshipStatus(string characterName)
 	{
 		switch (characterName)
@@ -115,50 +87,85 @@ public class RelationshipManager : MonoBehaviour
 
 	private string GetCaptainHawthornStatus()
 	{
-        if (captainHawthornRelationship >= 7)
-            return "Right-Hand Crew Member\n" +
-                "Captain Hawthorn sees you as his right-hand, always ready to step up and lead when needed.\r\n";
-        else if (captainHawthornRelationship >= 1)
-            return "Dependable Inhabitant\n" +
-                "You’re reliable and competent, and Captain Hawthorn knows he can count on you to get the job done.\r\n";
-        else if (captainHawthornRelationship >= -6)
-            return "Unreliable Cadet\n" +
-                "Captain Hawthorn isn’t sure he can trust you— your unpredictability makes working together tense.\r\n";
+        //check for masteventsystem
+        if (MasterEventSystem.Instance == null)
+        {
+            Debug.LogError("MasterEventSystem.Instance is null!");
+            return "Error: Master Event System is not available.";
+        }
+
+        // Directly check flags
+        if (MasterEventSystem.Instance.checkFlag(Flags.HawthornLikePlus))
+        {
+            return "<b>Right-Hand Crew Member</b>\n<size=16><i>Captain Hawthorn sees you as his right-hand, always ready to step up and lead.</i></size>";
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.HawthornLike))
+        {
+            return "<b>Dependable Inhabitant</b>\n<size=16><i>You're reliable and competent. Hawthorn knows he can count on you.</i></size>";
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.HawthornDislike))
+        {
+            return "<b>Unreliable Cadet</b>\n<size=16><i>Hawthorn isn’t sure he can trust you. Working together is tense.</i></size>";
+        }
         else
-            return "Loose Cannon\n" +
-                "Captain Hawthorn sees you as unpredictable and a danger to the station’s stability.";
+        {
+            return "<b>Loose Cannon</b>\n<size=16><i>Hawthorn sees you as unpredictable and a danger to the station’s stability.</i></size>";
+        }
+
     }
 
     private string GetDrAspenBonnieStatus()
     {
-        if (drAspenBonnieRelationship >= 7)
-            return "Research Partner\n" +
-                "Dr. Aspen Bonnie considers you an invaluable collaborator, someone she can rely on for breakthrough discoveries.\r\n";
-        else if (drAspenBonnieRelationship >= 1)
-            return "Valued Colleague\n" +
-                "Dr. Bonnie respects your input, but you’re not yet fully in her circle of trusted confidants.\r\n";
-        else if (drAspenBonnieRelationship >= -6)
-            return "Persistent Nuisance\n" +
-                "Dr. Bonnie considers you an ongoing annoyance, someone she has to tolerate but would rather not deal with.\r\n";
+        //check for masteventsystem
+        if (MasterEventSystem.Instance == null)
+        {
+            Debug.LogError("MasterEventSystem.Instance is null!");
+            return "Error: Master Event System is not available.";
+        }
+
+        if (MasterEventSystem.Instance.checkFlag(Flags.BonnieLikePlus))
+        {
+            return "<b>Research Partner</b>\n<size=16><i>Dr. Bonnie considers you invaluable for breakthrough discoveries.</i></size>";
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.BonnieLike))
+        {
+            return "<b>Valued Colleague</b>\n<size=16><i>Bonnie respects your input, but you're not in her trusted circle yet.</i></size>";
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.BonnieDislike))
+        {
+            return "<b>Persistent Nuisance</b>\n<size=16><i>Bonnie finds you a hindrance, tolerating you but preferring distance.</i></size>";
+        }
         else
-            return "Scientific Deadweight\n" +
-                "Dr. Bonnie sees you as a hindrance to progress, preferring to work without your involvement entirely.\r\n";
+        {
+            return "<b>Scientific Deadweight</b>\n<size=16><i>Bonnie sees you as a setback, preferring to work alone.</i></size>";
+        }
     }
 
     private string GetGaryPineStatus()
     {
-        if (garyPineRelationship >= 7)
-            return "Partner in Crime\n" +
-                "You and Gary Pine make a perfect team, always seen together and finding shortcuts to your tasks.\r\n";
-        else if (garyPineRelationship >= 1)
-            return "Budding Ally\n" +
-                "Gary Pine likes working with you, but he’s still figuring out if he can fully trust you.\r\n";
-        else if (garyPineRelationship >= -6)
-            return "Rival\n" +
-                "There’s tension between you and Gary Pine, and he’s not above trying to outmaneuver you.\r\n";
+        //check for masteventsystem
+        if (MasterEventSystem.Instance == null)
+        {
+            Debug.LogError("MasterEventSystem.Instance is null!");
+            return "Error: Master Event System is not available.";
+        }
+
+        if (MasterEventSystem.Instance.checkFlag(Flags.PineLikePlus))
+        {
+            return "<b>Partner in Crime</b>\n<size=16><i>You and Gary Pine make a perfect team, always seen together.</i></size>";
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.PineLike))
+        {
+            return "<b>Budding Ally</b>\n<size=16><i>Gary likes working with you, but he's not fully sure he can trust you yet.</i></size>";
+        }
+        else if (MasterEventSystem.Instance.checkFlag(Flags.PineDislike))
+        {
+            return "<b>Rival</b>\n<size=16><i>There's tension, and Gary isn’t above outmaneuvering you.</i></size>";
+        }
         else
-            return "Arch Nemesis\n" +
-                "You and Gary Pine are locked in a fierce competition, constantly trying to outsmart each other.\r\n";
+        {
+            return "<b>Arch Nemesis</b>\n<size=16><i>You and Gary Pine are locked in a fierce competition.</i></size>";
+        }
     }
 
 	public void UpdateJournalUI()

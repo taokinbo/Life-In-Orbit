@@ -30,6 +30,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 31
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -53,6 +55,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 15
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -76,6 +80,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -100,6 +106,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -122,6 +130,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -146,6 +156,8 @@ MonoBehaviour:
     isDisabled: 00000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -169,6 +181,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie

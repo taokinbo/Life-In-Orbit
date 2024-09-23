@@ -13,6 +13,30 @@ MonoBehaviour:
   m_Name: Scene15Hawthorn
   m_EditorClassIdentifier: 
   dialogue:
+  - dialogue: Captain Hawthorn stands at attention, looking more serious than usual.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 7
+    soundBit: 0
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 1
+    isBold: 0
+    isItalic: 1
+    shake: 0
   - dialogue: "Glad you have all arrived. The situation with the alien has gotten
       worse. If we don\u2019t get it under control, the entire simulation could be
       canceled before tomorrow\u2019s final evaluation."
@@ -30,6 +54,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -52,6 +78,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -76,6 +104,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 22
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -92,7 +122,7 @@ MonoBehaviour:
     choices:
     - "\"We\u2019ll get through this. I\u2019m ready for whatever happens.\""
     - "\"Great, so everything we\u2019ve done might be for nothing?\""
-    choiceGoTo: 0400000005000000
+    choiceGoTo: 0500000006000000
     points: 02000000feffffff
     pointsGoTo: 0700000007000000
     hasFlag: 0
@@ -100,6 +130,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -112,7 +144,7 @@ MonoBehaviour:
     questNumMin: 0
     questNumMax: 0
     stop: 0
-    forceSkipTo: 6
+    forceSkipTo: 7
     choice: 0
     choices: []
     choiceGoTo: 
@@ -123,6 +155,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -146,6 +180,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 10
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -168,6 +204,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -191,6 +229,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -213,6 +253,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -236,6 +278,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 15
+    soundBit: 34
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -258,6 +302,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 8
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -282,6 +328,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 7
+    soundBit: 29
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -298,7 +346,7 @@ MonoBehaviour:
     choices:
     - "\"Dr. Bonnie\u2019s research could help us in the long run.\""
     - "\"Captain Hawthorn\u2019s right\u2014we need to focus on tomorrow.\""
-    choiceGoTo: 0d0000000f000000
+    choiceGoTo: 0e00000010000000
     points: fefffffffeffffff
     pointsGoTo: 0700000009000000
     hasFlag: 1
@@ -306,6 +354,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -328,6 +378,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -339,7 +391,7 @@ MonoBehaviour:
     questNumMin: 0
     questNumMax: 0
     stop: 0
-    forceSkipTo: 17
+    forceSkipTo: 18
     choice: 0
     choices: []
     choiceGoTo: 
@@ -350,6 +402,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -372,6 +426,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 5
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -394,6 +450,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 6
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -416,6 +474,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -439,6 +499,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 13
+    soundBit: 40
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -462,6 +524,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 7
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Captain Hawthorn
@@ -484,6 +548,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 1
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -507,6 +573,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 15
     bgSprite: 
     showName: 1
     name: Lumina

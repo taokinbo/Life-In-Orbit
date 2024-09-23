@@ -29,6 +29,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 14
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -53,6 +55,32 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 30
+    bgSprite: 
+    showName: 1
+    name: Dr. Bonnie
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "But don\u2019t worry, I\u2019m not here to talk about extraterrestrials\u2014yet."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 15
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -70,7 +98,7 @@ MonoBehaviour:
     - "\"It\u2019s good to meet you, Dr. I look forward to working with you.\""
     - "\"Thanks for the introduction. I guess we\u2019ll be working together.\""
     - "\"Let\u2019s just get this over with. I\u2019m here to get the job done.\" "
-    choiceGoTo: 030000000400000005000000
+    choiceGoTo: 040000000500000006000000
     points: 0200000001000000ffffffff
     pointsGoTo: 090000000900000009000000
     hasFlag: 0
@@ -78,6 +106,8 @@ MonoBehaviour:
     isDisabled: 000000000000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -90,7 +120,7 @@ MonoBehaviour:
     questNumMin: 0
     questNumMax: 0
     stop: 0
-    forceSkipTo: 7
+    forceSkipTo: 8
     choice: 0
     choices: []
     choiceGoTo: 
@@ -101,6 +131,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 37
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -113,7 +145,7 @@ MonoBehaviour:
     questNumMin: 0
     questNumMax: 0
     stop: 0
-    forceSkipTo: 7
+    forceSkipTo: 8
     choice: 0
     choices: []
     choiceGoTo: 
@@ -124,6 +156,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 31
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -146,6 +180,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 31
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -169,6 +205,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -176,7 +214,8 @@ MonoBehaviour:
     isBold: 0
     isItalic: 0
     shake: 0
-  - dialogue: 'Dr. Bonnie taps on her tablet and glances back at the player. '
+  - dialogue: Dr. Bonnie taps on her tablet and brings her attention back to the
+      player.
     questNumMin: 0
     questNumMax: 0
     stop: 0
@@ -191,6 +230,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -214,6 +255,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -237,6 +280,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -253,7 +298,7 @@ MonoBehaviour:
     choices:
     - "\"I appreciate the feedback. I\u2019ll do better next time.\""
     - "\"It wasn\u2019t perfect, but I got it done. That\u2019s what counts, right?\" "
-    choiceGoTo: 0b0000000c000000
+    choiceGoTo: 0c0000000d000000
     points: 01000000ffffffff
     pointsGoTo: 0900000009000000
     hasFlag: 0
@@ -261,6 +306,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -273,7 +320,7 @@ MonoBehaviour:
     questNumMin: 0
     questNumMax: 0
     stop: 0
-    forceSkipTo: 13
+    forceSkipTo: 14
     choice: 0
     choices: []
     choiceGoTo: 
@@ -284,6 +331,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 35
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -307,6 +356,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 14
+    soundBit: 39
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -329,6 +380,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -353,6 +406,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -376,6 +431,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 16
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -398,6 +455,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: Dr. Bonnie
@@ -422,6 +481,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 38
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -444,6 +505,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -467,6 +530,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 11
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: Dr. Bonnie
@@ -490,6 +555,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 12
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Dr. Bonnie
@@ -513,6 +580,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 15
+    soundBit: 32
     bgSprite: 
     showName: 1
     name: Dr. Bonnie

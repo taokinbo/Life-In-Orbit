@@ -29,6 +29,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 42
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -51,6 +53,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -76,6 +80,8 @@ MonoBehaviour:
     isDisabled: 000000000000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -99,6 +105,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 44
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -121,6 +129,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 21
+    soundBit: 45
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -144,6 +154,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 22
+    soundBit: 44
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -169,6 +181,8 @@ MonoBehaviour:
     isDisabled: 18000000190000001a000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -192,6 +206,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 50
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -215,6 +231,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -239,6 +257,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -262,6 +282,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 1
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -285,6 +307,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 1
     chatSprite: 
+    charSprites: 18
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -308,6 +332,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 46
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -330,6 +356,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -354,6 +382,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -376,6 +406,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 1
     chatSprite: 
+    charSprites: 21
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -399,6 +431,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 1
     chatSprite: 
+    charSprites: 22
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -423,6 +457,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 43
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -447,6 +483,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -469,6 +507,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 1
     chatSprite: 
+    charSprites: 17
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -492,6 +532,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 1
     chatSprite: 
+    charSprites: 20
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -499,7 +541,8 @@ MonoBehaviour:
     isBold: 0
     isItalic: 0
     shake: 0
-  - dialogue: "Anywho\u2019s, I'm gonna take a deserved break for my job well done."
+  - dialogue: "I\u2019d stay and talk some more but I think it\u2019s time for me
+      to catch some sleep after all that hard work."
     questNumMin: 3
     questNumMax: 3
     stop: 0
@@ -514,6 +557,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -538,6 +583,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -560,6 +607,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 47
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -582,6 +631,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 47
     bgSprite: 
     showName: 1
     name: Gary Pine

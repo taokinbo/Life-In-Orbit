@@ -29,6 +29,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 41
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -52,6 +54,8 @@ MonoBehaviour:
     isDisabled: 00000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -76,6 +80,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 42
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -101,6 +107,8 @@ MonoBehaviour:
     isDisabled: 000000000000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -123,6 +131,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 21
+    soundBit: 48
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -146,6 +156,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 43
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -169,6 +181,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 43
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -192,6 +206,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -215,6 +231,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 20
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -239,6 +257,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -262,6 +282,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 44
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -284,6 +306,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 18
+    soundBit: 44
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -307,6 +331,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 1
+    soundBit: 0
     bgSprite: 
     showName: 1
     name: Lumina
@@ -331,6 +357,8 @@ MonoBehaviour:
     isDisabled: 0000000000000000
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 
@@ -353,6 +381,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 49
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -375,6 +405,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 49
     bgSprite: 
     showName: 1
     name: Gary Pine
@@ -397,6 +429,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 0
+    soundBit: 0
     bgSprite: 
     showName: 0
     name: 

@@ -29,6 +29,8 @@ MonoBehaviour:
     isDisabled: 
     advanceQuest: 0
     chatSprite: 
+    charSprites: 17
+    soundBit: 41
     bgSprite: 
     showName: 1
     name: Gary Pine

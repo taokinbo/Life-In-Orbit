@@ -31,7 +31,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 1
+    soundBit: 5
     bgSprite: 
     showName: 1
     name: Lumina
@@ -103,7 +103,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 15
     bgSprite: 
     showName: 1
     name: Lumina
@@ -206,7 +206,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 18
     bgSprite: 
     showName: 1
     name: Lumina
@@ -307,7 +307,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 9
     bgSprite: 
     showName: 1
     name: Lumina
@@ -384,7 +384,7 @@ MonoBehaviour:
     advanceQuest: 0
     chatSprite: 
     charSprites: 0
-    soundBit: 0
+    soundBit: 3
     bgSprite: 
     showName: 1
     name: Lumina
