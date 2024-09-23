@@ -4058,17 +4058,17 @@ MonoBehaviour:
   Doc_Oh: {fileID: 8300000, guid: c98e49d2bd86e414e81ed26af0696bec, type: 3}
   Doc_Ehh: {fileID: 8300000, guid: 2e7e696a6cb27444ba927004c34dadd5, type: 3}
   Doc_Ugh: {fileID: 8300000, guid: 071fda42a61bf7d4badc59cc8dc57829, type: 3}
-  Rival_HeyThere: {fileID: 0}
-  Rival_WellThen: {fileID: 0}
-  Rival_Hmmm: {fileID: 0}
-  Rival_Fair: {fileID: 0}
-  Rival_Ha: {fileID: 0}
-  Rival_Yeah: {fileID: 0}
-  Rival_Later: {fileID: 0}
-  Rival_Yes: {fileID: 0}
-  Rival_Lets: {fileID: 0}
-  Rival_Oh: {fileID: 0}
-  Rival_YouAgain: {fileID: 0}
+  Rival_HeyThere: {fileID: 8300000, guid: a9f1689b280977744b05ac0afe4bec01, type: 3}
+  Rival_WellThen: {fileID: 8300000, guid: a79229542615da34887f83605da00182, type: 3}
+  Rival_Hmmm: {fileID: 8300000, guid: 67e962525ed993b4f837ac6a764a9a35, type: 3}
+  Rival_Fair: {fileID: 8300000, guid: 671cfba4974285245be4535ca3b6edd0, type: 3}
+  Rival_Ha: {fileID: 8300000, guid: 29a24f9f993af9d45a6d895d4e88e701, type: 3}
+  Rival_Yeah: {fileID: 8300000, guid: b8b147adedc87c84dbc33e374751020f, type: 3}
+  Rival_Later: {fileID: 8300000, guid: 1f088ee9c53c24b4ab9083de1374608e, type: 3}
+  Rival_Yes: {fileID: 8300000, guid: 4f0e71f9ce4b6a14f90cc6022c83f580, type: 3}
+  Rival_Lets: {fileID: 8300000, guid: 9e34b71c27a1d0449b2fbd4c9c367689, type: 3}
+  Rival_Oh: {fileID: 8300000, guid: 1fbaab11f28fa0f41b196f49093ebea3, type: 3}
+  Rival_YouAgain: {fileID: 8300000, guid: 83af7f0dd2207d046a6fa2d633832a03, type: 3}
 --- !u!82 &2079396177
 AudioSource:
   m_ObjectHideFlags: 0
