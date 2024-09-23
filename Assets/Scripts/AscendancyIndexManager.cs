@@ -237,6 +237,12 @@ public class AscendancyIndexManager : MonoBehaviour
             */
         }
         totalScore = ApplyRelationshipModifiers(totalScore);
-        UpdateAscendancyScoreUI(totalScore);
+        ascendancyIndex = totalScore;
+        UpdateAscendancyScoreUI(ascendancyIndex);
+    }
+
+    public int GetAIScore() //for ranking system
+    {
+        return ascendancyIndex;  // Returns the  star rating  the player ecieved
     }
 }
