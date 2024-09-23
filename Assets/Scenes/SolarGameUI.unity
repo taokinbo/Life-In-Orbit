@@ -234,6 +234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell22
       objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -695,6 +699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell21
       objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1054,6 +1062,10 @@ PrefabInstance:
     - target: {fileID: 6857899604878193557, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
       propertyPath: m_Name
       value: Cell01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1439,6 +1451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell20
       objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1529,7 +1545,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 921891206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 98156351}
+        m_TargetAssemblyTypeName: SolarGameController, Assembly-CSharp
+        m_MethodName: CheckSolution
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &921891206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,6 +2209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell10
       objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2673,6 +2705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell11
       objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2793,6 +2829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cell02
       objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2912,6 +2952,10 @@ PrefabInstance:
     - target: {fileID: 6857899604878193557, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
       propertyPath: m_Name
       value: Cell12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634116054687414113, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
+      propertyPath: PanelID
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3722,10 +3766,6 @@ PrefabInstance:
     - target: {fileID: 6857899604878193557, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
       propertyPath: m_Name
       value: Cell00
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838903377168268508, guid: f2e5b4351769b1a479a170d32873536d, type: 3}
-      propertyPath: m_Name
-      value: Image1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

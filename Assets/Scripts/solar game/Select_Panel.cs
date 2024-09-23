@@ -63,25 +63,23 @@ public class Select_Panel : MonoBehaviour
         {
             case 0:
                 componetThing.sprite = South;
-                //gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.South, PanelID);
+                gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.South, PanelID);
                 break;
             case 1:
                 componetThing.sprite = East;
-                //gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.East, PanelID);
+                gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.East, PanelID);
                 break;
             case 2:
                 componetThing.sprite = North;
-               // gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.North, PanelID);
+                gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.North, PanelID);
                 break;
             case 3:
                 componetThing.sprite = West;
-                //gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.West, PanelID);
+                gameController.SetSolarPanelOrientation(SolarPanel.PanelOrientation.West, PanelID);
                 break;
             default:
                 componetThing.sprite = Empty;
                 break;
         }
     }
-
-
 }

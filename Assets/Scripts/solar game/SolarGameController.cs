@@ -15,6 +15,9 @@ public class SolarGameController : MonoBehaviour
     public Sprite Level3;
     public Sprite Level4;
     private SolarPanel[] SolarPanels = new SolarPanel[9];
+    private MiniGame1LevelData levelData;
+    private int level;
+    private int submissions;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +25,8 @@ public class SolarGameController : MonoBehaviour
         panels = FindObjectsOfType<Select_Panel>();
         button = FindObjectOfType<ButtonImageSwitch>();
         changeAngle = FindObjectOfType<ChangeAngle>();
-        int level = MasterEventSystem.Instance.getMinigameLevel();
-        setUpLevel(level);
+        level = MasterEventSystem.Instance.getMinigameLevel();
+        setUpLevel();
     }
 
     // Update is called once per frame
@@ -63,7 +66,7 @@ public class SolarGameController : MonoBehaviour
         button.changeButtonImage();
     }
     
-    private void setUpLevel(int level)
+    private void setUpLevel()
     {
         if(level < 1)
         {
@@ -90,10 +93,10 @@ public class SolarGameController : MonoBehaviour
         {
             if (panel.enabled)
             {
-                //SolarPanel solarPanel = panel.GetComponent<SolarPanel>();
-                //solarPanel.SetAngle(0);
-                //solarPanel.SetOrientation(SolarPanel.PanelOrientation.South);
-                //SolarPanels[panel.PanelID] = solarPanel;
+                SolarPanel solarPanel = panel.GetComponent<SolarPanel>();
+                solarPanel.SetAngle(SolarPanel.PanelAngle.Angle0);
+                solarPanel.SetOrientation(SolarPanel.PanelOrientation.South);
+                SolarPanels[panel.PanelID] = solarPanel;
             }
         }
 
@@ -138,10 +141,72 @@ public class SolarGameController : MonoBehaviour
     public void SetSolarPanelAngle(SolarPanel.PanelAngle angle, int panelID)
     {
         SolarPanels[panelID].SetAngle(angle);
+        //Debug.Log(angle.ToString());
     }
 
     public void SetSolarPanelOrientation(SolarPanel.PanelOrientation orientation, int panelID)
     {
         SolarPanels[panelID].SetOrientation(orientation);
+        //Debug.Log(orientation.ToString());
+    }
+
+    public void CheckSolution()
+    {
+        submissions++;
+
+        switch (level)
+        {
+            case 0:
+                levelData = ScriptableObject.CreateInstance<MG1Level0Data>();
+                break;
+            case 1:
+                levelData = ScriptableObject.CreateInstance<MG1Level1Data>();
+                break;
+            case 2:
+                levelData = ScriptableObject.CreateInstance<MG1Level2Data>();
+                break;
+            case 3:
+                levelData = ScriptableObject.CreateInstance<MG1Level3Data>();
+                break;
+            case 4:
+                levelData = ScriptableObject.CreateInstance<MG1Level4Data>();
+                break;
+            default:
+                break;
+        }
+
+        bool allCorrect = true;
+        foreach (var panel in panels)
+        {
+            if (panel.GetComponent<Button>().IsInteractable())
+            {
+                //Debug.Log("Panel Number " + panel.PanelID + "Panel Direction: " + SolarPanels[panel.PanelID].GetOrientation() + "Panel Angle: " + SolarPanels[panel.PanelID].GetAngle());
+                
+                PanelSolution[] solution = levelData.correctPanelSettings;
+                bool v = SolarPanels[panel.PanelID].IsCorrect(solution[panel.PanelID]);
+                if (v)
+                {
+                    panel.GetComponent<Button>().interactable = false;
+                    panel.GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    panel.GetComponent<Image>().color = Color.red;
+                    allCorrect = false;
+                }
+            }
+        }
+
+        if(submissions >= levelData.maxSubmissions)
+        {
+            if (!allCorrect)
+            {
+                foreach(var panel in panels)
+                {
+                    panel.GetComponent<Button>().interactable = false;
+                }
+
+            }
+        }
     }
 }
