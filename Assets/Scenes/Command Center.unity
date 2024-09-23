@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ascendancyIndexText: {fileID: 0}
-  ascendancyIndex: 30
+  ascendancyIndex: 0
 --- !u!1 &448503683
 GameObject:
   m_ObjectHideFlags: 0
