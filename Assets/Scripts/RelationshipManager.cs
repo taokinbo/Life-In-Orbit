@@ -7,22 +7,17 @@ public class RelationshipManager : MonoBehaviour
 	
 	public static RelationshipManager Instance; //Single instance for easy access
 	
-	//Relationship values for each character
-
 	//UI text for each character status
 	public TextMeshProUGUI captainHawthornStatusText;
 	public TextMeshProUGUI drAspenBonnieStatusText;
 	public TextMeshProUGUI garyPineStatusText;
 
-	//refernces to UI in Unity for Directory
-	public GameObject directoryBG;
-	public GameObject directoryButton;
-	public GameObject backButton;
+    //refernces to UI in Unity for Directory
+    public GameObject directoryPanel;
+    public GameObject homePanel;
 
-	//Ascendancy index
-	public int ascendancyIndex = 0;
-	
-	private void Awake()
+
+    private void Awake()
 	{
 		if (Instance == null)
 		{
@@ -39,18 +34,9 @@ public class RelationshipManager : MonoBehaviour
 	public void OpenDirectory()
 	{
 		// hide home screen and show the directory
-		directoryButton.SetActive(false); //hide home screen button
-		directoryBG.SetActive(true); //show the directory
-		backButton.SetActive(true); //show the back button
-
-        //shoe the relationship statuses
-        captainHawthornStatusText.gameObject.SetActive(true);
-        drAspenBonnieStatusText.gameObject.SetActive(true);
-        garyPineStatusText.gameObject.SetActive(true);
+		directoryPanel.SetActive(true);
 
         UpdateJournalUI();
-
-		MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.OpenDirectory);
 
 		Debug.Log("Directory opened, displaying relationship statuses.");
 	}
@@ -58,14 +44,8 @@ public class RelationshipManager : MonoBehaviour
     public void BackToHome()
     {
         // Hide the Directory UI and show the home screen
-        directoryBG.SetActive(false);  // Hide the Directory background
-        backButton.SetActive(false);  // Hide the back button
-        directoryButton.SetActive(true);  // Show the home screen button
-
-        //hide the directory again
-        captainHawthornStatusText.gameObject.SetActive(false);
-        drAspenBonnieStatusText.gameObject.SetActive(false);
-        garyPineStatusText.gameObject.SetActive(false);
+        directoryPanel.SetActive(false); // Show the home screen button
+        homePanel.SetActive(true);
 
         Debug.Log("Returned to home screen.");
     }

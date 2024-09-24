@@ -509,15 +509,15 @@ public class MasterEventSystem : MonoBehaviour
             return 14;
     
     }
-   
+
     public class TaskStatus
     {
-        public string TaskDescription;
-        public bool IsCompleted;
-        
-        public TaskStatus(string taskDescription, bool isCompleted)
+        public string Description;  // Task description
+        public bool IsCompleted;    // Task completion status
+
+        public TaskStatus(string description, bool isCompleted)
         {
-            TaskDescription = taskDescription;
+            Description = description;
             IsCompleted = isCompleted;
         }
     }
@@ -525,10 +525,21 @@ public class MasterEventSystem : MonoBehaviour
     // Dictionary to track tasks by scene
     private Dictionary<Events, List<TaskStatus>> tasksByScene = new Dictionary<Events, List<TaskStatus>>()
     {
-        { Events.Act1Scene1, new List<TaskStatus> { new TaskStatus("Go to Orientation", false) } },
-        { Events.Act1Scene2, new List<TaskStatus> { new TaskStatus("Attend Orientation", false), new TaskStatus("Select Your Role", false) } },
+        { Events.Act1Scene1, new List<TaskStatus>
+            {
+                new TaskStatus("Go to Orientation", false)
+            }
+        },
+        { Events.Act1Scene2, new List<TaskStatus>
+            {
+                new TaskStatus("Attend Orientation", false),
+                new TaskStatus("Select Your Role", false)
+            }
+        },
         // Add other tasks as necessary
     };
+
+
 
     //Get tasks for current scene
     public List<TaskStatus> GetTasksForCurrentScene()
@@ -553,7 +564,7 @@ public class MasterEventSystem : MonoBehaviour
         {
             foreach (TaskStatus task in tasksByScene[currentScene])
             {
-                if (task.TaskDescription == taskDescription)
+                if (task.Description == taskDescription)
                 {
                     task.IsCompleted = true;  // Mark the task as completed
                     break;

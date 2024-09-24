@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogueUI.unity
     guid: fd3056b46132eaf43b7fe971fed853e1
+  - enabled: 1
+    path: Assets/Scenes/TabletMenu.unity
+    guid: dbf5c171033ff05489462f8a1dd90350
   m_configObjects: {}
