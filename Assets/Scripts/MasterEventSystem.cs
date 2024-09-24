@@ -496,6 +496,74 @@ public class MasterEventSystem : MonoBehaviour
         return !notDone;
     }
 
+    public int GetCurrentDay()
+    {
+        //using the current event to return the correct in-game day
+        if (currentEvent <= Events.Act2Scene10)
+            return 1;
+        else if (currentEvent <= Events.Act3Scene14)
+            return 2;
+        else if (currentEvent <= Events.Act4Scene17)
+            return 13;
+        else
+            return 14;
+    
+    }
+   
+    public class TaskStatus
+    {
+        public string TaskDescription;
+        public bool IsCompleted;
+        
+        public TaskStatus(string taskDescription, bool isCompleted)
+        {
+            TaskDescription = taskDescription;
+            IsCompleted = isCompleted;
+        }
+    }
+
+    // Dictionary to track tasks by scene
+    private Dictionary<Events, List<TaskStatus>> tasksByScene = new Dictionary<Events, List<TaskStatus>>()
+    {
+        { Events.Act1Scene1, new List<TaskStatus> { new TaskStatus("Go to Orientation", false) } },
+        { Events.Act1Scene2, new List<TaskStatus> { new TaskStatus("Attend Orientation", false), new TaskStatus("Select Your Role", false) } },
+        // Add other tasks as necessary
+    };
+
+    //Get tasks for current scene
+    public List<TaskStatus> GetTasksForCurrentScene()
+    {
+        Events currentScene = getCurrentEvent();  // Get the current event (scene)
+
+        // Check if tasks exist for the current scene
+        if (tasksByScene.ContainsKey(currentScene))
+        {
+            return tasksByScene[currentScene];  // Return the list of tasks for this scene
+        }
+
+        return new List<TaskStatus>();  // Return an empty list if no tasks for the scene
+    }
+
+    //Mark tasks as completed
+    public void MarkTaskAsCompleted(string taskDescription)
+    {
+        Events currentScene = getCurrentEvent();
+
+        if (tasksByScene.ContainsKey(currentScene))
+        {
+            foreach (TaskStatus task in tasksByScene[currentScene])
+            {
+                if (task.TaskDescription == taskDescription)
+                {
+                    task.IsCompleted = true;  // Mark the task as completed
+                    break;
+                }
+            }
+        }
+    }
+
+   
+
     public void setRole(Roles role)
     {
         currentRole = role;
