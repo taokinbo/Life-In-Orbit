@@ -64,6 +64,7 @@ public enum Flags
     AiHigh, AiLow, AiHighHawthorn, AiLowHawthorn, AiHighBonnie, AiLowBonnie,
     PineHint, PineNoHint,
     AIHighLikePlus, AIHighLike, AIHighDislike, AIHighDislikePlus, AILowLikePlus, AILowLike, AILowDislike, AILowDislikePlus,
+    NameSelection, NameSelectionFinished, NameSelectionMoveOne, NameSelectionStart
 }
 
 public class MasterEventSystem : MonoBehaviour
@@ -87,7 +88,7 @@ public class MasterEventSystem : MonoBehaviour
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
     HashSet<Flags> flags = new HashSet<Flags>(){
-        Flags.HawthornDislike, Flags.PineDislike, Flags.BonnieDislike, Flags.Minigame1Start, Flags.BonnieNoHint, Flags.PineNoHint,
+        Flags.HawthornDislike, Flags.PineDislike, Flags.BonnieDislike, Flags.Minigame1Start, Flags.BonnieNoHint, Flags.PineNoHint, Flags.NameSelectionStart
     };
 
     public static MasterEventSystem Instance;
@@ -165,7 +166,9 @@ public class MasterEventSystem : MonoBehaviour
         // var currentDict = new Dictionary<EventInfoTypes, bool>();
         var currentDict = new Dictionary<EventInfoTypes, bool>()
         {
-            // { EventInfoTypes.Hawthorn, true} // TODO: REMOVE AFTER DONE WITH TESTING
+            { EventInfoTypes.NameSelection, true},
+            { EventInfoTypes.Lumina, true },
+
         };
         eventInfo[Events.GameStart] = currentDict;
         // Act 1 Scene 1
@@ -402,6 +405,18 @@ public class MasterEventSystem : MonoBehaviour
             if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighHawthorn);
             else flags.Add(Flags.AiLowHawthorn);
         }
+        if (newFlag == Flags.NameSelectionMoveOne) {
+            eventInfo[currentEvent][EventInfoTypes.NameSelection] = false;
+            // return;
+        }
+        if (newFlag == Flags.NameSelection) {
+            eventInfo[currentEvent][EventInfoTypes.NameSelection] = true;
+            flags.Remove(Flags.NameSelectionFinished);
+            // return;
+        }
+        if (newFlag == Flags.NameSelectionMoveOne) {
+            eventInfo[currentEvent][EventInfoTypes.Lumina] = true;
+        }
         eventTypeCleared(EventInfoTypes.None);
     }
 
@@ -507,7 +522,7 @@ public class MasterEventSystem : MonoBehaviour
             return 13;
         else
             return 14;
-    
+
     }
 
     public class TaskStatus
@@ -573,7 +588,7 @@ public class MasterEventSystem : MonoBehaviour
         }
     }
 
-   
+
 
     public void setRole(Roles role)
     {

@@ -13,57 +13,8 @@ MonoBehaviour:
   m_Name: Scene1Lumina
   m_EditorClassIdentifier: 
   dialogue:
-  - dialogue: "Nice to meet you, {PlayerName}! My name is Lumina. I\u2019m here to
-      assist you in navigating life aboard the station. Think of me as your guide
-      and companion."
-    questNumMin: 0
-    questNumMax: 0
-    stop: 0
-    forceSkipTo: -1
-    choice: 0
-    choices: []
-    choiceGoTo: 
-    points: 
-    pointsGoTo: 
-    hasFlag: 0
-    flags: 
-    isDisabled: 
-    advanceQuest: 0
-    chatSprite: 
-    charSprites: 0
-    soundBit: 5
-    bgSprite: 
-    showName: 1
-    name: Lumina
-    isGrey: 0
-    isBold: 0
-    isItalic: 0
-    shake: 0
-  - dialogue: "Now, let\u2019s talk about the simulation. "
-    questNumMin: 0
-    questNumMax: 0
-    stop: 0
-    forceSkipTo: -1
-    choice: 0
-    choices: []
-    choiceGoTo: 
-    points: 
-    pointsGoTo: 
-    hasFlag: 0
-    flags: 
-    isDisabled: 
-    advanceQuest: 0
-    chatSprite: 
-    charSprites: 0
-    soundBit: 0
-    bgSprite: 
-    showName: 1
-    name: Lumina
-    isGrey: 0
-    isBold: 0
-    isItalic: 0
-    shake: 0
-  - dialogue: "Let me give you some context about what\u2019s going on. "
+  - dialogue: "Now that we\u2019ve got that sorted, let me give you some context
+      about what\u2019s going on. "
     questNumMin: 0
     questNumMax: 0
     stop: 0
@@ -172,7 +123,7 @@ MonoBehaviour:
     choices:
     - '"Wait, could you repeat that?"'
     - "\u201CGot it, I think I understand.\u201D"
-    choiceGoTo: 070000000a000000
+    choiceGoTo: 0500000008000000
     points: 0000000000000000
     pointsGoTo: 0000000000000000
     hasFlag: 0
@@ -244,7 +195,7 @@ MonoBehaviour:
     questNumMin: 0
     questNumMax: 0
     stop: 0
-    forceSkipTo: 11
+    forceSkipTo: 9
     choice: 0
     choices: []
     choiceGoTo: 
@@ -349,7 +300,7 @@ MonoBehaviour:
     choice: 1
     choices:
     - "\u201CSounds good. I\u2019m ready to get started!\u201D"
-    choiceGoTo: 0e000000
+    choiceGoTo: 0c000000
     points: 00000000
     pointsGoTo: 00000000
     hasFlag: 0

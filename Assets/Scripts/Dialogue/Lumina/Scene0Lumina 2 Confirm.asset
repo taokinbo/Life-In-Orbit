@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686498bbb3e84f9408ddb4a95612c42e, type: 3}
+  m_Name: Scene0Lumina 2 Confirm
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogue: "Nice to meet you {PlayerName}! My name is Lumina. I\u2019m here to
+      assist you in navigating life aboard the station. Think of me as your guide
+      and companion."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 5
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Now, let\u2019s talk about the simulation. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Before we go any further, are you happy with the name you've chosen?
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 4
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 1
+    choices:
+    - '"Yes, everything looks good."'
+    - '"Wait, I want to change it."'
+    choiceGoTo: 0400000005000000
+    points: 0000000000000000
+    pointsGoTo: 0000000000000000
+    hasFlag: 1
+    flags: 0000000039000000
+    isDisabled: 0000000000000000
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 0
+    name: 
+    isGrey: 0
+    isBold: 1
+    isItalic: 1
+    shake: 0
+  - dialogue: "Great! Let\u2019s move on."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 1
+    flags: 3b000000
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 'Nows the time to fix it. '
+    questNumMin: 3
+    questNumMax: 3
+    stop: 1
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0

@@ -257,6 +257,7 @@ public class DialogueUI : MonoBehaviour
                 curChoice = 0;
             }
             else{
+                if (dia.hasFlag) MasterEventSystem.Instance.addFlag(dia.flags[0]);
                 index++;
             }
 
