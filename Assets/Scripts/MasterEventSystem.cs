@@ -85,6 +85,8 @@ public class MasterEventSystem : MonoBehaviour
     private int pointsPine = 0;
     private int pointsBonnie = 0;
     private int extreamRelationship = 6;
+    private int rank = 0;
+    private string roleRelatedHint = "";
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
     HashSet<Flags> flags = new HashSet<Flags>(){
@@ -398,10 +400,12 @@ public class MasterEventSystem : MonoBehaviour
         flags.Add(newFlag);
         Debug.Log("Flag Added: " + newFlag);
         if (newFlag == Flags.SupportBonnie) {
+            pointsBonnie += 2;
             if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighBonnie);
             else flags.Add(Flags.AiLowBonnie);
         }
         if (newFlag == Flags.SupportHawthorn) {
+            pointsHawthorn += 2;
             if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighHawthorn);
             else flags.Add(Flags.AiLowHawthorn);
         }
@@ -633,6 +637,22 @@ public class MasterEventSystem : MonoBehaviour
         currentEvent = scene;
     }
 
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int newRank) {
+        rank = newRank;
+    }
+
+    public string getRoleRelatedHint() {
+        return roleRelatedHint;
+    }
+
+    public void setRoleRelatedHint(string newRoleRelatedHint) {
+        roleRelatedHint = newRoleRelatedHint;
+    }
+
     public void cheatNextScene()
     {
         currentEvent++;
@@ -793,6 +813,7 @@ public class MasterEventSystem : MonoBehaviour
         public int pointsPine;
         public int pointsBonnie;
         public string flags;
+        public int rank;
     }
 
     public void Save()
@@ -809,6 +830,7 @@ public class MasterEventSystem : MonoBehaviour
         data.pointsPine = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Pine);
         data.pointsBonnie = MasterEventSystem.Instance.getRelationshipPoints(EventInfoTypes.Bonnie);
         data.flags = MasterEventSystem.Instance.getAllFlags();
+        data.rank = MasterEventSystem.Instance.getRank();
 
         string json = JsonConvert.SerializeObject(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
@@ -823,17 +845,19 @@ public class MasterEventSystem : MonoBehaviour
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
             Debug.Log(json);
-            MasterEventSystem.Instance.setPlayerName(data.playerName);
-            MasterEventSystem.Instance.setDifficulty(Roles.Biologist, data.biologyDifficulty);
-            MasterEventSystem.Instance.setDifficulty(Roles.Engineer, data.engineerDifficulty);
-            MasterEventSystem.Instance.setCurrentEvent(data.currentEvent);
-            MasterEventSystem.Instance.setRole(data.currentRole);
-            MasterEventSystem.Instance.setAllEventInfo(data.eventInfo);
-            MasterEventSystem.Instance.setLocation(data.location);
-            MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Hawthorn, data.pointsHawthorn);
-            MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Pine, data.pointsPine);
-            MasterEventSystem.Instance.setRelationshipPoints(EventInfoTypes.Bonnie, data.pointsBonnie);
-            MasterEventSystem.Instance.setAllFlags(data.flags);
+            Instance.setPlayerName(data.playerName);
+            Instance.setDifficulty(Roles.Biologist, data.biologyDifficulty);
+            Instance.setDifficulty(Roles.Engineer, data.engineerDifficulty);
+            Instance.setCurrentEvent(data.currentEvent);
+            Instance.setRole(data.currentRole);
+            Instance.setAllEventInfo(data.eventInfo);
+            Instance.setLocation(data.location);
+            Instance.setRelationshipPoints(EventInfoTypes.Hawthorn, data.pointsHawthorn);
+            Instance.setRelationshipPoints(EventInfoTypes.Pine, data.pointsPine);
+            Instance.setRelationshipPoints(EventInfoTypes.Bonnie, data.pointsBonnie);
+            Instance.setAllFlags(data.flags);
+            Instance.setRank(data.rank);
+
         }
         else
         {

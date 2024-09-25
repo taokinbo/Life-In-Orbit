@@ -217,7 +217,7 @@ public class DialogueUI : MonoBehaviour
             if (dia.bgSprite != "" && dia.bgSprite != curBackground){ //need to make work with emotions better
                 SetBackground(dia.bgSprite);
             }
-            yield return TypewriterEffect.Run(dia.dialogue.Replace("{PlayerName}", playerName), textLabel, dia.isBold, dia.isItalic);
+            yield return TypewriterEffect.Run(replaceText(dia.dialogue), textLabel, dia.isBold, dia.isItalic);
 
             if (dia.choice){
                 curentChoiceAmount = dia.choices.Length;
@@ -227,7 +227,7 @@ public class DialogueUI : MonoBehaviour
                 StyleSelect(0);
                 for (int i = 0; i < curentChoiceAmount; i++){
                     // make visually striked through if flag for unEnabled
-                    options[i].text = doFormatting(MasterEventSystem.Instance.checkFlag(dia.isDisabled[i]) ? makeStrikeThrough(dia.choices[i]) : dia.choices[i], dia.isBold, dia.isItalic);
+                    options[i].text = doFormatting(MasterEventSystem.Instance.checkFlag(dia.isDisabled[i]) ? makeStrikeThrough(replaceText(dia.choices[i])) : replaceText(dia.choices[i]), dia.isBold, dia.isItalic);
                 }
                 isChoice = true;
             }
@@ -272,6 +272,23 @@ public class DialogueUI : MonoBehaviour
         return "<s>" + text + "</s>";
     }
 
+    private string replaceText(string text) {
+        string curString = text;
+        Roles role = MasterEventSystem.Instance.getRole();
+        Roles oppositeRole = role == Roles.Engineer ? Roles.Biologist : Roles.Engineer;
+
+        curString = curString.Replace("{PlayerName}", playerName);
+        curString = curString.Replace("{Role}", role.ToString());
+        curString = curString.Replace("{Opposite Role}", oppositeRole.ToString());
+        if (role == Roles.Engineer) curString = curString.Replace("{Role Room}", "Engineering Bay");
+        if (role == Roles.Biologist) curString = curString.Replace("{Role Room}", "Biodome");
+        curString = curString.Replace("{Rank}", MasterEventSystem.Instance.getRank().ToString());
+        curString = curString.Replace("{Role Related Hint}", MasterEventSystem.Instance.getRoleRelatedHint());
+
+
+        return curString;
+    }
+
     public string doFormatting(string text, bool isBold = false, bool isItalic = false) {
         string endText = text;
         if (isBold) endText = "<b>" + endText + "</b>";
@@ -290,6 +307,7 @@ public class DialogueUI : MonoBehaviour
         // chatSprite.SetBool(curSprite, false);
         // SetSprite("None");
         SetCharSprite(CharSprites.Empty);
+        spriteImage.color = Color.white;
         dialogueBox.SetActive(false);
         nameBox.SetActive(false);
         chatSpriteGO.SetActive(false);
