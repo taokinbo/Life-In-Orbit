@@ -49,6 +49,7 @@ public class UIController : MonoBehaviour
     }
     public void ChangeSceneToEngineeringBay()
     {
+        //Need to add only allow in at certain scenes
         MasterEventSystem.Instance.setLocation(Scenes.EngineeringBay);
         SceneManager.LoadScene((int)Scenes.EngineeringBay);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
@@ -56,6 +57,7 @@ public class UIController : MonoBehaviour
 
     public void ChangeSceneToBiodome()
     {
+        //Need to lock until role is unlocked (but also should only be available at certain scenes)
         MasterEventSystem.Instance.setLocation(Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);

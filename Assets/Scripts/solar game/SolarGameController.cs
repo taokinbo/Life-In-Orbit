@@ -214,7 +214,7 @@ public class SolarGameController : MonoBehaviour
                     bool twoWrong = false;
                     allCorrect = false;
 
-                    if(level <= 2)
+                    if(level <= 4)
                     {
                         string feedback;
                         if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle && SolarPanels[panel.PanelID].currentOrientation != solution[panel.PanelID].correctOrientation)
@@ -237,6 +237,7 @@ public class SolarGameController : MonoBehaviour
                     if (twoWrong)
                     {
                         panel.GetComponent<Image>().color = Color.red;
+                        twoWrong = false;
                     }
                     else
                     {
