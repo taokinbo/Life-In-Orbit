@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Command Center.unity
     guid: 20184cde4e26dff4b9170810da097d86
   - enabled: 1
-    path: Assets/Scenes/Engineering Bay.unity
-    guid: f3dcf58bf74dcc144aeba68811d4832e
+    path: Assets/Scenes/SolarGameUI.unity
+    guid: b1ae200eaf511364da69f17220cad843
   - enabled: 1
     path: Assets/Scenes/Biodome.unity
     guid: ca8f4ef38c190ac4a9f958a222c60bbc
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TabletMenu.unity
     guid: dbf5c171033ff05489462f8a1dd90350
+  - enabled: 1
+    path: Assets/Scenes/Engineering Bay.unity
+    guid: f3dcf58bf74dcc144aeba68811d4832e
   m_configObjects: {}

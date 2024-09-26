@@ -84,8 +84,8 @@ public class DialogueActivator : MonoBehaviour
         // Debug.Log(diaUI);
         if (!diaUI) {
             Debug.Log("Dia UI didnt exist");
-            // diaUI = FindObjectOfType<DialogueUI>();
-            // setCurrentEvent(MasterEventSystem.Instance.getCurrentEvent());
+            diaUI = FindObjectOfType<DialogueUI>();
+            setCurrentEvent(MasterEventSystem.Instance.getCurrentEvent());
         }
         if (diaUI.IsOpen) return;
         if (matchingSceneList[curIndex] == currentEvent && canSpeakNow(curIndex)) {
