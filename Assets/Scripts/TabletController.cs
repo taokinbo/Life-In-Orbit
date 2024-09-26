@@ -10,6 +10,7 @@ public class TabletController : MonoBehaviour
     public GameObject homePanel;        // The Home Screen
     public GameObject directoryPanel;   // The Directory panel (RelationshipManager)
     public GameObject researchPanel;    // The Research panel
+    public GraphicRaycaster canvasCaster; // The interaction controller for the canvas
 
     //UI elements
     public TextMeshProUGUI tasksText;              // The text field for displaying tasks
@@ -26,19 +27,20 @@ public class TabletController : MonoBehaviour
     public Sprite stormyIcon;
 
     //method to open tablet
-    private bool isTabletOpen = true;  // Track whether the tablet is open
+    private bool isTabletOpen = false;  // Track whether the tablet is open
 
-    // Start is called before the first frame update 
+    // Start is called before the first frame update
     void Start()
     {
         Debug.Log("TabletController Start() method is running");  // Log to check if this is called
-        OpenHome();
+        CloseTablet();
+        // OpenHome();
     }
 
     // Optionally, use a keyboard shortcut to toggle the tablet
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyUp(KeyCode.T))
         {
             if (isTabletOpen)
             {
@@ -46,6 +48,7 @@ public class TabletController : MonoBehaviour
             }
             else
             {
+                // Debug.Log()
                 OpenTablet();  // Open if not open
             }
         }
@@ -55,22 +58,23 @@ public class TabletController : MonoBehaviour
     // Open the tablet by loading the TabletMenu scene additively
     public void OpenTablet()
     {
-        if (!isTabletOpen)
-        {
-            SceneManager.LoadSceneAsync("TabletMenu", LoadSceneMode.Additive);
-            isTabletOpen = true;
-            tabletPanel.SetActive(true);  // Ensure the tablet panel becomes visible
-        }
+        // SceneManager.LoadSceneAsync("TabletMenu", LoadSceneMode.Additive); // none of this is working if scene isnt loaded yet. need to load scene in navigation area
+        isTabletOpen = true;
+        canvasCaster.enabled = true;
+        homePanel.SetActive(true);  // Ensure the tablet panel becomes visible
+        directoryPanel.SetActive(false);
+        researchPanel.SetActive(false);
+
     }
 
     public void CloseTablet()
     {
-        if (isTabletOpen)
-        {
-            SceneManager.UnloadSceneAsync("TabletMenu");
-            isTabletOpen = false;
-            tabletPanel.SetActive(false);  // Ensure the tablet panel hides when closing
-        }
+            // SceneManager.UnloadSceneAsync("TabletMenu"); // Dont destroy tablet when closing, just hide
+        isTabletOpen = false;
+        canvasCaster.enabled = false;
+        homePanel.SetActive(false);  // Ensure the tablet panel hides when closing
+        directoryPanel.SetActive(false);
+        researchPanel.SetActive(false);
     }
     // Method to update the tasks for the current scene/day
     public void UpdateTaskList()
@@ -85,7 +89,7 @@ public class TabletController : MonoBehaviour
 
         // Fetch the tasks for the current scene
         List<MasterEventSystem.TaskStatus> tasks = MasterEventSystem.Instance.GetTasksForCurrentScene();
-        
+
         // Initialize a string to hold the task list
         string taskDisplay = "";
 
@@ -115,7 +119,7 @@ public class TabletController : MonoBehaviour
 
 
 
-    // Method to update the current day and weather 
+    // Method to update the current day and weather
     public void UpdateDayAndWeather()
     {
         int currentDay = 1; //MasterEventSystem.Instance.GetCurrentDay();  // Get the current day from MasterEventSystem
@@ -127,27 +131,27 @@ public class TabletController : MonoBehaviour
         switch (currentDay)
         {
             case 1:
-                
+
                 temperature = 75f;
                 weatherIcon.sprite = sunnyIcon;  // Set the Sunny weather icon
                 break;
             case 2:
-                
+
                 temperature = 60f;
                 weatherIcon.sprite = rainyIcon;  // Set the Rainy weather icon
                 break;
             case 13:
-               
+
                 temperature = 30f;
                 weatherIcon.sprite = snowyIcon;  // Set the Snowy weather icon
                 break;
             case 14:
-               
+
                 temperature = 50f;
                 weatherIcon.sprite = stormyIcon;  // Set the Stormy weather icon
                 break;
             default:
-                
+
                 temperature = 0f;
                 Debug.LogWarning("Unknown day or weather condition.");
                 break;
@@ -181,20 +185,22 @@ public class TabletController : MonoBehaviour
 
     public void OpenDirectory()
     {
-        homePanel.SetActive(false);      // Hide the home screen
+        // homePanel.SetActive(false);      // Hide the home screen
         directoryPanel.SetActive(true);  // Show the directory panel
+        researchPanel.SetActive(false);   // Hide the research panel
+
         RelationshipManager.Instance.OpenDirectory();
     }
 
     // Method to open the Research panel
     public void OpenResearch()
     {
-        homePanel.SetActive(false);      // Hide the home screen
+        // homePanel.SetActive(false);      // Hide the home screen
         directoryPanel.SetActive(false);
         researchPanel.SetActive(true);   // Show the research panel
     }
 
-    //method to quit the game 
+    //method to quit the game
     public void ExitGame()
     {
         Application.Quit();
