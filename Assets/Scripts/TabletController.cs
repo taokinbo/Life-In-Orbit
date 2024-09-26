@@ -26,13 +26,27 @@ public class TabletController : MonoBehaviour
     public Sprite stormyIcon;
 
     //method to open tablet
-    private bool isTabletOpen = true;  // Track whether the tablet is open
+    private bool isTabletOpen = false;  // Track whether the tablet is open
+
+    private void Awake()
+    {
+        // Ensure that this is the only TabletController instance
+        if (FindObjectsOfType<TabletController>().Length > 1)
+        {
+            Destroy(gameObject);  // Destroy duplicate instances
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);  // Make this object persist across scenes
+    }
+
 
     // Start is called before the first frame update 
     void Start()
     {
-        Debug.Log("TabletController Start() method is running");  // Log to check if this is called
-        OpenHome();
+ 
+
+        OpenHome();  // Open the home panel once the tablet is loaded
     }
 
     // Optionally, use a keyboard shortcut to toggle the tablet
@@ -52,26 +66,35 @@ public class TabletController : MonoBehaviour
     }
 
 
-    // Open the tablet by loading the TabletMenu scene additively
+    // Open the tablet by activating the tablet panel
     public void OpenTablet()
     {
         if (!isTabletOpen)
         {
-            SceneManager.LoadSceneAsync("TabletMenu", LoadSceneMode.Additive);
+            Debug.Log("Opening TabletMenu"); 
+            SceneManager.LoadSceneAsync("TabletMenu", LoadSceneMode.Additive).completed += (asyncOp) =>
+            {
+                Debug.Log("TabletMenu scene loaded successfully");
+                GameObject tabletPanel = GameObject.Find("MainTabletPanel");  
+                Debug.Log("MainTabletPanel active: " + tabletPanel.activeSelf);
+            };
+            SceneManager.LoadSceneAsync("TabletMenu", LoadSceneMode.Additive);  // Load the TabletMenu scene additively
             isTabletOpen = true;
-            tabletPanel.SetActive(true);  // Ensure the tablet panel becomes visible
         }
     }
 
+
+    // Close the tablet by deactivating the tablet panel
     public void CloseTablet()
     {
         if (isTabletOpen)
         {
-            SceneManager.UnloadSceneAsync("TabletMenu");
+            SceneManager.UnloadSceneAsync("TabletMenu");  // Unload the TabletMenu scene
             isTabletOpen = false;
-            tabletPanel.SetActive(false);  // Ensure the tablet panel hides when closing
         }
     }
+
+
     // Method to update the tasks for the current scene/day
     public void UpdateTaskList()
     {

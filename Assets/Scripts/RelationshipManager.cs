@@ -17,19 +17,6 @@ public class RelationshipManager : MonoBehaviour
     public GameObject homePanel;
 
 
-    private void Awake()
-	{
-		if (Instance == null)
-		{
-			Instance = this;
-			DontDestroyOnLoad(gameObject); // Keep the relationship manager between scenes
-
-        }
-		else
-		{
-			Destroy(gameObject);
-		}
-	}
 
 	public void OpenDirectory()
 	{
