@@ -597,6 +597,7 @@ public class MasterEventSystem : MonoBehaviour
     public void setRole(Roles role)
     {
         currentRole = role;
+        flags.Add(role == Roles.Engineer ? Flags.RoleEngineer : Flags.RoleBiologist);
     }
 
     public Roles getRole()
@@ -606,6 +607,11 @@ public class MasterEventSystem : MonoBehaviour
 
     public void setPlayerName(string name)
     {
+        // Debug.Log("length of input " + name.Length.ToString());
+        if (name.Trim() == "") return;
+        else {
+            Debug.Log("why is trim failing" + name);
+        }
         playerName = name;
     }
 

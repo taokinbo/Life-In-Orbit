@@ -13,6 +13,7 @@ public class RoleSelectionManager : MonoBehaviour
     public Outline biologistOutline;
 
     private Roles selectedRole;
+    private bool shownOnce = false;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class RoleSelectionManager : MonoBehaviour
         engineerOutline.enabled = false;
         biologistOutline.enabled = false;
 
-        //Add listeners for the role selection buttons 
+        //Add listeners for the role selection buttons
         engineerButton.onClick.AddListener(() => SelectRole(Roles.Engineer));
         biologistButton.onClick.AddListener(() => SelectRole(Roles.Biologist));
 
@@ -69,21 +70,21 @@ public class RoleSelectionManager : MonoBehaviour
         Debug.Log("Role Confirmed: " + selectedRole.ToString());
 
         // Mark JobSelection as cleared using eventTypeCleared()
+
+        MasterEventSystem.Instance.setRole(selectedRole);
+        roleSelectionPanel.SetActive(false);
+
         MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.JobSelection);
 
-        roleSelectionPanel.SetActive(false);
     }
 
-    //Handle changes in the current event 
+    //Handle changes in the current event
     void HandleEventChange(Events currentEvent)
     {
-        if (currentEvent == Events.Act1Scene3)
+        if (currentEvent == Events.Act1Scene3 && !shownOnce)
         {
             roleSelectionPanel.SetActive(true); //show the panel
-        }
-        else
-        {
-            roleSelectionPanel.SetActive(false); //hide panel for rest of game
+            shownOnce = true;
         }
     }
     // Unsubscribe from the event when this object is destroyed

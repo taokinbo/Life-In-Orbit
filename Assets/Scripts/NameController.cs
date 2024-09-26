@@ -9,7 +9,7 @@ public class NameController : MonoBehaviour
     public Events currentEvent;
     [SerializeField] private GameObject InputGameObject;
     [SerializeField] private GameObject SubmitGameObject;
-    [SerializeField] private TMP_Text inputText;
+    [SerializeField] private TMP_InputField inputText;
 
 
 
