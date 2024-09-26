@@ -75,6 +75,7 @@ public class UIController : MonoBehaviour
 
     public void newGame() {
         // ChangeSceneToPlayersQuarters();
+        MasterEventSystem.Instance.stopMusic();
         ChangeSceneToIntroSeq();
 
     }

@@ -67,6 +67,11 @@ public enum Flags
     NameSelection, NameSelectionFinished, NameSelectionMoveOne, NameSelectionStart
 }
 
+public enum Songs
+{
+    None, Intro, Main, GaryTheme, BonnieTheme, HawthornTheme, SolarPanelTheme,
+}
+
 public class MasterEventSystem : MonoBehaviour
 {
 
@@ -97,8 +102,22 @@ public class MasterEventSystem : MonoBehaviour
 
     public delegate void EventInfoChangeHandler(Events newEvent);
     public event EventInfoChangeHandler OnEventInfoChnaged;
+    [SerializeField] private AudioClip intro, main, garyTheme, bonnieTheme, hawthornTheme, solarPanelTheme;
+    Dictionary<Songs, AudioClip> songMapping = new Dictionary<Songs, AudioClip>();
+    private Songs currentSong = Songs.None;
+    [SerializeField] private AudioSource _audioSource;
 
-
+    public AudioSource audioSource
+    {
+        get
+        {
+            if (_audioSource == null)
+            {
+                _audioSource = GetComponent<AudioSource>();
+            }
+            return _audioSource;
+        }
+    }
 
     private void Awake()
     {
@@ -112,6 +131,7 @@ public class MasterEventSystem : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         setDefaultEventInfo();
+        setSongMapping();
 
     }
 
@@ -134,11 +154,23 @@ public class MasterEventSystem : MonoBehaviour
         return curentLocation;
     }
 
+    private void setSongMapping()
+    {
+        songMapping[Songs.Intro] = intro;
+        songMapping[Songs.Main] = main;
+        songMapping[Songs.GaryTheme] = garyTheme;
+        songMapping[Songs.BonnieTheme] = bonnieTheme;
+        songMapping[Songs.HawthornTheme] = hawthornTheme;
+        songMapping[Songs.SolarPanelTheme] = solarPanelTheme;
+    }
+
     public void setLocation(Scenes location)
     {
         curentLocation = location;
         EventInfoTypes roomEvent;
-        switch (location) {
+        Songs newSong = Songs.Main;
+        switch (location)
+        {
             case Scenes.PlayersQuarters:
                 roomEvent = EventInfoTypes.PlayersQuarters;
                 break;
@@ -149,6 +181,7 @@ public class MasterEventSystem : MonoBehaviour
                 roomEvent = EventInfoTypes.CommandCenter;
                 break;
             case Scenes.EngineeringBay:
+                newSong = Songs.SolarPanelTheme;
                 roomEvent = EventInfoTypes.EngineeringBay;
                 break;
             case Scenes.Biodome:
@@ -158,8 +191,42 @@ public class MasterEventSystem : MonoBehaviour
                 roomEvent = EventInfoTypes.None;
                 break;
         }
+
+        if (currentSong != newSong && location != Scenes.OpeningScene)
+        {
+            currentSong = newSong;
+            playBackgroundMusic(newSong);
+        }
         eventTypeCleared(roomEvent);
         Save();
+    }
+
+    private void playBackgroundMusic(Songs songToPlay)
+    {
+        StartCoroutine(audioSource.CrossFade(songMapping[songToPlay]));
+    }
+
+    public void playCharacterMusic(EventInfoTypes character) {
+        Songs songToPlay = Songs.None;
+        switch (character) {
+            case EventInfoTypes.Bonnie:
+                songToPlay = Songs.BonnieTheme;
+                break;
+            case EventInfoTypes.Hawthorn:
+                songToPlay = Songs.HawthornTheme;
+                break;
+            case EventInfoTypes.Pine:
+                songToPlay = Songs.GaryTheme;
+                break;
+            default:
+                return;
+        }
+
+        playBackgroundMusic(songToPlay);
+    }
+
+    public void stopMusic() {
+        audioSource.Stop();
     }
 
     private void setDefaultEventInfo()
@@ -399,26 +466,31 @@ public class MasterEventSystem : MonoBehaviour
 
         flags.Add(newFlag);
         Debug.Log("Flag Added: " + newFlag);
-        if (newFlag == Flags.SupportBonnie) {
+        if (newFlag == Flags.SupportBonnie)
+        {
             pointsBonnie += 2;
             if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighBonnie);
             else flags.Add(Flags.AiLowBonnie);
         }
-        if (newFlag == Flags.SupportHawthorn) {
+        if (newFlag == Flags.SupportHawthorn)
+        {
             pointsHawthorn += 2;
             if (checkFlag(Flags.AiHigh)) flags.Add(Flags.AiHighHawthorn);
             else flags.Add(Flags.AiLowHawthorn);
         }
-        if (newFlag == Flags.NameSelectionMoveOne) {
+        if (newFlag == Flags.NameSelectionMoveOne)
+        {
             eventInfo[currentEvent][EventInfoTypes.NameSelection] = false;
             // return;
         }
-        if (newFlag == Flags.NameSelection) {
+        if (newFlag == Flags.NameSelection)
+        {
             eventInfo[currentEvent][EventInfoTypes.NameSelection] = true;
             flags.Remove(Flags.NameSelectionFinished);
             // return;
         }
-        if (newFlag == Flags.NameSelectionMoveOne) {
+        if (newFlag == Flags.NameSelectionMoveOne)
+        {
             eventInfo[currentEvent][EventInfoTypes.Lumina] = true;
         }
         eventTypeCleared(EventInfoTypes.None);
@@ -609,7 +681,8 @@ public class MasterEventSystem : MonoBehaviour
     {
         // Debug.Log("length of input " + name.Length.ToString());
         if (name.Trim() == "") return;
-        else {
+        else
+        {
             Debug.Log("why is trim failing" + name);
         }
         playerName = name;
@@ -625,6 +698,17 @@ public class MasterEventSystem : MonoBehaviour
         if (role == Roles.Biologist) return biologyDifficulty;
         if (role == Roles.Engineer) return engineerDifficulty;
         return -1;
+    }
+
+    public bool getIfMinigameUnlocked() {
+        int curScene = (int)currentEvent;
+
+        if (curScene == 5) return true;
+        if (curScene == 9) return true;
+        if (curScene == 12) return true;
+        if (curScene == 16) return true;
+        if (curScene == 19) return true;
+        else return false;
     }
 
     public void setDifficulty(Roles role, int difficulty)
@@ -643,19 +727,23 @@ public class MasterEventSystem : MonoBehaviour
         currentEvent = scene;
     }
 
-    public int getRank() {
+    public int getRank()
+    {
         return rank;
     }
 
-    public void setRank(int newRank) {
+    public void setRank(int newRank)
+    {
         rank = newRank;
     }
 
-    public string getRoleRelatedHint() {
+    public string getRoleRelatedHint()
+    {
         return roleRelatedHint;
     }
 
-    public void setRoleRelatedHint(string newRoleRelatedHint) {
+    public void setRoleRelatedHint(string newRoleRelatedHint)
+    {
         roleRelatedHint = newRoleRelatedHint;
     }
 
@@ -666,7 +754,8 @@ public class MasterEventSystem : MonoBehaviour
         OnEventInfoChnaged?.Invoke(currentEvent);
     }
 
-    private void removeAIRelationshipFlags() {
+    private void removeAIRelationshipFlags()
+    {
         flags.Remove(Flags.AIHighDislike);
         flags.Remove(Flags.AIHighDislike);
         flags.Remove(Flags.AIHighLikePlus);
@@ -692,12 +781,13 @@ public class MasterEventSystem : MonoBehaviour
                     removeFlag(Flags.HawthornDislike);
                     removeFlag(Flags.HawthornDislikePlus);
                     addFlag(Flags.HawthornLike);
-                    if (pointsHawthorn > extreamRelationship) {
+                    if (pointsHawthorn > extreamRelationship)
+                    {
                         flags.Add(Flags.HawthornLikePlus);
-                        flags.Add(isFlagHigh? Flags.AIHighLikePlus : Flags.AILowLikePlus);
+                        flags.Add(isFlagHigh ? Flags.AIHighLikePlus : Flags.AILowLikePlus);
                     }
                     else flags.Remove(Flags.HawthornLikePlus);
-                    flags.Add(isFlagHigh? Flags.AIHighLike : Flags.AILowLike);
+                    flags.Add(isFlagHigh ? Flags.AIHighLike : Flags.AILowLike);
 
 
                 }
@@ -706,12 +796,13 @@ public class MasterEventSystem : MonoBehaviour
                     removeFlag(Flags.HawthornLike);
                     removeFlag(Flags.HawthornLikePlus);
                     addFlag(Flags.HawthornDislike);
-                    if (pointsHawthorn < -1 * extreamRelationship) {
+                    if (pointsHawthorn < -1 * extreamRelationship)
+                    {
                         flags.Add(Flags.HawthornDislikePlus);
-                        flags.Add(isFlagHigh? Flags.AIHighDislikePlus : Flags.AILowDislikePlus);
+                        flags.Add(isFlagHigh ? Flags.AIHighDislikePlus : Flags.AILowDislikePlus);
                     }
                     else flags.Remove(Flags.HawthornDislikePlus);
-                    flags.Add(isFlagHigh? Flags.AIHighDislike : Flags.AILowDislike);
+                    flags.Add(isFlagHigh ? Flags.AIHighDislike : Flags.AILowDislike);
 
                 }
                 break;
@@ -839,6 +930,7 @@ public class MasterEventSystem : MonoBehaviour
         data.rank = MasterEventSystem.Instance.getRank();
 
         string json = JsonConvert.SerializeObject(data);
+        PlayerPrefs.SetString("saveData", json);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
         Debug.Log("saving...");
     }
@@ -846,9 +938,12 @@ public class MasterEventSystem : MonoBehaviour
     public void Load()
     {
         string path = Application.persistentDataPath + "/savefile.json";
-        if (File.Exists(path))
+        string json;
+        json = PlayerPrefs.GetString("saveData", "");
+        if (json == "" && File.Exists(path)) json = File.ReadAllText(path);
+        if (json != "")
         {
-            string json = File.ReadAllText(path);
+            // string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
             Debug.Log(json);
             Instance.setPlayerName(data.playerName);
@@ -870,7 +965,67 @@ public class MasterEventSystem : MonoBehaviour
             Debug.Log("load failed");
         }
     }
+}
+public static class AudioSourceExt
+{
+    static bool isMidCrossFade = false;
+    static bool switchSong = false;
+    static AudioClip newSong = null;
+    public static IEnumerator CrossFade(
+            this AudioSource audioSource,
+            AudioClip newSound)
+    {
 
+        if (isMidCrossFade) {
+            switchSong = true;
+            newSong = newSound;
+        }
+        else {
+            // in here we wait until the FadeOut coroutine is done
+        // Debug.Log("starting cross");
+        isMidCrossFade = true;
+        yield return FadeOut(audioSource);
+        // Debug.Log("done fade out");
 
+        audioSource.clip = newSound;
+        yield return FadeIn(audioSource);
+        // Debug.Log("done fade in");
+        }
+    }
 
+    public static IEnumerator FadeOut(this AudioSource audioSource)
+    {
+        float startVolume = audioSource.volume;
+        while (audioSource.volume > 0 && !switchSong)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / 1.0f;
+            // Debug.Log(audioSource.volume);
+
+            yield return null;
+        }
+        audioSource.Stop();
+        audioSource.volume = 0;
+    }
+
+    public static IEnumerator FadeIn(this AudioSource audioSource)
+    {
+        float startVolume = 0.2f;
+        audioSource.volume = 0;
+        audioSource.Play();
+        while (audioSource.volume < 1)
+        {
+            audioSource.volume += startVolume * Time.deltaTime / 1.0f;
+            // Debug.Log(audioSource.volume);
+
+            yield return null;
+        }
+        audioSource.volume = 1;
+        isMidCrossFade = false;
+
+        if (switchSong) {
+            switchSong = false;
+            // audioSource.volume = 0;
+            CrossFade(audioSource, newSong);
+        }
+    }
 }
