@@ -99,6 +99,7 @@ public class DialogueActivator : MonoBehaviour
                     return;
                 }
             }
+            MasterEventSystem.Instance.playCharacterMusic(Character);
             diaUI.ShowDialogue(dialogueObjects[tempCurIndex], dontMarkCharacterDone[tempCurIndex] ? EventInfoTypes.None : Character);
         }
         else {

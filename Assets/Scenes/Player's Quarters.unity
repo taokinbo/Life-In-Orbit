@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 106855231}
   - component: {fileID: 106855230}
   - component: {fileID: 106855229}
+  - component: {fileID: 106855234}
+  - component: {fileID: 106855235}
   m_Layer: 5
   m_Name: To Hallway
   m_TagString: Untagged
@@ -157,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -671, y: 27}
-  m_SizeDelta: {x: 315.51, y: 658.27}
+  m_AnchoredPosition: {x: -679, y: 22}
+  m_SizeDelta: {x: 354.2, y: 690.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106855229
 MonoBehaviour:
@@ -229,16 +231,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 43fe2bf6d73e62d47bec3d433080a337, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -254,6 +256,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106855227}
   m_CullTransparentMesh: 1
+--- !u!114 &106855234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106855227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0.73331356, a: 1}
+  m_EffectDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
+--- !u!114 &106855235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106855227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42320f798ac01704498bac23575c270a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  endColor: {r: 1, g: 0, b: 1, a: 1}
+  outlineSize: 15
+  needsToBeInactive:
+  - {fileID: 1645266889}
+  _spriteOutline: {fileID: 0}
+  _diaUI: {fileID: 0}
 --- !u!1 &295234742
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TabletMenu.unity
     guid: dbf5c171033ff05489462f8a1dd90350
   - enabled: 1
-    path: Assets/Scenes/Engineering Bay.unity
-    guid: f3dcf58bf74dcc144aeba68811d4832e
-  - enabled: 1
     path: Assets/Scenes/OpeningSequence.unity
     guid: 4c558962270a82b4fb8ccb7b72f0725b
   m_configObjects: {}

@@ -76,7 +76,7 @@ public class MiniGame1Manager : MonoBehaviour
 
     public void AwardStarRating(bool completed, int level, int submissions, Image image)
     {
-        
+
 
         if (completed)
         {
@@ -211,7 +211,7 @@ public class MiniGame1Manager : MonoBehaviour
             default:
                 break;
         }
-        
+
     }
 
 	//Call this method when the player submits their configuration
@@ -251,7 +251,10 @@ public class MiniGame1Manager : MonoBehaviour
     public void OnMiniGameComplete()
 	{
         // Notify event system
+        MasterEventSystem.Instance.removeFlag(Flags.Minigame1Start);
+        MasterEventSystem.Instance.addFlag(Flags.MG1Complete);
         MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.EngineeringBay);
+        // MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.Lumina);
 		Debug.Log("Notified EventSystem that the mini-game is complete.");
 	}
 }

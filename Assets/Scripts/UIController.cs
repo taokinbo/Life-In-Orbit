@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, DialogueUI, AscendecyIndex}
+public enum Scenes {StartMenu, PlayersQuarters, Hallway, CommandCenter, EngineeringBay, Biodome, DialogueUI, TabletMenu, OpeningScene}
 
 public class UIController : MonoBehaviour
 {
@@ -32,6 +32,7 @@ public class UIController : MonoBehaviour
         MasterEventSystem.Instance.setLocation(Scenes.PlayersQuarters);
         SceneManager.LoadScene((int)Scenes.PlayersQuarters);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
+        SceneManager.LoadScene((int)Scenes.TabletMenu, LoadSceneMode.Additive);
     }
 
     public void ChangeSceneToHallway()
@@ -39,6 +40,7 @@ public class UIController : MonoBehaviour
         MasterEventSystem.Instance.setLocation(Scenes.Hallway);
         SceneManager.LoadScene((int)Scenes.Hallway);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
+        SceneManager.LoadScene((int)Scenes.TabletMenu, LoadSceneMode.Additive);
     }
 
     public void ChangeSceneToCommandCenter()
@@ -46,6 +48,7 @@ public class UIController : MonoBehaviour
         MasterEventSystem.Instance.setLocation(Scenes.CommandCenter);
         SceneManager.LoadScene((int)Scenes.CommandCenter);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
+        SceneManager.LoadScene((int)Scenes.TabletMenu, LoadSceneMode.Additive);
     }
     public void ChangeSceneToEngineeringBay()
     {
@@ -53,6 +56,7 @@ public class UIController : MonoBehaviour
         MasterEventSystem.Instance.setLocation(Scenes.EngineeringBay);
         SceneManager.LoadScene((int)Scenes.EngineeringBay);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
+        SceneManager.LoadScene((int)Scenes.TabletMenu, LoadSceneMode.Additive);
     }
 
     public void ChangeSceneToBiodome()
@@ -61,10 +65,19 @@ public class UIController : MonoBehaviour
         MasterEventSystem.Instance.setLocation(Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.Biodome);
         SceneManager.LoadScene((int)Scenes.DialogueUI, LoadSceneMode.Additive);
+        SceneManager.LoadScene((int)Scenes.TabletMenu, LoadSceneMode.Additive);
+    }
+
+    public void ChangeSceneToIntroSeq() {
+        MasterEventSystem.Instance.setLocation(Scenes.OpeningScene);
+        SceneManager.LoadScene((int)Scenes.OpeningScene);
     }
 
     public void newGame() {
-        ChangeSceneToPlayersQuarters();
+        // ChangeSceneToPlayersQuarters();
+        MasterEventSystem.Instance.stopMusic();
+        ChangeSceneToIntroSeq();
+
     }
 
     public void loadGame() {

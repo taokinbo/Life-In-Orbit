@@ -132,6 +132,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1151484970}
   - component: {fileID: 1151484969}
+  - component: {fileID: 1151484972}
+  - component: {fileID: 1151484971}
   m_Layer: 0
   m_Name: VideoPlayerObject
   m_TagString: Untagged
@@ -190,6 +192,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151484971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151484968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc48bde4f0e850448b8900a770659d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFlagToRemove: 0
+  currentFlagToRun: 0
+--- !u!114 &1151484972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151484968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4df54759201dd459c8812fa8613c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1151484969}
+  uiCon: {fileID: 1151484971}
 --- !u!1 &1892720592
 GameObject:
   m_ObjectHideFlags: 0

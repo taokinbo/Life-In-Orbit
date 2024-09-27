@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Linq;
 using TMPro;
-using TreeEditor;
 using UnityEngine;
 
 public class AscendancyIndexManager : MonoBehaviour
@@ -113,7 +112,7 @@ public class AscendancyIndexManager : MonoBehaviour
     {
         int level = PipeGameController.Instance.GetCurrentLevel();  // Get the current level
         float score = 0;
-    
+
         // Add similar logic to calculate score based on star ratings once the Biologist minigame is implemented
 
         switch (level)
@@ -170,7 +169,7 @@ public class AscendancyIndexManager : MonoBehaviour
                 Debug.LogError("Invalid level number");
                 break;
         }
-       
+
         return score;
     }
     */
