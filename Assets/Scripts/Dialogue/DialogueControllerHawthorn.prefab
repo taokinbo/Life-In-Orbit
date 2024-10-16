@@ -76,6 +76,6 @@ MonoBehaviour:
   anySkipCharChecks: 0
   skipCharChecks: 
   altDiaBoxUsed: 0
-  backupDialogue: {fileID: 11400000, guid: c632e875feb405641a3db15ef2490be1, type: 2}
+  backupDialogue: {fileID: 11400000, guid: 74f6f5cb11c802741998d2a39060213d, type: 2}
   curIndex: 0
   currentEvent: 0
