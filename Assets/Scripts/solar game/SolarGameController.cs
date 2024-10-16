@@ -187,6 +187,67 @@ public class SolarGameController : MonoBehaviour
         //Debug.Log(orientation.ToString());
     }
 
+    public void GenerateFeedback(List<int> incorrectAnglePanels, List<int> incorrectOrientationPanels, List<int> bothWrongPanels)
+    {
+        string feedback = "";
+
+        // Access the correct solution from the levelData
+        PanelSolution[] solution = levelData.correctPanelSettings;
+
+        // General feedback for initial submissions
+        if (submissions < levelData.maxSubmissions - 1)
+        {
+            if (bothWrongPanels.Count > 0)
+            {
+                feedback += "Panels " + string.Join(", ", bothWrongPanels) + " have both incorrect angle and orientation.\n";
+            }
+            if (incorrectAnglePanels.Count > 0)
+            {
+                feedback += "Panels " + string.Join(", ", incorrectAnglePanels) + " have the wrong angle.\n";
+            }
+            if (incorrectOrientationPanels.Count > 0)
+            {
+                feedback += "Panels " + string.Join(", ", incorrectOrientationPanels) + " have the wrong orientation.\n";
+            }
+        }
+        // Specific feedback as they approach max submissions
+        else
+        {
+            if (bothWrongPanels.Count > 0)
+            {
+                foreach (int panelID in bothWrongPanels)
+                {
+                    feedback += "Panel " + panelID + " needs to be adjusted to the correct angle (" + solution[panelID - 1].correctAngle + " degrees) and orientation (" + solution[panelID - 1].correctOrientation + ").\n";
+                }
+            }
+            if (incorrectAnglePanels.Count > 0)
+            {
+                foreach (int panelID in incorrectAnglePanels)
+                {
+                    feedback += "Panel " + panelID + " needs to be adjusted to the correct angle (" + solution[panelID - 1].correctAngle + " degrees).\n";
+                }
+            }
+            if (incorrectOrientationPanels.Count > 0)
+            {
+                foreach (int panelID in incorrectOrientationPanels)
+                {
+                    feedback += "Panel " + panelID + " needs to be adjusted to the correct orientation (" + solution[panelID - 1].correctOrientation + ").\n";
+                }
+            }
+        }
+
+        // Send the generated feedback to the UI system (or wherever feedback should be displayed)
+        SendFeedbackToDialogue(feedback);
+    }
+
+
+
+    private void SendFeedbackToDialogue(string feedbackMessage)
+    {
+        Debug.Log("Sending feedback to dialogue system: " + feedbackMessage);
+    }
+
+
     public void CheckSolution()
     {
         submissions++;
@@ -196,6 +257,10 @@ public class SolarGameController : MonoBehaviour
             submissionsLeft.text = (levelData.maxSubmissions - submissions).ToString();
 
         bool allCorrect = true;
+        List<int> incorrectAnglePanels = new List<int>();
+        List<int> incorrectOrientationPanels = new List<int>();
+        List<int> bothWrongPanels = new List<int>();
+
         foreach (var panel in panels)
         {
             if (panel.GetComponent<Button>().IsInteractable())
@@ -214,24 +279,22 @@ public class SolarGameController : MonoBehaviour
                     bool twoWrong = false;
                     allCorrect = false;
 
-                    if(level <= 4)
+                    if(level <= 2)
                     {
-                        string feedback;
+                    
                         if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle && SolarPanels[panel.PanelID].currentOrientation != solution[panel.PanelID].correctOrientation)
                         {
-                            feedback = "Panel " + panel.PanelID + 1 + " has an incorrect angle and orientation";
+                            bothWrongPanels.Add(panel.PanelID + 1);
                             twoWrong = true;
                         }
                         else if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle)
                         {
-                            feedback = "Panel " + panel.PanelID + 1 + " has an incorrect angle";
+                            incorrectAnglePanels.Add(panel.PanelID + 1);
                         }
                         else
                         {
-                            feedback = "Panel " + panel.PanelID + 1 + " has an incorrect orientation";
+                            incorrectOrientationPanels.Add(panel.PanelID + 1);
                         }
-
-                        manager.SendFeedbackToDialogue(feedback);
                     }
 
                     if (twoWrong)
@@ -247,7 +310,7 @@ public class SolarGameController : MonoBehaviour
                 }
             }
         }
-
+        GenerateFeedback(incorrectAnglePanels, incorrectOrientationPanels, bothWrongPanels);
         if (levelData.maxSubmissions != -1 && submissions >= levelData.maxSubmissions && !allCorrect)
         {
             //If we've run out of submissions and not all correct, disable and complete
