@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Scene5Lumina 3 Feedback1
   m_EditorClassIdentifier: 
   dialogue:
-  - dialogue: "Not quite there yet. Try adjusting {hint without giving away solution}.
-      You\u2019re close!"
+  - dialogue: '{feedback}'
     questNumMin: 0
     questNumMax: 0
     stop: 1

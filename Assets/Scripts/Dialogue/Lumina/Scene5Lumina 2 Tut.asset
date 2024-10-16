@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Scene5Lumina 2 Tut
   m_EditorClassIdentifier: 
   dialogue:
-  - dialogue: "Great! You\u2019re getting the hang of it. Now, for the next part,
-      you\u2019ll need to {brief explanation of the next step in min-game #}. This
-      one\u2019s all on you, but if you need help, I\u2019m here."
+  - dialogue: "Great! You\u2019re getting the hang of it. Now, for the orientation,
+      you\u2019ll need to rotate the panels to face South. Once you\u2019ve set it
+      to the right direction, click the next spot on the grid to move on to the next
+      panel. "
     questNumMin: 0
     questNumMax: 0
     stop: 1

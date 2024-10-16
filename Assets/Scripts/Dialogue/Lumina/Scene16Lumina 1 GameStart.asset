@@ -63,3 +63,29 @@ MonoBehaviour:
     isBold: 0
     isItalic: 0
     shake: 0
+  - dialogue: "The system won\u2019t allow much room for error this time, and thanks
+      to the sabotage, I can\u2019t read the system properly to guide you through
+      it. You\u2019re mostly on your own here."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0

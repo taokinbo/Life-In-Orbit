@@ -64,7 +64,7 @@ public class SolarGameController : MonoBehaviour
         if (selectedPanel == -1) return;
         foreach (var panel in panels)
         {
-            if (panel.PanelID == selectedPanel) panel.switchImage(); 
+            if (panel.PanelID == selectedPanel) panel.switchImage();
         }
     }
 
@@ -245,6 +245,9 @@ public class SolarGameController : MonoBehaviour
     private void SendFeedbackToDialogue(string feedbackMessage)
     {
         Debug.Log("Sending feedback to dialogue system: " + feedbackMessage);
+        MasterEventSystem.Instance.setCurrentGameFeedback(feedbackMessage);
+        MasterEventSystem.Instance.removeFlag(Flags.Minigame1Start);
+        MasterEventSystem.Instance.addFlag(Flags.MG1F1);
     }
 
 
@@ -266,7 +269,7 @@ public class SolarGameController : MonoBehaviour
             if (panel.GetComponent<Button>().IsInteractable())
             {
                 //Debug.Log("Panel Number " + panel.PanelID + "Panel Direction: " + SolarPanels[panel.PanelID].GetOrientation() + "Panel Angle: " + SolarPanels[panel.PanelID].GetAngle());
-                
+
                 PanelSolution[] solution = levelData.correctPanelSettings;
                 bool v = SolarPanels[panel.PanelID].IsCorrect(solution[panel.PanelID]);
                 if (v)
@@ -281,7 +284,7 @@ public class SolarGameController : MonoBehaviour
 
                     if(level <= 2)
                     {
-                    
+
                         if (SolarPanels[panel.PanelID].currentAngle != solution[panel.PanelID].correctAngle && SolarPanels[panel.PanelID].currentOrientation != solution[panel.PanelID].correctOrientation)
                         {
                             bothWrongPanels.Add(panel.PanelID + 1);

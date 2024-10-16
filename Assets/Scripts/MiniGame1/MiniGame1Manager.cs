@@ -252,6 +252,12 @@ public class MiniGame1Manager : MonoBehaviour
 	{
         // Notify event system
         MasterEventSystem.Instance.removeFlag(Flags.Minigame1Start);
+        MasterEventSystem.Instance.removeFlag(Flags.MG1F1);
+        MasterEventSystem.Instance.removeFlag(Flags.MG1F2);
+        MasterEventSystem.Instance.removeFlag(Flags.MG1F3);
+        MasterEventSystem.Instance.removeFlag(Flags.MG1F4);
+        MasterEventSystem.Instance.removeFlag(Flags.MG1F5);
+        MasterEventSystem.Instance.removeFlag(Flags.MG1F6);
         MasterEventSystem.Instance.addFlag(Flags.MG1Complete);
         MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.EngineeringBay);
         // MasterEventSystem.Instance.eventTypeCleared(EventInfoTypes.Lumina);

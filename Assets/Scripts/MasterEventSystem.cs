@@ -92,6 +92,7 @@ public class MasterEventSystem : MonoBehaviour
     private int extreamRelationship = 6;
     private int rank = 0;
     private string roleRelatedHint = "";
+    private string currentGameFeedback = "";
 
     Dictionary<Events, Dictionary<EventInfoTypes, bool>> eventInfo = new Dictionary<Events, Dictionary<EventInfoTypes, bool>>();
     HashSet<Flags> flags = new HashSet<Flags>(){
@@ -574,6 +575,14 @@ public class MasterEventSystem : MonoBehaviour
         if (curScene <= 19) return 4;
         else return -1;
 
+    }
+
+    public void setCurrentGameFeedback(string feedback) {
+        currentGameFeedback = feedback;
+    }
+
+    public string getCurrentGameFeedback() {
+        return currentGameFeedback;
     }
 
     public bool isSceneDone()

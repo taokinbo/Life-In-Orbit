@@ -284,6 +284,7 @@ public class DialogueUI : MonoBehaviour
         if (role == Roles.Biologist) curString = curString.Replace("{Role Room}", "Biodome");
         curString = curString.Replace("{Rank}", MasterEventSystem.Instance.getRank().ToString());
         curString = curString.Replace("{Role Related Hint}", MasterEventSystem.Instance.getRoleRelatedHint());
+        curString = curString.Replace("{feedback}", MasterEventSystem.Instance.getCurrentGameFeedback());
 
 
         return curString;

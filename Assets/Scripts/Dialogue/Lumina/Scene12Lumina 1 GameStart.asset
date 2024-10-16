@@ -38,9 +38,164 @@ MonoBehaviour:
     isBold: 0
     isItalic: 0
     shake: 0
-  - dialogue: "Looks like the sabotage is targeting {specific element of the task}.
-      You\u2019ll need to be careful with how you handle it\u2014it won\u2019t behave
-      the way you\u2019re used to."
+  - dialogue: "Looks like the sabotage is targeting weather. You\u2019ll need to
+      be careful with how you handle it\u2014it won\u2019t behave the way you\u2019re
+      used to."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "The alien has encrypted new weather conditions into the system. We\u2019ve
+      got light rain and some cloud cover, which means certain parts of the grid
+      won\u2019t be getting full sunlight. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "You\u2019ll need to adjust the angle and orientation of the panels
+      to adapt to these conditions. Some panels may even need to face east or west
+      depending on where they are on the grid."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "This can be found in Dr. Bonnie\u2019s research but just to make sure
+      you have an understanding, for panels with clear skies, set them to 45\xB0
+      and face them north. "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "For panels in cloudy areas or corners of the grid, try adjusting the
+      angle to 60\xB0 and, if needed, orient them east or west.\" "
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: You can see which panels have cloud coverage in the overcast section
+      of your system. For now, it is all light cloud coverage so panels with cloud
+      coverage will be shown as a light gray fill in.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "Let\u2019s start by adjusting the angle of a panel in a clear area
+      to 45\xB0 and face it north. For the panels in cloudy or obstructed areas,
+      you\u2019ll need to set a steeper angle or adjust the orientation."
     questNumMin: 0
     questNumMax: 0
     stop: 0

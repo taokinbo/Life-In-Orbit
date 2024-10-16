@@ -39,8 +39,9 @@ MonoBehaviour:
     isBold: 0
     isItalic: 0
     shake: 0
-  - dialogue: "Here\u2019s what we\u2019re dealing with: {insert complication caused
-      by sabotage, like misaligned solar panels, nutrient blockages, etc.}."
+  - dialogue: "Here\u2019s what we\u2019re dealing with: They\u2019ve unlocked more
+      sections of the grid, but the panels are missing. It\u2019s up to you to replace
+      and configure them."
     questNumMin: 0
     questNumMax: 0
     stop: 0
@@ -64,8 +65,192 @@ MonoBehaviour:
     isBold: 0
     isItalic: 0
     shake: 0
-  - dialogue: "You\u2019ll need to keep an eye on {specific mechanic affected}, and
+  - dialogue: "You\u2019ll need to keep an eye on The hemisphere this time is in
+      the southern hemisphere, which means the orientation will be different, and
       it may take a few extra steps to get things back in working order."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "It\u2019s the evening so the sun is setting in the east, so you\u2019ll
+      need to adjust the panels to make the most of the remaining sunlight. Panels
+      facing east and north will capture the most light at this time."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: Focus on getting both the angle and orientation correct. And remember,
+      your performance in this simulation will be critical to your approval for the
+      new planet.
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "If you ever need a little extra help, don\u2019t forget you can use
+      your tablet to check on Dr. Bonnie\u2019s research. She\u2019s compiled some
+      valuable information that can assist with your work. Just pull it up anytime
+      during the task, and you might find a useful tip or two."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "You\u2019ll notice there are 6 panels on the grid this time. Like
+      before, click on a square to adjust the angle and orientation on the left side
+      of the screen."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "For the panel in the center of the grid, it won\u2019t get as much
+      sunlight this time of day if set to 45 degrees so think of what other angles
+      available may provide more sunlight."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: "On the right side of the system, you\u2019ll see that your hemisphere
+      has changed and the Time of Day, the current weather conditions remain Sunny,
+      and how many submissions you have left. For this go around, you\u2019ll only
+      have 6 submissions before the system will lock out and auto-correct itself."
+    questNumMin: 0
+    questNumMax: 0
+    stop: 0
+    forceSkipTo: -1
+    choice: 0
+    choices: []
+    choiceGoTo: 
+    points: 
+    pointsGoTo: 
+    hasFlag: 0
+    flags: 
+    isDisabled: 
+    advanceQuest: 0
+    chatSprite: 
+    charSprites: 0
+    soundBit: 0
+    bgSprite: 
+    showName: 1
+    name: Lumina
+    isGrey: 0
+    isBold: 0
+    isItalic: 0
+    shake: 0
+  - dialogue: 'The grid will still give you feedback: green means both settings are
+      correct, yellow means one is wrong, and red means both are off.'
     questNumMin: 0
     questNumMax: 0
     stop: 1
