@@ -16,9 +16,20 @@ public class RelationshipManager : MonoBehaviour
     public GameObject directoryPanel;
     public GameObject homePanel;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
-
-	public void OpenDirectory()
+    public void OpenDirectory()
 	{
 		// hide home screen and show the directory
 		directoryPanel.SetActive(true);
@@ -62,6 +73,7 @@ public class RelationshipManager : MonoBehaviour
         }
 
         // Directly check flags
+        Debug.Log("relationship check: " + MasterEventSystem.Instance.checkFlag(Flags.HawthornLikePlus) + MasterEventSystem.Instance.checkFlag(Flags.HawthornDislikePlus));
         if (MasterEventSystem.Instance.checkFlag(Flags.HawthornLikePlus))
         {
             return "<b>Right-Hand Crew Member</b>\n<size=16><i>Captain Hawthorn sees you as his right-hand, always ready to step up and lead.</i></size>";
@@ -137,7 +149,7 @@ public class RelationshipManager : MonoBehaviour
 
 	public void UpdateJournalUI()
 	{
-		captainHawthornStatusText.text = GetRelationshipStatus("CaptainHawthorn");
+        captainHawthornStatusText.text = GetRelationshipStatus("CaptainHawthorn");
 		drAspenBonnieStatusText.text = GetRelationshipStatus("DrAspenBonnie");
 		garyPineStatusText.text = GetRelationshipStatus("GaryPine");
 	}

@@ -64,7 +64,10 @@ public class TabletController : MonoBehaviour
         homePanel.SetActive(true);  // Ensure the tablet panel becomes visible
         directoryPanel.SetActive(false);
         researchPanel.SetActive(false);
-
+        UpdateDayAndWeather();
+        UpdateAscendancyIndex();
+        UpdateTaskList();
+        Debug.Log("Tablet opened and all sections updated");
     }
 
     public void CloseTablet()
@@ -82,6 +85,7 @@ public class TabletController : MonoBehaviour
         if (MasterEventSystem.Instance == null)
         {
             Debug.LogError("MasterEventSystem is not initialized.");
+            tasksText.text = "Could not retrieve tasks from masterevent system.";
             return;
         }
         // Get the current day from the MasterEventSystem
@@ -167,8 +171,10 @@ public class TabletController : MonoBehaviour
     //Method to update the Ascendancy Index
     public void UpdateAscendancyIndex()
     {
-        float ascendancyScore = 70.9f;//AscendancyIndexManager.Instance.GetFinalAscendancyScore(); // Get the final score from AscendancyIndexManager
+        float ascendancyScore = AscendancyIndexManager.Instance.GetAscendancyIndex();
+        Debug.Log("Tablet Ascendancy Score has been calculated and retrieved.");
         ascendancyIndexText.text = ascendancyScore.ToString("F1");
+        Debug.Log("UI has been updated.");
 
     }
 

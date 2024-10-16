@@ -8,7 +8,6 @@ using UnityEngine;
 public class AscendancyIndexManager : MonoBehaviour
 {
     public static AscendancyIndexManager Instance;
-    public TextMeshProUGUI ascendancyIndexText; // UI text for displaying the score
     public float ascendancyIndex = 0;
 
     //mini-game 1 connections
@@ -231,16 +230,9 @@ public class AscendancyIndexManager : MonoBehaviour
         }
 
         return currentScore;
-    }
-
-    // Update the UI element to show the current Ascendancy Index
-    private void UpdateAscendancyScoreUI(float totalScore)
-    {
-        ascendancyIndexText.text = totalScore.ToString("F1");
-    }
-
+    }    
     // Calculate the final Ascendancy Index score based on star ratings and relationships
-    public void CalculateFinalScore()
+    public float CalculateFinalScore()
     {
         float totalScore = 0;
 
@@ -260,18 +252,15 @@ public class AscendancyIndexManager : MonoBehaviour
             totalScore = CalculateBiologistScore(starRating);
             */
         }
-        totalScore = ApplyRelationshipModifiers(totalScore);
-        ascendancyIndex = totalScore;
-        UpdateAscendancyScoreUI(ascendancyIndex);
-    }
-
-    public float GetAIScore() //for ranking system
-    {
-        return ascendancyIndex;  // Returns the score the player has
+     
+        return totalScore;
     }
 
     public float GetAscendancyIndex()
     {
+        ascendancyIndex += CalculateFinalScore();
+        ascendancyIndex = ApplyRelationshipModifiers(ascendancyIndex);
+        Debug.Log("Ascendancy Score has been calculated and retrieved.");
         return ascendancyIndex;
     }
 }
